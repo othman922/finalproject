@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const menuController = require('../controllers/')
+const menuController = require('../controllers/menuControllers')
 
-// router.get('/', recipeController.homepage)
+router.get('/', menuController.homepage)
 
 // router.post('/search', recipeController.searchRecipe)
 

@@ -1,7 +1,8 @@
 const express = require('express')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-const routes = require('./routes/')
+const cors = require('cors')
+const routes = require('./routes/menuRoutes')
 const fileUpload = require('express-fileupload')
 require('dotenv').config()
 
@@ -12,9 +13,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 app.use(cors())
-app.use(cookieParser(''));
+app.use(cookieParser('restaurantDB'));
 app.use(session({
-    secret: '',
+    secret: 'restaurantDB',
     saveUninitialized: true,
     resave: true
 }));

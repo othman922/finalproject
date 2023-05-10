@@ -4,5 +4,5 @@ require('../connections/connection')
 //Get Homepage
 
 exports.homepage = async(req,res) => {
-
+    res.send('Hello')
 }
