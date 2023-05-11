@@ -3,6 +3,7 @@ const router = express.Router()
 const menuController = require('../controllers/menuControllers')
 
 router.get('/', menuController.homepage)
+router.get('/menu', menuController.menu)
 
 // router.post('/search', recipeController.searchRecipe)
 
