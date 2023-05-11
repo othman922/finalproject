@@ -4,6 +4,7 @@ const menuController = require('../controllers/menuControllers')
 
 router.get('/', menuController.homepage)
 router.get('/menu', menuController.menu)
+router.post('/login', menuController.login)
 
 // router.post('/search', recipeController.searchRecipe)
 
