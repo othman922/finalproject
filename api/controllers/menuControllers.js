@@ -81,6 +81,69 @@ exports.menuById = async (req, res) => {
   }
 };
 
+//Post Menu
+
+exports.createMenu = async (req, res) => {
+  try {
+
+    const { name, description, price, image, vegan, category } = req.body
+
+    const menu = new Menu({
+      name,
+      description,
+      price,
+      image,
+      vegan,
+      category
+    })
+
+    await menu.save()
+
+    res.status(201).json(menu)
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+}
+
+//Update Menu
+
+exports.updateMenu = async (req, res) => {
+  try {
+
+    const { name, description, price, image, vegan, category } = req.body
+
+    const updatedMenu = await Menu.findByIdAndUpdate(
+      req.params.id,
+      { name, description, price, image, vegan, category },
+      { new: true }
+    ).populate('category');
+
+    res.status(200).json(updatedMenu)
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+}
+
+//Delete Menu
+
+exports.deleteMenu = async (req, res) => {
+  try {
+
+    const { id } = req.params
+    const menu = await Menu.findByIdAndDelete(id)
+
+    res.status(200).json(menu)
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+}
+
 
 //Post login
 
