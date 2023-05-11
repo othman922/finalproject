@@ -9,24 +9,24 @@ const jwt = require('jsonwebtoken');
 
 //Admin created
 
-const createAdmin = async () => {
-  const admin = new User({
-    email: process.env.ADMIN_EMAIL,
-    password: await bcrypt.hash(process.env.ADMIN_PASSWORD, Number(process.env.PASSWORD_SALT)),
-    isAdmin: true
-  });
+// const createAdmin = async () => {
+//   const admin = new User({
+//     email: process.env.ADMIN_EMAIL,
+//     password: await bcrypt.hash(process.env.ADMIN_PASSWORD, Number(process.env.PASSWORD_SALT)),
+//     isAdmin: true
+//   });
 
-  await admin.save();
-  console.log('Admin erstellt.');
-};
+//   await admin.save();
+//   console.log('Admin erstellt.');
+// };
 
-createAdmin();
+// createAdmin();
 
 //Get Homepage
 
 exports.homepage = async (req, res) => {
   try {
-    const categories = await Category.find({});
+    const categories = await Category.find();
     res.status(200).json(categories);
   } catch (error) {
     console.error(error);
