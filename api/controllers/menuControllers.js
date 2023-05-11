@@ -1,33 +1,11 @@
 require('../connections/connection')
+
 const Category = require('../models/Category')
 const Menu = require('../models/Menu')
 const User = require('../models/Users')
+
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
-//Get Homepage
-
-exports.homepage = async (req, res) => {
-  try {
-    const categories = await Category.find({});
-    res.status(200).json(categories);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Ein Fehler ist aufgetreten.');
-  }
-};
-
-//Get Menu
-
-exports.menu = async (req, res) => {
-  try {
-    const menu = await Menu.find({}).populate('category');
-    res.status(200).json(menu);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Ein Fehler ist aufgetreten.');
-  }
-};
 
 //Admin created
 
@@ -43,6 +21,66 @@ const createAdmin = async () => {
 };
 
 createAdmin();
+
+//Get Homepage
+
+exports.homepage = async (req, res) => {
+  try {
+    const categories = await Category.find({});
+    res.status(200).json(categories);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+};
+
+//Get Homepage by ID
+
+exports.homepageById = async (req, res) => {
+  try {
+    const categories = await Category.findOne({ _id: req.params.id });
+
+    if (!categories) {
+      return res.status(404).send('Categories not found')
+    }
+
+    res.status(200).json(categories);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+};
+
+
+//Get Menu
+
+exports.menu = async (req, res) => {
+  try {
+    const menu = await Menu.find({}).populate('category');
+    res.status(200).json(menu);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+};
+
+//Get Menu by ID
+
+exports.menuById = async (req, res) => {
+  try {
+    const menu = await Menu.findById(req.params.id).populate('category');
+
+    if (!menu) {
+      return res.status(404).send('Menu not found')
+    }
+
+    res.status(200).json(menu);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Ein Fehler ist aufgetreten.');
+  }
+};
+
 
 //Post login
 
