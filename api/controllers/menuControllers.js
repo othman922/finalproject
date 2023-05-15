@@ -210,6 +210,7 @@ exports.login = async (req, res) => {
       { userId: user._id, isAdmin: user.isAdmin },
       process.env.JWT_SECRET
     );
+    
     return res.json({ token });
   } catch (error) {
     console.error(error);
