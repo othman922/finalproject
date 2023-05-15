@@ -3,6 +3,7 @@ require("../connections/connection");
 const Category = require("../models/Category");
 const Menu = require("../models/Menu");
 const User = require("../models/Users");
+const Reservation = require("../models/Reservation");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -22,7 +23,7 @@ const jwt = require("jsonwebtoken");
 
 // createAdmin();
 
-//Get Homepage
+// GET Homepage
 
 exports.homepage = async (req, res) => {
   try {
@@ -34,7 +35,7 @@ exports.homepage = async (req, res) => {
   }
 };
 
-//Get Homepage by ID
+// GET Homepage by ID
 
 exports.homepageById = async (req, res) => {
   try {
@@ -51,7 +52,7 @@ exports.homepageById = async (req, res) => {
   }
 };
 
-//Post Category create
+// POST Category
 
 exports.createCategory = async (req, res) => {
   try {
@@ -71,7 +72,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
-// Put Category update
+// UPDATE Category
 
 exports.updateCategory = async (req, res) => {
   try {
@@ -90,7 +91,7 @@ exports.updateCategory = async (req, res) => {
   }
 };
 
-//Delete a category
+// DELETE a category
 
 exports.deleteCategory = async (req, res) => {
   try {
@@ -104,7 +105,7 @@ exports.deleteCategory = async (req, res) => {
   }
 };
 
-//Get Menu
+// GET Menu
 
 exports.menu = async (req, res) => {
   try {
@@ -116,7 +117,7 @@ exports.menu = async (req, res) => {
   }
 };
 
-//Get Menu by ID
+// GET Menu by ID
 
 exports.menuById = async (req, res) => {
   try {
@@ -133,7 +134,7 @@ exports.menuById = async (req, res) => {
   }
 };
 
-//Post Menu
+// POST Menu
 
 exports.createMenu = async (req, res) => {
   try {
@@ -157,7 +158,7 @@ exports.createMenu = async (req, res) => {
   }
 };
 
-//Update Menu
+// UPDATE Menu
 
 exports.updateMenu = async (req, res) => {
   try {
@@ -176,7 +177,7 @@ exports.updateMenu = async (req, res) => {
   }
 };
 
-//Delete Menu
+// DELETE Menu
 
 exports.deleteMenu = async (req, res) => {
   try {
@@ -190,7 +191,76 @@ exports.deleteMenu = async (req, res) => {
   }
 };
 
-//Post login
+// GET Reservations
+
+exports.getReservations = async (req, res) => {
+  try {
+    const reservations = await Reservation.find();
+    res.status(200).json(reservations);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Ein Fehler ist aufgetreten.");
+  }
+};
+
+// GET Reservations by ID
+
+exports.getReservationsById = async (req, res) => {
+  try {
+    const reservations = await Reservation.findOne({ _id: req.params.id });
+
+    if (!reservations) {
+      return res.status(404).send("Reservations not found");
+    }
+
+    res.status(200).json(reservations);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Ein Fehler ist aufgetreten.");
+  }
+};
+
+// POST Reservation
+
+exports.createReservation = async (req, res) => {
+  try {
+    const { date, people, time, email, name, telephone, extra } = req.body;
+
+    const reservation = new Reservation({
+      date,
+      people, 
+      time, 
+      email, 
+      name, 
+      telephone, 
+      extra
+    });
+
+    await reservation.save();
+
+    res.status(201).json(reservation);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Ein Fehler ist aufgetreten.");
+  }
+};
+
+// DELETE Reservation
+
+exports.deleteReservation = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const reservation = await Reservation.findByIdAndDelete(id);
+
+    res.status(200).json(reservation);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Ein Fehler ist aufgetreten.");
+  }
+};
+
+
+// POST Login
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
@@ -234,6 +304,8 @@ exports.login = async (req, res) => {
     res.status(500).send("Ein Fehler ist aufgetreten.");
   }
 };
+
+// GET Logout
 
 exports.logout = async (req, res, next) => {
   const decodedUser = jwt.decode(req.cookies.accessToken)
