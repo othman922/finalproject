@@ -206,14 +206,47 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: "Invalid password" });
     }
 
-    const token = jwt.sign(
+    const accessToken = jwt.sign(
       { userId: user._id, isAdmin: user.isAdmin },
-      process.env.JWT_SECRET
+      process.env.JWT_KEY,
+      { expiresIn: "30m" }
+    );
+
+    const refreshToken = jwt.sign(
+      { userId: user._id },
+      process.env.JWT_REFRESH_KEY,
+      { expiresIn: "1w" }
     );
     
-    return res.json({ token });
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      withCredentials: true
+    });
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      withCredentials: true
+    });
+
+    res.send({ user, accessToken, refreshToken });
+
   } catch (error) {
     console.error(error);
     res.status(500).send("Ein Fehler ist aufgetreten.");
   }
 };
+
+exports.logout = async (req, res, next) => {
+  const decodedUser = jwt.decode(req.cookies.accessToken)
+
+  try {
+    await User.updateOne(
+      { userId: decodedUser.userId },
+      { $set: { JWT_REFRESH_KEY: null } }
+    );
+    res.clearCookie("accessToken");
+    res.clearCookie("refreshToken");
+    res.status(200).send("logged out");
+  } catch (error) {
+    console.log(error);
+  }
+}

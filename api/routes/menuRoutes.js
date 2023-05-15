@@ -10,13 +10,14 @@ router.post("/menu", auth, isAdmin, menuController.createMenu);
 router.put("/menu/:id", auth, isAdmin, menuController.updateMenu);
 router.delete("/menu/:id", auth, isAdmin, menuController.deleteMenu);
 
-router.get("/", menuController.homepage);
-router.get("/:id", menuController.homepageById);
-router.post("/", auth, isAdmin, menuController.createCategory);
-router.put("/:id", auth, isAdmin, menuController.updateCategory);
-router.delete("/:id", auth, isAdmin, menuController.deleteCategory);
+router.get("/categories", menuController.homepage);
+router.get("/categories/:id", menuController.homepageById);
+router.post("/categories", auth, isAdmin, menuController.createCategory);
+router.put("/categories/:id", auth, isAdmin, menuController.updateCategory);
+router.delete("/categories/:id", auth, isAdmin, menuController.deleteCategory);
 
 router.post("/login", menuController.login);
+router.get("/logout", menuController.logout);
 
 // router.post('/search', recipeController.searchRecipe)
 // comment
