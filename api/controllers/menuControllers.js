@@ -7,6 +7,7 @@ const Reservation = require("../models/Reservation");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const fs = require('fs');
 
 //Admin created
 
@@ -80,15 +81,31 @@ exports.createCategory = async (req, res) => {
 exports.updateCategory = async (req, res) => {
   try {
     const { name } = req.body;
-    const image = req.files.image.name;
 
-    req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
+    const existingCategory = await Category.findById(req.params.id);
 
-    const updatedCategory = await Category.findByIdAndUpdate(
-      req.params.id,
-      { name, image },
-      { new: true }
-    );
+    if (!existingCategory) {
+      return res.status(404).json({ message: 'Category item not found' });
+    }
+
+    if (req.files && req.files.image){
+      const image = req.files.image.name;
+
+      if (existingCategory.image) {
+        fs.unlink(`${process.env.FILEDIR}/category/${existingCategory.image}`, (err) => {
+          if (err) {
+            console.error(err);
+          }
+        })};
+
+        req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
+        existingCategory.image = image;
+      }
+
+      existingCategory.name = name;
+
+      const updatedCategory = await existingCategory.save();
+
 
     res.status(200).json(updatedCategory);
   } catch (error) {
@@ -172,15 +189,35 @@ exports.createMenu = async (req, res) => {
 exports.updateMenu = async (req, res) => {
   try {
     const { name, description, price, vegan, category } = req.body;
-    const image = req.files.image.name;
 
-    req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
+    const existingMenu = await Menu.findById(req.params.id);
 
-    const updatedMenu = await Menu.findByIdAndUpdate(
-      req.params.id,
-      { name, description, price, image, vegan, category },
-      { new: true }
-    ).populate("category");
+    if (!existingMenu) {
+      return res.status(404).json({ message: 'Menu item not found' });
+    }
+
+    if (req.files && req.files.image){
+      const image = req.files.image.name;
+
+      if (existingMenu.image) {
+        fs.unlink(`${process.env.FILEDIR}/menu/${existingMenu.image}`, (err) => {
+          if (err) {
+            console.error(err);
+          }
+        })};
+
+        req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
+        existingMenu.image = image;
+      }
+
+      existingMenu.name = name;
+      existingMenu.description = description;
+      existingMenu.price = price;
+      existingMenu.vegan = vegan;
+      existingMenu.category = category;
+      
+
+    const updatedMenu = await existingMenu.save();
 
     res.status(200).json(updatedMenu);
   } catch (error) {
