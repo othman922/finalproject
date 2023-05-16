@@ -56,7 +56,10 @@ exports.homepageById = async (req, res) => {
 
 exports.createCategory = async (req, res) => {
   try {
-    const { name, image } = req.body;
+    const { name } = req.body;
+    const image = req.files.image.name;
+
+    req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
 
     const category = new Category({
       name,
@@ -138,7 +141,10 @@ exports.menuById = async (req, res) => {
 
 exports.createMenu = async (req, res) => {
   try {
-    const { name, description, price, image, vegan, category } = req.body;
+    const { name, description, price, vegan, category } = req.body;
+    const image = req.files.image.name;
+
+    req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
 
     const menu = new Menu({
       name,
@@ -228,12 +234,12 @@ exports.createReservation = async (req, res) => {
 
     const reservation = new Reservation({
       date,
-      people, 
-      time, 
-      email, 
-      name, 
-      telephone, 
-      extra
+      people,
+      time,
+      email,
+      name,
+      telephone,
+      extra,
     });
 
     await reservation.save();
@@ -258,7 +264,6 @@ exports.deleteReservation = async (req, res) => {
     res.status(500).send("Ein Fehler ist aufgetreten.");
   }
 };
-
 
 // POST Login
 
@@ -287,18 +292,17 @@ exports.login = async (req, res) => {
       process.env.JWT_REFRESH_KEY,
       { expiresIn: "1w" }
     );
-    
+
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
-      withCredentials: true
+      withCredentials: true,
     });
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      withCredentials: true
+      withCredentials: true,
     });
 
     res.send({ user, accessToken, refreshToken });
-
   } catch (error) {
     console.error(error);
     res.status(500).send("Ein Fehler ist aufgetreten.");
@@ -308,7 +312,7 @@ exports.login = async (req, res) => {
 // GET Logout
 
 exports.logout = async (req, res, next) => {
-  const decodedUser = jwt.decode(req.cookies.accessToken)
+  const decodedUser = jwt.decode(req.cookies.accessToken);
 
   try {
     await User.updateOne(
@@ -321,4 +325,4 @@ exports.logout = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
