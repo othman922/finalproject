@@ -25,3 +25,4 @@ const transporter = nodemailer.createTransport({
   }; 
 
 module.exports = sendEmailNotification
+
