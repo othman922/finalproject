@@ -9,6 +9,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require('fs');
 
+
+// const sendEmailNotification = require('../connections/nodemailer');
+
 //Admin created
 
 // const createAdmin = async () => {
@@ -286,6 +289,8 @@ exports.createReservation = async (req, res) => {
     });
 
     await reservation.save();
+
+    // await sendEmailNotification(reservation);
 
     res.status(201).json(reservation);
   } catch (error) {
