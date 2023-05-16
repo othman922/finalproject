@@ -79,7 +79,10 @@ exports.createCategory = async (req, res) => {
 
 exports.updateCategory = async (req, res) => {
   try {
-    const { name, image } = req.body;
+    const { name } = req.body;
+    const image = req.files.image.name;
+
+    req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
 
     const updatedCategory = await Category.findByIdAndUpdate(
       req.params.id,
@@ -168,7 +171,10 @@ exports.createMenu = async (req, res) => {
 
 exports.updateMenu = async (req, res) => {
   try {
-    const { name, description, price, image, vegan, category } = req.body;
+    const { name, description, price, vegan, category } = req.body;
+    const image = req.files.image.name;
+
+    req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
 
     const updatedMenu = await Menu.findByIdAndUpdate(
       req.params.id,
