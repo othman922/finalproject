@@ -12,8 +12,8 @@ router.delete("/menu/:id", auth, isAdmin, menuController.deleteMenu);
 
 router.get("/categories", menuController.homepage);
 router.get("/categories/:id", menuController.homepageById);
-router.post("/categories", menuController.createCategory);
-router.put("/categories/:id", menuController.updateCategory);
+router.post("/categories", auth, isAdmin, menuController.createCategory);
+router.put("/categories/:id", auth, isAdmin, menuController.updateCategory);
 router.delete("/categories/:id", auth, isAdmin, menuController.deleteCategory);
 
 router.get("/reservations", auth, isAdmin, menuController.getReservations);
