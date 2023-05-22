@@ -6,6 +6,7 @@ import {
   Outlet
 } from "react-router-dom";
 import Home from "./pages/home/Home";
+import Speise from "./pages/speise/Speise";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,19 +15,21 @@ function App () {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
+        <Route path="/speise" element={<Speise />} />
+
 
 
       </Route>
     )
   )
   return (
-    <main id="App" className="row m-0" >
-      <aside id="appNavigation" className="col-12 border bg-dark text-light text-center">
+    <main id="App" className=" m-0 " >
+      <aside id="appNavigation" className="  bg-dark text-light text-center">
         navigation
       </aside>
       <RouterProvider router={router} />
 
-      <footer id="appFooter" className="col-12 border bg-dark text-light text-center">
+      <footer id="appFooter" className="  bg-dark text-light text-center">
         Footer
       </footer>
     </main>
@@ -36,7 +39,7 @@ function App () {
 
 const Root = () => {
   return (
-    <section id="appBody" className="container col-12  bg-danger ">
+    <section id="appBody" className="container  ">
       <Outlet />
     </section>
 
