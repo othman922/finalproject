@@ -318,6 +318,9 @@ exports.deleteReservation = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
+  console.log('Received email:', email);
+  console.log('Received password:', password);
+
   try {
     const user = await User.findOne({ email });
     if (!user) {
@@ -341,14 +344,8 @@ exports.login = async (req, res) => {
       { expiresIn: "1w" }
     );
 
-    res.cookie("accessToken", accessToken, {
-      httpOnly: true,
-      withCredentials: true,
-    });
-    res.cookie("refreshToken", refreshToken, {
-      httpOnly: true,
-      withCredentials: true,
-    });
+    res.cookie("accessToken", accessToken);
+    res.cookie("refreshToken", refreshToken);
 
     res.send({ user, accessToken, refreshToken });
   } catch (error) {
