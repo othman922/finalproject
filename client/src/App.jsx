@@ -16,6 +16,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 
 
+import Speise from "./pages/speise/Speise";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,6 +32,8 @@ function App () {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
+        <Route path="/speise" element={<Speise />} />
+
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
           <Route path="/dashboard" element={<AdminDashboard />} />
@@ -56,7 +59,7 @@ function App () {
 
 const Root = () => {
   return (
-    <section id="appBody" className="container col-12  bg-danger ">
+    <section id="appBody" className="container  ">
       <Outlet />
     </section>
 

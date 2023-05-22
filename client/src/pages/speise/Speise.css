@@ -1,0 +1,21 @@
+
+#Speise section:first-child:hover{
+   transition: 350ms;
+    }
+
+#Speise section:first-child:hover{
+background-color: black;
+}
+
+
+/* CLASS NAMES */
+
+.decorationNone{
+    text-decoration: none;
+    color: white;
+    transition: 350ms;
+    }
+
+.decorationNone:hover{
+    color: orange;
+}
