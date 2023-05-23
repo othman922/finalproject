@@ -14,7 +14,7 @@ export default function Home () {
     const navigate = useNavigate()
     return (
         
-        <main id='homeContainer' className='d-flex justify-content-between align-items-center gap-5 '>
+        <main id='homeContainer' className='w-100%'>
             <Header/>   
 
             {/* <section className="border h-75">
