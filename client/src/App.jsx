@@ -15,9 +15,9 @@ import Home from "./pages/home/Home";
 import About from "./pages/About";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
-
-
 import Speise from "./pages/speise/Speise";
+
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -48,34 +48,20 @@ function App () {
     )
   )
   return (
-    <main id="App" > 
-      <RouterProvider router={router} />
     <AuthContext.Provider value={{ loggedIn }}>
       <main id="App" className="row m-0" >
-        <aside id="appNavigation" className="col-12 border bg-dark text-light text-center">
-          navigation
-        </aside>
         <RouterProvider router={router} />
-
-        <footer id="appFooter" className="col-12 border bg-dark text-light text-center">
-          Footer
-        </footer>
       </main>
     </AuthContext.Provider>
-    </main>
   )
 }
 
 const Root = () => {
   return (
-    <section className="ottt">
-       <section id="appBody" className="container  ">
-      <Outlet />
-    </section>
-    </section>
 
-   
-
+    <section id="appBody" className="container  ">
+        <Outlet />
+    </section>
   )
 }
 
