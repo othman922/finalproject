@@ -1,8 +1,11 @@
+import { Footer } from "../../component/footer/Footer"
+import { Header } from "../../component/header/Header"
 import "./Home.css"
 
 export default function Home () {
     return (
-        <main id='homeContainer' className='w-70 h-100 mx-5  row'>
+        <main id='homeContainer' className='w-100% '>
+            <Header/>
             <section className="w-100 col-12 d-flex justify-content-between px-5 align-items-center  ">
                 <h1 className="text-warning">
                     Web-waiters
@@ -23,7 +26,7 @@ export default function Home () {
                     <a href="#">Tisch reservieren ➡️</a>
                 </div>
             </section>
-            <section className="w-100 col-12 d-flex justify-content-between px-5 align-items-center ">
+            <section className=" col-12 d-flex justify-content-between px-5 align-items-center ">
                 <div className="backgroundCircle bg-warning rounded-circle d-flex justify-content-center align-items-center">
                     <a href="#">Angebot der Woche ➡️</a>
                 </div>
@@ -31,6 +34,7 @@ export default function Home () {
                     <a href="#">zu den Events ➡️</a>
                 </div>
             </section>
+            <Footer/>
         </main>
     )
 }

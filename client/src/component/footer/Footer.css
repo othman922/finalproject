@@ -1,0 +1,20 @@
+.myFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1 ;
+  height: 120px;
+}
+
+
+.social-icons a {
+  font-size: 30px;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}

@@ -1,19 +1,9 @@
 #App{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-}
-
-#appBody{
-  height: 70vh;
   background-image: url("./assets/image/background.jpg");
   background-position: center;
   background-size: cover;
 }
 
-#appNavigation{
-height: 10vh;
-}
 
-#appFooter{
-height: 20vh;
-}
