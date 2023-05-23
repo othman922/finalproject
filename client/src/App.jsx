@@ -59,7 +59,7 @@ function App () {
 const Root = () => {
   return (
 
-    <section id="appBody" className="container  ">
+    <section>
         <Outlet />
     </section>
   )
