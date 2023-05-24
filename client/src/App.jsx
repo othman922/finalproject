@@ -16,7 +16,8 @@ import About from "./pages/About";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import Speise from "./pages/speise/Speise";
-
+import { Footer } from "./component/footer/Footer"
+import { Header } from "./component/header/Header"
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,7 +33,7 @@ function App () {
   const authenticate = () => {
     setLoggedIn(true);
   };
-  
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
@@ -59,9 +60,17 @@ function App () {
 const Root = () => {
   return (
 
-    <section>
+    <>
+      <section className="appHeader w-100">
+        <Header />
+      </section>
+      <section className="appBody w-100">
         <Outlet />
-    </section>
+      </section>
+      <section className="appFooter w-100">
+        <Footer />
+      </section>
+    </>
   )
 }
 

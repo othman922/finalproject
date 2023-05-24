@@ -1,5 +1,4 @@
-import { Footer } from "../../component/footer/Footer"
-import { Header } from "../../component/header/Header"
+
 import { useNavigate } from "react-router-dom"
 import starter from "../../assets/image/anna-pelzer-IGfIGP5ONV0-unsplash.jpg"
 import getränk from "../../assets/image/edward-howell-jNs7IPdt4HQ-unsplash.jpg"
@@ -13,9 +12,8 @@ import "./Home.css"
 export default function Home () {
     const navigate = useNavigate()
     return (
-        
+
         <main id='homeContainer' className='w-100%'>
-            <Header/>   
 
             {/* <section className="border h-75">
                 <p>Welcome to <span><strong><em>The restaurant</em></strong></span></p>
@@ -99,7 +97,7 @@ export default function Home () {
                     </div>
                 </div>
             </section> */}
-        <Footer/>
+
         </main>
     )
 }
