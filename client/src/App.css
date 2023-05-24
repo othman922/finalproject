@@ -1,5 +1,5 @@
 #App{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: url("./assets/image/background.jpg");
   background-position: center;
@@ -19,7 +19,15 @@
   position: absolute;
 } */
 
+.appBody{
+  height: 70vh;
+}
 
-
+.appHeader{
+  height: 10vh;
+}
+.appFooter{
+  height: 20vh;
+}
 
 
