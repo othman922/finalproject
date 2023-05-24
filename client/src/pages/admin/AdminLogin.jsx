@@ -20,6 +20,8 @@ export default function AdminLogin( { authenticate } ) {
       const response = await axios.post("http://localhost:9000/login", { email, password });
       console.log(response)
       if (response.status === 200) {
+        const token = response.data.accessToken; 
+        localStorage.setItem("token", token);
         authenticate();
         window.history.pushState({}, "", "/dashboard");
       }

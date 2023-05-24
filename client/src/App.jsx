@@ -42,7 +42,7 @@ function App () {
 
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
-          <Route path="/dashboard" element={<AdminDashboard />} />
+          <Route path="/dashboard/*" element={<AdminDashboard />} />
         )}
       </Route>
     )
