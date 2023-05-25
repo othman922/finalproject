@@ -1,21 +1,57 @@
 
-#Speise section:first-child:hover{
-   transition: 350ms;
-    }
+#Speise{
+    min-height:70vh;
+    font-size: clamp(16px, 2.5vw, 25px);
+}
 
-#Speise section:first-child:hover{
+#Speise #menuNavigation{
+   transition: 350ms;
+   height: 5vh;
+ }
+
+#Speise #menuNavigation:hover{
 background-color: black;
 }
 
+#Speise #menu{
+    width: 90%;
+    min-height: 60vh;
+    font-size: clamp(10px,1vw, 16px);
+
+  }
 
 /* CLASS NAMES */
 
 .decorationNone{
     text-decoration: none;
     color: white;
-    transition: 350ms;
+    transition: 400ms;
     }
 
 .decorationNone:hover{
     color: orange;
+}
+
+
+/* Recipe card */
+
+.menuElement{
+width: clamp(270px, 23vw, 360px);
+height: clamp(100px, 15vh, 200px);
+outline: 5px solid rgba(255, 166, 0, 0.755);
+background-color: orange;
+background-color: rgba(0, 0, 0, .5);
+transition: 300ms;
+}
+
+.menuElement:hover{
+    transform: rotate(-3deg);
+    /* animation-name: welcome;
+    animation-duration: 600ms; */
+}
+
+.image{
+    width: clamp(100px, 7vw, 250px);
+    height: clamp(100px, 7vw, 250px);
+    border-radius: 50%;
 }

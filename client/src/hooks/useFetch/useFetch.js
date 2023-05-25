@@ -1,12 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect,  } from "react";
 
-export const useFetch = (url, _options) => {
+export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-  const options = useRef(_options);
+ 
   useEffect(() => {
-    console.log(options);
+   
     const controller = new AbortController();
     const fetchData = async () => {
       setIsPending(true);
@@ -34,7 +34,7 @@ export const useFetch = (url, _options) => {
     return () => {
       controller.abort();
     };
-  }, [url, options]);
+  }, [url]);
 
   return { data, isPending, error };
 };

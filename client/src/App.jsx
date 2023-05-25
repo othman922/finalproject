@@ -50,7 +50,7 @@ function App () {
   )
   return (
     <AuthContext.Provider value={{ loggedIn }}>
-      <main id="App" className="row m-0" >
+      <main id="App" className=" m-0" >
         <RouterProvider router={router} />
       </main>
     </AuthContext.Provider>
@@ -61,8 +61,8 @@ const Root = () => {
   return (
 
     <>
-      <section className="appHeader w-100">
-        <Header />
+      <section className="appHeader w-100 bg-black ">
+        {/* <Header/> */}
       </section>
       <section className="appBody w-100">
         <Outlet />

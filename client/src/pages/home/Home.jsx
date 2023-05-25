@@ -13,35 +13,18 @@ export default function Home () {
     const navigate = useNavigate()
     return (
 
-        <main id='homeContainer' className='w-100%'>
-
-            {/* <section className="border h-75">
-                <p>Welcome to <span><strong><em>The restaurant</em></strong></span></p>
-                <p>design by <span><strong><em>Web-Waiter</em></strong></span></p>
-                <button>Speise Ansehen</button>
-            </section>
-            <section className="border h-75">
-                <h2>-20% off</h2>
-                <div id="mainDish" className="border border-3 border-warning" >
-                    <img id="mainDishImage" className=" w-100 h-100" src={hauptgericht} alt="" />
+        <main id='homeContainer' className='border w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5'>
+            <section className=" position-relative text-light  d-flex flex-column justify-content-center align-items-center flex-shrink-0">
+                <div>
+                    <p>Welcome to <span className=""><strong><em>The Restaurant</em></strong></span></p>
+                    <p>This website was designed by </p>
+                    <p><strong><em><span><strong>The WebWaiters</strong></span></em></strong></p>
                 </div>
-            </section> */}
-
-            {/* <section className="welcomeContainer ">
+                <button type="button" className="btn btn-warning" onClick={() => navigate("/speise")}>Speise ansehen !</button>
 
             </section>
-            <section className="dayOfferContainer">
-
-            </section> */}
-            <section className=" border borer-2 border-warning position-relative text-light fs-3 d-flex flex-column justify-content-evenly align-items-center">
-                <p>Welcome to <span className="fs-2"><strong><em>The Restaurant</em></strong></span></p>
-                <p>This website was designed by </p>
-                <p><strong><em><span><strong>The WebWaiters</strong></span></em></strong></p>
-                <button type="button" className="btn btn-warning fs-3" onClick={() => navigate("/speise")}>Speise ansehen !</button>
-
-            </section>
-            <section className="position-relative h-100 d-flex flex-column justify-content-between align-items-center py-3">
-                <h1 className="btn btn-light fs-2 ">-20% OFF</h1>
+            {/* <section className="position-relative h-100 d-flex flex-column justify-content-between align-items-center py-3">
+                <h1 className="btn btn-light  ">-20% OFF</h1>
                 <div id="starter" className="position-absolute" >
                     <img id="starterImage" className=" w-100 h-100" src={starter} alt="" />
                 </div>
@@ -55,48 +38,19 @@ export default function Home () {
                     <img id="dessertImage" className=" w-100 h-100" src={dessert} alt="" />
                 </div>
 
-                <button type="button" className="btn btn-warning fs-3">Angebot ansehen !</button>
-            </section>
-            {/* <section className=" position-relative d-flex flex-column justify-content-between align-items-center py-3">
-                <h1 className="btn btn-light fs-2 ">-20% OFF</h1>
+                <button type="button" className="btn btn-warning ">Angebot ansehen !</button>
+            </section> */}
+            <section className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">
+                <h1 className="btn btn-light  ">-20% OFF</h1>
 
                 <div id="mainDish" className="" >
                     <img id="mainDishImage" className=" w-100 h-100" src={hauptgericht} alt="" />
                 </div>
 
 
-                <button type="button" className="btn btn-warning fs-3 fs-sm-4">Angebot ansehen !</button>
-            </section> */}
-            {/* <section className="bg-black text-light">
-                <div className="modal-body">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-md-4">.col-md-4</div>
-                            <div className="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
-                            <div className="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-9">
-                                Level 1: .col-sm-9
-                                <div className="row">
-                                    <div className="col-8 col-sm-6">
-                                        Level 2: .col-8 .col-sm-6
-                                    </div>
-                                    <div className="col-4 col-sm-6">
-                                        Level 2: .col-4 .col-sm-6
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
+                <button type="button" className="btn btn-warning  m-4">Angebot ansehen !</button>
+            </section>
+
 
         </main>
     )

@@ -1,17 +1,48 @@
+#homeContainer{
+    min-height:70vh ;
+}
 
+#homeContainer section{
+width: clamp(250px, 30vw, 500px);
+height: clamp(250px, 45vh, 500px);
+
+font-size: clamp(16px, 3vw, 30px);
+transition: 300ms;
+outline: 10px solid rgba(255, 166, 0, 0.755);
+background-color: orange;
+background-color: rgba(0, 0, 0, .5);
+}
+
+
+#homeContainer section:hover{
+    transform: rotate(3deg);
+    /* animation-name: welcome;
+    animation-duration: 600ms; */
+}
+
+/* @keyframes welcome {
+    from {transform: rotate(5deg);}
+    to{transform: rotate(0deg);}
+} */
   
-
-
-/* Angebot des tages */
+#homeContainer section:first-child{
+  
+}
 
 #mainDish{
-    width: 250px;
-    height: 250px;
+    width: clamp(150px, 15vw, 250px);
+    height: clamp(150px, 15vw, 250px);
     left: 20%;
     top: 25%;
    }
 
+#mainDishImage{
+    border-radius: 50%;
+}
 
+/* Angebot des tages */
+/* 
+   
 
 #drink{
     width: 150px;
@@ -48,5 +79,5 @@
 #mainDish, #mainDishImage, #starter, #starterImage, #dessert, #dessertImage {
     border-radius: 50%;
 
-}
+} */
 
