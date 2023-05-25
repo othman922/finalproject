@@ -99,6 +99,7 @@ export default function Speise () {
                     <div className="text d-flex flex-column">
                         <p className="titleAndPrice d-flex justify-content-between" >Food name <span className="text-warning">50$</span></p>
                         <p className="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, blanditiis.</p>
+                        <div><button>cathegorie</button><button></button></div>
                     </div>
                 </div>
             </section>
