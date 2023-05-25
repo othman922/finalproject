@@ -1,68 +1,56 @@
 .header {
-  background-color: white ;
-  width: 100%;
- padding-bottom: 1px;
+  background-color: rgba(88, 25, 25, 0.76) ;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  .logo {
+
+  .menu {
+    width: 80vw;
     display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  .logo img {
-    width:90px;
-    height: 90px;
-  }
-  .menu ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-around;
     align-items: center;
+  }
+.container1 .main-link1 {
+  text-decoration: none;
+  color: black;
+  background-color:bisque;
+  padding: 8px !important;
+  border-radius: 15px;
+
+}
+  .menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
     list-style-type: none;
-    padding: 0;
+    margin: 5px 0 !important;
   }
   .menu li .main-link{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
     text-decoration: none;
-    color: rgb(3, 3, 3);
-    font-size: 21px;
-    text-align: center;
+    color: rgb(241, 234, 234);
+    font-size: 19px;
   }
 .header .main-link {
   transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 5px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin: 3px;
+  padding: 5px;
   }
-  .header .main-link:hover {
+  .header .main-link:hover,.main-link1:hover {
     color: black;
   background-color:aqua;
-  border-radius: 20px;
+  border-radius: 15px;
   }
-  .cta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .reservation {
-    margin-top: 4px;
-display: flex;
-justify-content: center;
-   align-items: center;
-  }
-  .reservation .reservation-1{
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    margin-right: 10px;
-    background-color: aqua;
-    border-radius: 20px;
-    padding: 7px;
-    color: black;
-  }
-  .icon-1{
-    margin-right: 5px;
-  }
+
+ .container1 .main-link .social-icons{
+  margin-right: 13px;
+ }
+
+ 
+ 

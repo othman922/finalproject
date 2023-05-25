@@ -1,17 +1,80 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height:fit-content;
+  background-color: rgba(88, 25, 25, 0.76) ;
+  color: aliceblue;
+  
+  
+}
 .myFooter {
- width: 100%;
+  padding-top: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #f1f1f1 ;
-  height: 20vh;
+  
 }
-
+.social-icons{
+  display: flex;
+  justify-content: center;
+  
+}
 
 .social-icons a {
   font-size: 30px;
+  margin-left: 20px;
+  color: beige;
+  
 }
 .flex {
+  width: 60vw;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.flex ul {
+list-style-type: none;
+margin: 0 !important;
+
+}
+.flex ul h3{
+color: rgb(219, 219, 223);
+font-size: 19px;
+
+}
+.flex ul a{
+  color: azure;
+  text-decoration: none;
+}
+.footer-end {
+  background-color: rgba(88, 25, 25, 0.76) ;
   display: flex;
   justify-content: center;
+}
+
+.opening-hours {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opening-hours li {
+  margin: 5px;
+}
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location h3 {
+  margin-right: 5px;
+}
+.location p {
+  margin-right: 9px;
+
+}
+.footer-end .flex1 {
+  margin: 0 !important;
 }

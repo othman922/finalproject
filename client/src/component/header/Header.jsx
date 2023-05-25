@@ -1,42 +1,59 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
-import logoImage from "../../assets/image/1.jpg";
-// import { FaCalendarAlt } from "react-icons/fa";
+import { FaRegCalendarAlt } from "react-icons/fa";
 export const Header = () => {
   return (
     <header className="header">
-      <div className="logo">
-        <img src={logoImage} alt="" />
-      </div>
+
+
       <div className="menu">
-        <ul>
-          <li>
-            <NavLink className="main-link" to="/about">
-              Über uns
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="main-link" to="/about">
-              Speisekarte
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="main-link" to="/about">
-              Reservierung
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="main-link" to="/about">
-              Evevnts
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="main-link" to="/about">
-              Informat
-            </NavLink>
-          </li>
-        </ul>
+
+
+        <div className="container1">
+
+
+          <NavLink className="main-link1" to="/">
+            Web Waiters
+          </NavLink>
+        </div>
+        <div className="menu-ul">
+          <ul>
+            <li>
+              <NavLink className="main-link" to="/about">
+                Über uns
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="main-link" to="/speise">
+                Speisekarte
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink className="main-link" to="/about">
+                Evevnts
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="main-link" to="/about">
+                Informat
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="container1">
+          <NavLink className="main-link1" to="/about">
+            {/* <span className="social-icons">
+              <FaRegCalendarAlt />
+            </span>{" "} */}
+            Reservierung
+          </NavLink>
+        </div>
+
+
       </div>
+
+
     </header>
   );
 };

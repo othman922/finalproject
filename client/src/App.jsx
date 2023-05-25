@@ -62,13 +62,13 @@ const Root = () => {
 
     <>
       <section className="appHeader w-100">
-        {/* <Header /> */}
+        <Header /> 
       </section>
       <section className="appBody w-100">
         <Outlet />
       </section>
       <section className="appFooter w-100">
-        {/* <Footer /> */}
+        <Footer />
       </section>
     </>
   )
