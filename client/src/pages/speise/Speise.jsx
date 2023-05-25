@@ -8,16 +8,33 @@ import first from "../../assets/image/anna-pelzer-IGfIGP5ONV0-unsplash.jpg"
 import second from "../../assets/image/caleb-kim-rGb8jE9XZnE-unsplash.jpg"
 import third from "../../assets/image/kobby-mendez-WXJ33HOrzvE-unsplash.jpg"
 import { useFetch } from "../../hooks/useFetch/useFetch";
-// import { useState } from "react";
+import axios from "axios"
+import { useEffect, useState } from "react"
+
 
 
 export default function Speise () {
-    // const [data, setData] = useState()
-    const url = "http://localhost:9000/menu"
-    const { data, isPending, error } = useFetch(url)
-    console.log(data)
-    console.log(isPending)
-    console.log(error)
+    const [menuDatas, setMenuDatas] = useState()
+    // const url = "http://localhost:9000/menu"
+    // const { data, isPending, error } = useFetch(url)
+    // console.log(data)
+    // console.log(isPending)
+    // console.log(error)
+
+    useEffect(() => {
+        getMenuItems();
+    }, []);
+
+    const getMenuItems = async () => {
+        try {
+            const response = await axios.get("http://localhost:9000/menu");
+            setMenuDatas(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    console.log(menuDatas)
 
     return (
         <main id="Speise" className='text-light  w-100 d-flex flex-column justify-content-between align-items-center'>
