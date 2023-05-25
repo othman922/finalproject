@@ -32,7 +32,7 @@ export default function Home () {
                 </div>
 
 
-                <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/login") }}>Angebot ansehen !</button>
+                <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/dashboard/*") }}>Angebot ansehen !</button>
             </section>
 
 
