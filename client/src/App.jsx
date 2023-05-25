@@ -61,14 +61,14 @@ const Root = () => {
   return (
 
     <>
-      <section className="appHeader w-100 bg-black ">
-        {/* <Header/> */}
+      <section className="appHeader w-100">
+        {/* <Header /> */}
       </section>
       <section className="appBody w-100">
         <Outlet />
       </section>
       <section className="appFooter w-100">
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   )

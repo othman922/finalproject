@@ -21,18 +21,19 @@ export default function Speise () {
     // console.log(isPending)
     // console.log(error)
 
-    useEffect(() => {
-        getMenuItems();
-    }, []);
+    // useEffect(() => {
+    //     getMenuItems();
+    // }, []);
 
-    const getMenuItems = async () => {
-        try {
-            const response = await axios.get("http://localhost:9000/menu");
-            setMenuDatas(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+    // const getMenuItems = async () => {
+    //     try {
+    //         const response = await axios.get("http://localhost:9000/menu");
+    //         console.log(response)
+    //         setMenuDatas(response.data);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
 
     console.log(menuDatas)
 

@@ -16,18 +16,12 @@ background-color: rgba(0, 0, 0, .5);
 
 #homeContainer section:hover{
     transform: rotate(3deg);
-    /* animation-name: welcome;
-    animation-duration: 600ms; */
+    
 }
 
-/* @keyframes welcome {
-    from {transform: rotate(5deg);}
-    to{transform: rotate(0deg);}
-} */
+
   
-#homeContainer section:first-child{
-  
-}
+
 
 #mainDish{
     width: clamp(150px, 15vw, 250px);
@@ -40,44 +34,5 @@ background-color: rgba(0, 0, 0, .5);
     border-radius: 50%;
 }
 
-/* Angebot des tages */
-/* 
-   
 
-#drink{
-    width: 150px;
-    height: 250px;
-    border-radius: 60px 60px 60px 60px;
-    left: 55%;
-    top: 25%;
-}
-
-
-#drinkImage{
-    border-radius: 60px 60px 60px 60px;
-
-}
-
-#starter{
-    width: 100px;
-    height: 100px;
-    left: 10%;
-    top: 20%;
-}
-
-
-
-#dessert{
-    width: 80px;
-    height: 80px;
-    left: 35%;
-    bottom: 15%;
-}
-
-
-
-#mainDish, #mainDishImage, #starter, #starterImage, #dessert, #dessertImage {
-    border-radius: 50%;
-
-} */
 

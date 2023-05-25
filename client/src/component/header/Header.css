@@ -1,23 +1,17 @@
-.df {
+.header {
   background-color: white ;
   width: 100%;
-  padding-bottom: 1px;
+ padding-bottom: 1px;
 }
-
-  
   .logo {
     display: flex;
     justify-content: center;
     text-align: center;
   }
-  
   .logo img {
-    margin-top: 15px;
     width:90px;
     height: 90px;
   }
-  
- 
   .menu ul {
     width: 100%;
     display: flex;
@@ -26,9 +20,7 @@
     align-items: center;
     list-style-type: none;
     padding: 0;
-    
   }
-
   .menu li .main-link{
     width: 100%;
     display: flex;
@@ -39,36 +31,27 @@
     color: rgb(3, 3, 3);
     font-size: 21px;
     text-align: center;
-
   }
 .header .main-link {
   transition: color 0.3s ease, background-color 0.3s ease;
   padding: 5px;
   border-radius: 20px;
-
-
   }
   .header .main-link:hover {
     color: black;
   background-color:aqua;
   border-radius: 20px;
   }
-  
-
-  
   .cta {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-  
-
   .reservation {
     margin-top: 4px;
 display: flex;
 justify-content: center;
    align-items: center;
-
   }
   .reservation .reservation-1{
     display: flex;
@@ -83,5 +66,3 @@ justify-content: center;
   .icon-1{
     margin-right: 5px;
   }
-
- 

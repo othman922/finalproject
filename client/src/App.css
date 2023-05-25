@@ -24,10 +24,10 @@
 }
 
 .appHeader{
-  height: 10vh;
+  height: fit-content;
 }
 .appFooter{
-  height: 20vh;
+  height: fit-content;
 }
 
 

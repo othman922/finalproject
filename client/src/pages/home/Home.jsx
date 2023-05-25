@@ -23,23 +23,7 @@ export default function Home () {
                 <button type="button" className="btn btn-warning" onClick={() => navigate("/speise")}>Speise ansehen !</button>
 
             </section>
-            {/* <section className="position-relative h-100 d-flex flex-column justify-content-between align-items-center py-3">
-                <h1 className="btn btn-light  ">-20% OFF</h1>
-                <div id="starter" className="position-absolute" >
-                    <img id="starterImage" className=" w-100 h-100" src={starter} alt="" />
-                </div>
-                <div id="mainDish" className="position-absolute" >
-                    <img id="mainDishImage" className=" w-100 h-100" src={hauptgericht} alt="" />
-                </div>
-                <div id="drink" className="position-absolute" >
-                    <img id="drinkImage" className=" w-100 h-100" src={getränk} alt="" />
-                </div>
-                <div id="dessert" className="position-absolute" >
-                    <img id="dessertImage" className=" w-100 h-100" src={dessert} alt="" />
-                </div>
 
-                <button type="button" className="btn btn-warning ">Angebot ansehen !</button>
-            </section> */}
             <section className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">
                 <h1 className="btn btn-light  ">-20% OFF</h1>
 
@@ -48,7 +32,7 @@ export default function Home () {
                 </div>
 
 
-                <button type="button" className="btn btn-warning  m-4">Angebot ansehen !</button>
+                <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/login") }}>Angebot ansehen !</button>
             </section>
 
 
