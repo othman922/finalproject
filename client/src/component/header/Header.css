@@ -1,7 +1,5 @@
 .header {
- background: #CF0404;
-background: linear-gradient(to top, #CF0404 0%, #170202 100%);
-
+  background-color: #111010;
   color:#fff;
   display:flex;
   justify-content:center;
