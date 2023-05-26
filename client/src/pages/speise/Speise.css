@@ -6,14 +6,14 @@
 
 #Speise #menuNavigation{
    transition: 350ms;
-   height: 5vh;
+   min-height: 5vh;
  }
 
 #Speise #menuNavigation:hover{
 background-color: black;
 }
 
-#Speise #menu{
+#Speise #menu, .loadingSection{
     width: 90%;
     min-height: 60vh;
     font-size: clamp(10px,1vw, 16px);
@@ -36,11 +36,11 @@ background-color: black;
 /* Recipe card */
 
 .menuElement{
-width: clamp(270px, 23vw, 360px);
-height: clamp(100px, 15vh, 200px);
+width: clamp(250px, 24vw, 380px);
+height: clamp(100px, 21vh, 230px);
 outline: 5px solid rgba(255, 166, 0, 0.755);
 background-color: orange;
-background-color: rgba(0, 0, 0, .5);
+background-color: rgba(0, 0, 0, .7);
 transition: 300ms;
 }
 
@@ -55,3 +55,11 @@ transition: 300ms;
     height: clamp(100px, 7vw, 250px);
     border-radius: 50%;
 }
+
+
+
+/* MODAL */
+
+.modal-dialog {
+    max-width: 500px;
+  }
