@@ -11,7 +11,9 @@ export const Footer = () => {
         <div className="flex ">
           <div>
             <ul>
-              <h3 className="location"> <p><FaMapMarkerAlt /></p> Standort</h3>
+              <h3 className="location"> 
+              <p><FaMapMarkerAlt />
+              </p> <p> <span className="app-initial" >S</span>tandort</p> </h3>
               <li>
                 <NavLink
                   to={googleMapsLink}
@@ -24,7 +26,11 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-
+          <div>
+            <h3>kontakt</h3>
+            <p>gggg</p>
+            <p>ffffffff</p>
+          </div>
           
           <div>
             <ul className="opening-hours">
@@ -39,18 +45,14 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
-
-      {/* 
-        */}
-      <div className="footer-end">
+        <div className="footer-end">
       <ul className="flex1">
           <div className="social-icons">
-            <NavLink to="/">
-              <FaFacebook />
+            <NavLink  to="/">
+              <FaFacebook className="facebook"/>
             </NavLink>
             <NavLink to="https://www.instagram.com/aabo_bilal/" target="_blank">
-              <FaInstagram />
+              <FaInstagram className="instgram" />
             </NavLink>
             <NavLink to="/">
               <FaTwitter />
@@ -59,9 +61,12 @@ export const Footer = () => {
           </div>
         </ul> 
       </div>
-      <div className="footer-end">
-       
       </div>
+
+      {/* 
+        */}
+     
+     
     </footer>
   );
 };

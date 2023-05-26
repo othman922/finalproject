@@ -1,56 +1,70 @@
 .header {
-  background-color: rgba(88, 25, 25, 0.76) ;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+ background: #CF0404;
+background: linear-gradient(to top, #CF0404 0%, #170202 100%);
 
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center
+  }
+  
   .menu {
-    width: 80vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width:80vw;
+  display:flex;
+  justify-content:space-around;
+  align-items:center
   }
-.container1 .main-link1 {
-  text-decoration: none;
-  color: black;
-  background-color:bisque;
-  padding: 8px !important;
-  border-radius: 15px;
-
-}
+  
+  .container1 .main-link1 {
+    
+  text-decoration:none;
+  color:#000;
+  background-color:#ffe4c4;
+  padding:10px!important;
+  border-radius:200px 5px 200px 5px;
+  -moz-border-radius:200px 5px 200px 5px;
+  -webkit-border-radius:200px 5px 200px 5px;
+  border:17px none #000
+  }
+  
   .menu ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 5px;
-    list-style-type: none;
-    margin: 5px 0 !important;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  padding:5px;
+  list-style-type:none;
+  margin:5px 0!important
   }
-  .menu li .main-link{
-    text-decoration: none;
-    color: rgb(241, 234, 234);
-    font-size: 19px;
+  
+  .menu li .main-link {
+  text-decoration:none;
+  color:#f1eaea;
+  
+  font-size:19px
   }
-.header .main-link {
-  transition: color 0.3s ease, background-color 0.3s ease;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  margin: 3px;
-  padding: 5px;
+  
+  .header .main-link {
+  transition:color .3s ease,background-color .3s ease;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  margin:3px;
+  padding:5px
   }
+  
   .header .main-link:hover,.main-link1:hover {
-    color: black;
-  background-color:aqua;
-  border-radius: 15px;
+  color:#000;
+  background-color:aqua
   }
-
- .container1 .main-link .social-icons{
-  margin-right: 13px;
- }
-
- 
- 
+  
+  .container1 .main-link .social-icons {
+  margin-right:13px
+  }
+  
+  .header .main-link1:hover {
+  border-radius:200px 5px 200px 5px;
+  -moz-border-radius:200px 5px 200px 5px;
+  -webkit-border-radius:200px 5px 200px 5px;
+  border:17px none #000
+  }

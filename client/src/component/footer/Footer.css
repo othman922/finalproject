@@ -65,16 +65,36 @@ font-size: 19px;
 }
 .location {
   display: flex;
-  align-items: center;
+  
 }
 
 .location h3 {
-  margin-right: 5px;
+  margin-right: 15px;
 }
 .location p {
   margin-right: 9px;
+  font-size: 20px;
 
 }
 .footer-end .flex1 {
   margin: 0 !important;
 }
+
+.social-icons .facebook:hover
+{
+  color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons .instgram:hover
+{
+  color:#ea4c89
+}
+.app-initial{
+    color: #007bb6;}
