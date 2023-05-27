@@ -25,18 +25,19 @@ export const Header = () => {
             </li>
             <li>
               <NavLink className="main-link" to="/speise">
+                
                 Speisekarte
               </NavLink>
             </li>
 
             <li>
-              <NavLink className="main-link" to="/about">
-                Evevnts
+              <NavLink className="main-link" to="/events">
+                Events
               </NavLink>
             </li>
             <li>
               <NavLink className="main-link" to="/about">
-                Informat
+                Informationen
               </NavLink>
             </li>
           </ul>

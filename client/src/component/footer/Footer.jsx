@@ -5,9 +5,9 @@ import {
   FaInstagram,
   FaTwitter,
   FaMapMarkerAlt,
-  FaMobileAlt
+  FaMobileAlt,
 } from "react-icons/fa";
-import { HiOutlineMailOpen } from 'react-icons/hi';
+import { HiOutlineMailOpen } from "react-icons/hi";
 
 export const Footer = () => {
   const googleMapsLink = `https://goo.gl/maps/UUPQsbFnk8CBGATp7`;
@@ -20,94 +20,113 @@ export const Footer = () => {
             <span className="app-initial">W</span>eb-
             <span className="app-initial">W</span>aiters
           </span>
-          
-          <ul>
-            <li>Uber uns</li>
-            <li>Speisekarte</li>
-            <li>Events</li>
-          </ul>
-          {/* <p>
-              
-             Lorem <strong>consectetur</strong> and{" "}
-            <strong>adipisicing elit.</strong> Nisi, repudiandae..
-          </p> */}
-        </div>
-       
 
-        <div className="g-i-t">
+          <ul>
+            <li>
+              <NavLink className="about-link" to="/about">
+                Über uns
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="menu-link" to="/speise">
+                Speisekarte
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="events-link" to="/events">
+                Events
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="grid-item-1">
           <div className="footer-title">Öffnungszeiten</div>
-          <ul>
-            <li> Mo.–So.</li>
-            <li>17:00–00:00 Uhr</li>
-            <li><h6>
-            letzter Einlass um 22:00 Uhr</h6></li>
-          </ul>
-        </div>
-        <div>
-        <div className="g-i-t">
-        <div className="footer-title">Address</div>
-          <ul>
-            <li> <NavLink  to={googleMapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer" >
-              <span><FaMapMarkerAlt /></span> Straßer 77 Berlin 1044
-
-            </NavLink>
-            </li>
-            <li> <NavLink  to={googleMapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer" >
-              <span><HiOutlineMailOpen /></span> mail@1234567.com
-
-            </NavLink>
-            </li>
-            <li> <NavLink  to={googleMapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer" >
-              <span><FaMobileAlt /></span>  +91 90904500112
-
-            </NavLink>
+          <ul className="hours-list">
+            <li>Mo.–So.</li>
+            <li>08:00–00:00 Uhr</li>
+            <li>
+              <p className="last-entry">letzter Einlass um 22:00 Uhr</p>
             </li>
           </ul>
         </div>
-        
+
+        <div className="grid-item-2">
+          <div className="footer-title">Address</div>
+          <ul className="address-list">
+            <li>
+              <NavLink
+                className="google-maps-link"
+                to={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>
+                  <FaMapMarkerAlt />
+                </span>{" "}
+                Straßer 77 Berlin 1044
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="google-maps-link"
+                to={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>
+                  <HiOutlineMailOpen />
+                </span>{" "}
+                mail@1234567.com
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="google-maps-link"
+                to={googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>
+                  <FaMobileAlt />
+                </span>{" "}
+                +91 90904500112
+              </NavLink>
+            </li>
+          </ul>
         </div>
+
         <div className="useful-links">
           <div className="footer-title">contact us</div>
-          <ul>
-          {/* <ul className="flex1">
-            <div className="social-icons">
-              <NavLink to="/">
-                <FaFacebook className="facebook" />
-              </NavLink>
+          <ul className="social-links-list">
+            <li>
+              <NavLink className="facebook-link" to="/">
+                <FaFacebook className="facebook-icon" />
+              </NavLink>{" "}
+              Facebook
+            </li>
+            <li>
               <NavLink
+                className="instagram-link"
                 to="https://www.instagram.com/aabo_bilal/"
                 target="_blank"
               >
-                <FaInstagram className="instgram" />
-              </NavLink>
-              <NavLink to="/">
-                <FaTwitter />
-              </NavLink>
-            </div>
-          </ul> */}
-            <li> <NavLink to="/">
-                <FaFacebook className="facebook" />
-              </NavLink> Facebook</li>
-            <li><NavLink
-                to="https://www.instagram.com/aabo_bilal/"
-                target="_blank"
-              >
-                <FaInstagram className="instgram" />
-              </NavLink>{" "}Sign In</li>
-            <li>  <NavLink to="/">
-                <FaTwitter className="twitter"/>
-              </NavLink>About Us</li>
+                <FaInstagram className="instagram-icon" />
+              </NavLink>{" "}
+              Instagram
+            </li>
+            <li>
+              {/* Add your Twitter link */}
+              <NavLink className="twitter-link" to="/" target="_blank">
+                <FaTwitter className="twitter-icon" />
+              </NavLink>{" "}
+              Twitter
+            </li>
           </ul>
         </div>
-      </div> 
-      
-      <div className="cr-con">Copyright &copy; 2023 | Made by DCI</div>
+      </div>
+      <div className="cr-cont">
+        <p>&copy; 2023 Web-Waiters. All rights reserved.</p>
+      </div>
     </footer>
   );
 };
