@@ -21,6 +21,7 @@ import Datenschutz from "./pages/Datenschutz/Datenschutz";
 import Impressum from "./pages/Impressum/Impressum";
 import { Footer } from "./component/footer/Footer"
 import { Header } from "./component/header/Header"
+import ReservationPage from "./pages/reservation/RerservationPage";
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,6 +48,7 @@ function App () {
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/impressum" element={<Impressum />} />
 
+        <Route path="/reservation" element={<ReservationPage/>} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
           <Route path="/dashboard/*" element={<AdminDashboard />} />
