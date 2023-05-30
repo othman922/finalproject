@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  createRoutesFromElements,
-  Outlet
+    createBrowserRouter,
+    RouterProvider,
+    Route,
+    createRoutesFromElements,
+    Outlet,
 } from "react-router-dom";
 
 import AuthContext from "./context/AuthContext";
@@ -19,6 +19,8 @@ import Speise from "./pages/speise/Speise";
 import Agb from "./pages/Agb/Agb";
 import Datenschutz from "./pages/Datenschutz/Datenschutz";
 import Impressum from "./pages/Impressum/Impressum";
+import ÜberUns from "./component/ÜberUns/ÜberUns";
+
 import { Footer } from "./component/footer/Footer"
 import { Header } from "./component/header/Header"
 import ReservationPage from "./pages/reservation/RerservationPage";
@@ -47,6 +49,7 @@ function App () {
         <Route path="/agb" element={<Agb />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/impressum" element={<Impressum />} />
+        <Route path="/ÜberUns" element={<ÜberUns />} />
 
         <Route path="/reservation" element={<ReservationPage/>} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
@@ -83,3 +86,4 @@ const Root = () => {
 }
 
 export default App
+
