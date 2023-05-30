@@ -16,6 +16,9 @@ import About from "./pages/About";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import Speise from "./pages/speise/Speise";
+import Agb from "./pages/Agb/Agb";
+import Datenschutz from "./pages/Datenschutz/Datenschutz";
+import Impressum from "./pages/Impressum/Impressum";
 import { Footer } from "./component/footer/Footer"
 import { Header } from "./component/header/Header"
 
@@ -38,8 +41,11 @@ function App () {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/speise" element={<Speise />} />
+        <Route path="/agb" element={<Agb />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
+        <Route path="/impressum" element={<Impressum />} />
 
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
