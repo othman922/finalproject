@@ -18,6 +18,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import Speise from "./pages/speise/Speise";
 import { Footer } from "./component/footer/Footer"
 import { Header } from "./component/header/Header"
+import ReservationPage from "./pages/reservation/RerservationPage";
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -40,7 +41,7 @@ function App () {
         <Route index element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/speise" element={<Speise />} />
-
+        <Route path="/reservation" element={<ReservationPage/>} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
           <Route path="/dashboard/*" element={<AdminDashboard />} />
