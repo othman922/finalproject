@@ -15,7 +15,7 @@ export const Footer = () => {
   return (
     <footer>
       <div className="f-item-con">
-        <div className="app-info">
+        <div className="grid-item">
           <span className="app-name">
             <span className="app-initial">W</span>eb-
             <span className="app-initial">W</span>aiters
@@ -39,7 +39,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="grid-item-1">
+        <div className="grid-item">
           <div className="footer-title">Öffnungszeiten</div>
           <ul className="hours-list">
             <li>Mo.–So.</li>
@@ -50,7 +50,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <div className="grid-item-2">
+        <div className="grid-item">
           <div className="footer-title">Address</div>
           <ul className="address-list">
             <li>
@@ -95,7 +95,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <div className="useful-links">
+        <div className="grid-item">
           <div className="footer-title">contact us</div>
           <ul className="social-links-list">
             <li>
