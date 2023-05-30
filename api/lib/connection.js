@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config()
 
-const dateBank=`${process.env.MONGODB_URI}/${process.env.MONGODB_DB}`
+const dateBank=`${process.env.MONGODB_URI}`
 
 mongoose
   .connect(dateBank, {
@@ -14,8 +14,3 @@ mongoose
   .catch((err) => {
     console.log(err);
 });
-
-// Models
-
-// require('./Category')
-// require('./Recipe')
