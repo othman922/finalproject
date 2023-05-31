@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 // import axios from "axios"
 import { useState } from "react"
 
-function MyVerticallyCenteredModal (props) {
+function MyVerticallyCenteredModal (props, menu) {
     return (
         <Modal
             {...props}
@@ -17,15 +17,13 @@ function MyVerticallyCenteredModal (props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+                    {menu.title}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Centered Modal</h4>
+                <h4>{menu.description}</h4>
                 <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
+                    {menu.description}
                 </p>
             </Modal.Body>
             <Modal.Footer>
@@ -70,8 +68,7 @@ export default function Speise () {
                             <p className="titleAndPrice d-flex justify-content-between" >{menu.name} <span className="text-warning">50$</span></p>
                             <p className="description">{menu.description}</p>
                             <Button className="btn btn-danger" style={{ width: "100px" }} variant="primary" onClick={() => setModalShow(true)}>Details</Button>
-                            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)}
-                            />
+                            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} menu={menu} />
                         </div>
                         {/* <div className="modal fade" id="myModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog">
