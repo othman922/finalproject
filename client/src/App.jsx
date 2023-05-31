@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import {
-    createBrowserRouter,
-    RouterProvider,
-    Route,
-    createRoutesFromElements,
-    Outlet,
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+  Outlet,
 } from "react-router-dom";
 
 import AuthContext from "./context/AuthContext";
@@ -51,7 +51,7 @@ function App () {
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/ÜberUns" element={<ÜberUns />} />
 
-        <Route path="/reservation" element={<ReservationPage/>} />
+        <Route path="/reservation" element={<ReservationPage />} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
           <Route path="/dashboard/*" element={<AdminDashboard />} />
@@ -78,7 +78,7 @@ const Root = () => {
       <section className="appBody w-100">
         <Outlet />
       </section>
-      <section className="appFooter   w-100">
+      <section className="appFooter w-100">
         <Footer />
       </section>
     </>

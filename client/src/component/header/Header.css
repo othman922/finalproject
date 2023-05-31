@@ -1,68 +1,68 @@
 .header {
-  background-color: white ;
-  width: 100%;
- padding-bottom: 1px;
-}
-  .logo {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  background-color: #111010;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center
   }
-  .logo img {
-    width:90px;
-    height: 90px;
+  
+  .menu {
+  width:80vw;
+  display:flex;
+  justify-content:space-around;
+  align-items:center
   }
+  
+  .container1 .main-link1 {
+    
+  text-decoration:none;
+  color:#000;
+  background-color:#ffe4c4;
+  padding:10px!important;
+  border-radius:200px 5px 200px 5px;
+  -moz-border-radius:200px 5px 200px 5px;
+  -webkit-border-radius:200px 5px 200px 5px;
+  border:17px none #000
+  }
+  
   .menu ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  padding:5px;
+  list-style-type:none;
+  margin:5px 0!important
   }
-  .menu li .main-link{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    text-decoration: none;
-    color: rgb(3, 3, 3);
-    font-size: 21px;
-    text-align: center;
+  
+  .menu li .main-link {
+  text-decoration:none;
+  color:#f1eaea;
+  
+  font-size:19px
   }
-.header .main-link {
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 5px;
-  border-radius: 20px;
+  
+  .header .main-link {
+  transition:color .3s ease,background-color .3s ease;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  margin:3px;
+  padding:5px
   }
-  .header .main-link:hover {
-    color: black;
-  background-color:aqua;
-  border-radius: 20px;
+  
+  .header .main-link:hover,.main-link1:hover {
+  color:#000;
+  background-color:aqua
   }
-  .cta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  
+  .container1 .main-link .social-icons {
+  margin-right:13px
   }
-  .reservation {
-    margin-top: 4px;
-display: flex;
-justify-content: center;
-   align-items: center;
-  }
-  .reservation .reservation-1{
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    margin-right: 10px;
-    background-color: aqua;
-    border-radius: 20px;
-    padding: 7px;
-    color: black;
-  }
-  .icon-1{
-    margin-right: 5px;
+  
+  .header .main-link1:hover {
+  border-radius:200px 5px 200px 5px;
+  -moz-border-radius:200px 5px 200px 5px;
+  -webkit-border-radius:200px 5px 200px 5px;
+  border:17px none #000
   }

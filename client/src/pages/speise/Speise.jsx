@@ -1,4 +1,3 @@
-
 import "./Speise.css"
 import { NavLink } from "react-router-dom"
 import { useFetch } from "../../hooks/useFetch/useFetch";
@@ -6,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 // import axios from "axios"
 import { useState } from "react"
-
 function MyVerticallyCenteredModal (props, menu) {
     return (
         <Modal
@@ -32,8 +30,6 @@ function MyVerticallyCenteredModal (props, menu) {
         </Modal>
     );
 }
-
-
 export default function Speise () {
     const [modalShow, setModalShow] = useState(false);
     const url = "http://localhost:9000/menu"
@@ -41,9 +37,6 @@ export default function Speise () {
     console.log(data)
     console.log(isPending)
     console.log(error)
-
-
-
     return (
         <main id="Speise" className='text-light  w-100 d-flex flex-column justify-content-between align-items-center'>
             <section id="menuNavigation" className="d-flex justify-content-around align-items-center mt-3 border border-3 border-warning w-75 flex-wrap">
@@ -87,13 +80,10 @@ export default function Speise () {
                                 </div>
                             </div>
                         </div> */}
-
                     </div>
                 ))}
                 {/* `http://localhost:9000/uploadedImages/menu/${menu.image}` */}
-
             </section>}
-
         </main>
     )
 }
