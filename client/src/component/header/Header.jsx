@@ -43,7 +43,7 @@ export const Header = () => {
           </ul>
         </div>
         <div className="container1">
-          <NavLink className="main-link1" to="/about">
+          <NavLink className="main-link1" to="/reservation">
             {/* <span className="social-icons">
               <FaRegCalendarAlt />
             </span>{" "} */}
