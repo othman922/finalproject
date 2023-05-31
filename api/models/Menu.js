@@ -21,8 +21,7 @@ const menuSchema = new mongoose.Schema({
         type: Boolean,
     },
     category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category',
+        type: String,
         required: 'This field is required'
     }
 })

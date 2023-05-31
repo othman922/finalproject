@@ -6,6 +6,7 @@ import "./MenuManagement.css"
 const MenuManagement = () => {
   const [showItems, setShowItems] = useState(false);
   const [menuItems, setMenuItems] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
@@ -21,12 +22,22 @@ const MenuManagement = () => {
 
   useEffect(() => {
     getMenuItems();
+    getCategories();
   }, []);
 
   const getMenuItems = async () => {
     try {
       const response = await axios.get("http://localhost:9000/menu");
       setMenuItems(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getCategories = async () => {
+    try {
+      const response = await axios.get("http://localhost:9000/categories");
+      setCategories(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -177,9 +188,19 @@ const MenuManagement = () => {
               </div>
             </div>
             <div className="mb-3">
-              <label className="form-label">Category:</label>
-              <input className="form-control" type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
-            </div>
+            <label className="form-label">Category:</label>
+              <select
+                className="form-control"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}>
+                <option value="">Select a category</option>
+                {categories.map((category) => (
+                  <option key={category._id} value={category._id}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+          </div>
             <button className="btn btn-primary" type="submit">Create</button>
           </form>
           <div className="mb-5 mt-5">
