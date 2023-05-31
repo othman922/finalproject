@@ -1,0 +1,61 @@
+.contact-page {
+    text-align: center;
+}
+
+.contact-page h1{
+  color: azure;
+}
+
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    border-color: black;
+    background-color: rgb(244, 240, 235);
+}
+
+.contact-page .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+   
+}
+
+.contact-page .form-group input {
+ border-color:rgb(252, 178, 39);
+ border-radius: 5px;
+}
+
+.contact-page .form-group textarea{
+  border-color:rgb(252, 178, 39);
+  border-radius: 5px;
+}
+
+.contact-page .form-group h2 {
+    background-color: rgb(252, 178, 39);
+   width: 400px;
+}
+
+.contact-page .form-group label {
+    margin-bottom: 5px;
+    /* text-align:right; */
+   
+
+}
+/* .contact-page .form-group label:after {
+  content: ":"; 
+} */
+
+.contact-page .form-group input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+.contact-page button {
+    padding: 10px;
+    background-color:  rgb(252, 178, 39);
+    border-radius: 20px;
+    margin-bottom: 15px;
+}

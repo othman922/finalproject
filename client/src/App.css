@@ -4,6 +4,15 @@
   background-image: url("./assets/image/background.jpg");
   background-position: center;
   background-size: cover;
+  height: 100vh;
+  background-image: url("./assets/image/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#appBody{
+  height: 70vh;
+  
 }
 
 /* #appBody::before{

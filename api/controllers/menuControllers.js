@@ -1,4 +1,4 @@
-require("../connections/connection");
+require("../lib/connection");
 
 const Category = require("../models/Category");
 const Menu = require("../models/Menu");
@@ -9,23 +9,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require('fs');
 
-
-// const sendEmailNotification = require('../connections/nodemailer');
-
-//Admin created
-
-// const createAdmin = async () => {
-//   const admin = new User({
-//     email: process.env.ADMIN_EMAIL,
-//     password: await bcrypt.hash(process.env.ADMIN_PASSWORD, Number(process.env.PASSWORD_SALT)),
-//     isAdmin: true
-//   });
-
-//   await admin.save();
-//   console.log('Admin erstellt.');
-// };
-
-// createAdmin();
 
 // GET Homepage
 
