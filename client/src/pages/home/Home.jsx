@@ -35,7 +35,19 @@ export default function Home () {
                 <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/login") }}>Angebot ansehen !</button>
             </section>
 
-
+            {/* {data.map((menu) => (
+                    <div key={menu.id} className="menuElement d-flex gap-2 flex-shrink-0 p-2">
+                        <div className="image d-flex flex-column justify-content-evenly align-items-center h-100">
+                            <img className="image" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt="" />
+                            <span>cathegorie</span>
+                        </div>
+                        <div className="text d-flex flex-column justify-content-evenly">
+                            <p className="titleAndPrice d-flex justify-content-between" >Food name <span className="text-warning">50$</span></p>
+                            <p className="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, blanditiis.</p>
+                            <button className="btn btn-danger">Details</button>
+                        </div>
+                    </div>
+                ))} */}
         </main>
     )
 }

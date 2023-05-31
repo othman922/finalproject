@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import {
-    createBrowserRouter,
-    RouterProvider,
-    Route,
-    createRoutesFromElements,
-    Outlet,
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+  Outlet,
 } from "react-router-dom";
 
 import AuthContext from "./context/AuthContext";
@@ -51,7 +51,7 @@ function App () {
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/ÜberUns" element={<ÜberUns />} />
 
-        <Route path="/reservation" element={<ReservationPage/>} />
+        <Route path="/reservation" element={<ReservationPage />} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
           <Route path="/dashboard/*" element={<AdminDashboard />} />
@@ -61,7 +61,7 @@ function App () {
   )
   return (
     <AuthContext.Provider value={{ loggedIn }}>
-      <main id="App" className=" m-0" >
+      <main id="App" className="" >
         <RouterProvider router={router} />
       </main>
     </AuthContext.Provider>
@@ -73,7 +73,7 @@ const Root = () => {
 
     <>
       <section className="appHeader w-100">
-        <Header /> 
+        <Header />
       </section>
       <section className="appBody w-100">
         <Outlet />

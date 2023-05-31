@@ -8,7 +8,7 @@ const Reservation = require("../models/Reservation");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require('fs');
-
+const mongoose = require("mongoose")
 
 // GET Homepage
 
@@ -117,6 +117,7 @@ exports.deleteCategory = async (req, res) => {
 // GET Menu
 
 exports.menu = async (req, res) => {
+  console.log(await mongoose.connection.db.listCollections());
   try {
     const menu = await Menu.find({}).populate("category");
     res.status(200).json(menu);
@@ -130,6 +131,8 @@ exports.menu = async (req, res) => {
 
 exports.menuById = async (req, res) => {
   try {
+Menu.find().maxTimeMS(20000)
+
     const menu = await Menu.findById(req.params.id).populate("category");
 
     if (!menu) {
