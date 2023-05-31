@@ -19,7 +19,7 @@ export const Header = () => {
         <div className="menu-ul">
           <ul>
             <li>
-              <NavLink className="main-link" to="/about">
+              <NavLink className="main-link" to="/ÜberUns">
                 Über uns
               </NavLink>
             </li>
