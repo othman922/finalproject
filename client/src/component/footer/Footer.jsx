@@ -23,7 +23,7 @@ export const Footer = () => {
 
           <ul>
             <li>
-              <NavLink className="about-link" to="/about">
+              <NavLink className="about-link" to="/ÜberUns">
                 Über uns
               </NavLink>
             </li>
