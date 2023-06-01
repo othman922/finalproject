@@ -1,4 +1,5 @@
 require("../lib/connection");
+const cloudinary = require("../lib/cloudinary");
 
 const Category = require("../models/Category");
 const Menu = require("../models/Menu");
@@ -7,8 +8,8 @@ const Reservation = require("../models/Reservation");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const fs = require('fs');
-const mongoose = require("mongoose")
+const fs = require("fs");
+const mongoose = require("mongoose");
 
 // GET Homepage
 
@@ -44,14 +45,19 @@ exports.homepageById = async (req, res) => {
 exports.createCategory = async (req, res) => {
   try {
     const { name } = req.body;
-    const image = req.files.image.name;
-
-    req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
+    const image = req.file.path;
 
     const category = new Category({
       name,
       image,
     });
+
+    const uploadImage = await cloudinary.uploader.upload(req.file.path, {
+      public_id: `category_${category._id}`,
+      folder: `category/${category.name}`,
+    });
+
+    category.image = uploadImage.secure_url;
 
     await category.save();
 
@@ -71,27 +77,43 @@ exports.updateCategory = async (req, res) => {
     const existingCategory = await Category.findById(req.params.id);
 
     if (!existingCategory) {
-      return res.status(404).json({ message: 'Category item not found' });
+      return res.status(404).json({ message: "Category item not found" });
     }
 
-    if (req.files && req.files.image){
+    // Lösche das alte Bild von Cloudinary, falls vorhanden
+    if (existingCategory.image) {
+      const publicId = existingCategory.image.split("/").pop().split(".")[0];
+      await cloudinary.uploader.destroy(publicId);
+    }
+
+    if (req.file) {
+      const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+        folder: `category/${name}`,
+      });
+      existingCategory.image = uploadResult.secure_url;
+    }
+
+    /* if (req.files && req.files.image) {
       const image = req.files.image.name;
 
       if (existingCategory.image) {
-        fs.unlink(`${process.env.FILEDIR}/category/${existingCategory.image}`, (err) => {
-          if (err) {
-            console.error(err);
+        fs.unlink(
+          `${process.env.FILEDIR}/category/${existingCategory.image}`,
+          (err) => {
+            if (err) {
+              console.error(err);
+            }
           }
-        })};
-
-        req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
-        existingCategory.image = image;
+        );
       }
 
-      existingCategory.name = name;
+      req.files.image.mv(`${process.env.FILEDIR}/category/${image}`);
+      existingCategory.image = image;
+    } */
 
-      const updatedCategory = await existingCategory.save();
+    existingCategory.name = name;
 
+    const updatedCategory = await existingCategory.save();
 
     res.status(200).json(updatedCategory);
   } catch (error) {
@@ -130,7 +152,7 @@ exports.menu = async (req, res) => {
 
 exports.menuById = async (req, res) => {
   try {
-Menu.find().maxTimeMS(20000)
+    Menu.find().maxTimeMS(20000);
 
     const menu = await Menu.findById(req.params.id).populate("category");
 
@@ -150,9 +172,7 @@ Menu.find().maxTimeMS(20000)
 exports.createMenu = async (req, res) => {
   try {
     const { name, description, price, vegan, category } = req.body;
-    const image = req.files.image.name;
-
-    req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
+    const image = req.file.path;
 
     const menu = new Menu({
       name,
@@ -162,6 +182,13 @@ exports.createMenu = async (req, res) => {
       vegan,
       category,
     });
+
+    const uploadImage = await cloudinary.uploader.upload(req.file.path, {
+      public_id: `menu_${menu._id}`,
+      folder: `menu/${menu.name}`,
+    });
+
+    menu.image = uploadImage.secure_url;
 
     await menu.save();
 
@@ -181,29 +208,45 @@ exports.updateMenu = async (req, res) => {
     const existingMenu = await Menu.findById(req.params.id);
 
     if (!existingMenu) {
-      return res.status(404).json({ message: 'Menu item not found' });
+      return res.status(404).json({ message: "Menu item not found" });
     }
 
-    if (req.files && req.files.image){
+    // Lösche das alte Bild von Cloudinary, falls vorhanden
+    if (existingMenu.image) {
+      const publicId = existingMenu.image.split("/").pop().split(".")[0];
+      await cloudinary.uploader.destroy(publicId);
+    }
+
+    if (req.file) {
+      const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+        folder: `menu/${name}`,
+      });
+      existingMenu.image = uploadResult.secure_url;
+    }
+
+    /* if (req.files && req.files.image) {
       const image = req.files.image.name;
 
       if (existingMenu.image) {
-        fs.unlink(`${process.env.FILEDIR}/menu/${existingMenu.image}`, (err) => {
-          if (err) {
-            console.error(err);
+        fs.unlink(
+          `${process.env.FILEDIR}/menu/${existingMenu.image}`,
+          (err) => {
+            if (err) {
+              console.error(err);
+            }
           }
-        })};
-
-        req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
-        existingMenu.image = image;
+        );
       }
 
-      existingMenu.name = name;
-      existingMenu.description = description;
-      existingMenu.price = price;
-      existingMenu.vegan = vegan;
-      existingMenu.category = category;
-      
+      req.files.image.mv(`${process.env.FILEDIR}/menu/${image}`);
+      existingMenu.image = image;
+    } */
+
+    existingMenu.name = name;
+    existingMenu.description = description;
+    existingMenu.price = price;
+    existingMenu.vegan = vegan;
+    existingMenu.category = category;
 
     const updatedMenu = await existingMenu.save();
 
@@ -303,8 +346,8 @@ exports.deleteReservation = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
-  console.log('Received email:', email);
-  console.log('Received password:', password);
+  console.log("Received email:", email);
+  console.log("Received password:", password);
 
   try {
     const user = await User.findOne({ email });
