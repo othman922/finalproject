@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useRef } from "react";
 import { generateAvailableTimes } from "./OpenHour";
 import PropTypes from "prop-types";
-import emailjs from "@emailjs/browser"; 
+import emailjs from "@emailjs/browser";
 
 const ReservationForm = ({ onSubmit }) => {
   const [email, setEmail] = useState("");
@@ -41,7 +41,7 @@ const ReservationForm = ({ onSubmit }) => {
 
     try {
       // Send email using emailjs
-     await emailjs.send(
+      await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
@@ -57,12 +57,15 @@ const ReservationForm = ({ onSubmit }) => {
           extra: extra,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      ); 
+      );
 
-      const response = await axios.post("http://localhost:9000/reservations", reservation);
+      const response = await axios.post(
+        "http://localhost:9000/reservations",
+        reservation
+      );
 
       if (response.status === 201) {
-        setLoading(true); 
+        setLoading(true);
         onSubmit(reservation);
 
         setEmail("");
@@ -72,15 +75,16 @@ const ReservationForm = ({ onSubmit }) => {
         setDate("");
         setPeople(0);
         setTime("");
-       } else {
+      } else {
         console.log(error.message);
-        setError("Versuchen Sie es bitte nochmal: fehler beim speichern der Reservierung");
+        setError(
+          "Versuchen Sie es bitte nochmal: fehler beim speichern der Reservierung"
+        );
       }
     } catch (error) {
       console.log(error.message);
       setError("Versuchen Sie es bitte nochmal: fehler beim verbinden");
-    }
- finally {
+    } finally {
       setLoading(false);
     }
   };
