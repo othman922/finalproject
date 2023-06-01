@@ -20,7 +20,7 @@ export default function AllMenus () {
                 {data.map((menu) => (
                     <div key={menu.id} className="menuElement d-flex gap-2 flex-shrink-0 p-2">
                         <div className="image d-flex flex-column justify-content-evenly align-items-center h-100">
-                            <img className="image text-light" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt={menu.name} />
+                            <img className="image text-light" src={menu.image} alt={menu.name} />
                             {menu.vegan && <span className="text-warning">Vegan</span>}
                         </div>
                         <div className="text d-flex flex-column justify-content-evenly">
