@@ -117,8 +117,7 @@ exports.deleteCategory = async (req, res) => {
 // GET Menu
 
 exports.menu = async (req, res) => {
-  console.log(await mongoose.connection.db.listCollections());
-  try {
+    try {
     const menu = await Menu.find({}).populate("category");
     res.status(200).json(menu);
   } catch (error) {

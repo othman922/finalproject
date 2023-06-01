@@ -45,7 +45,11 @@ function App () {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
+
         <Route path="/speise" element={<Speise />} />
+
+
+
         <Route path="/agb" element={<Agb />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/impressum" element={<Impressum />} />
