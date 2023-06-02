@@ -20,7 +20,7 @@ import Agb from "./pages/Agb/Agb";
 import Datenschutz from "./pages/Datenschutz/Datenschutz";
 import Impressum from "./pages/Impressum/Impressum";
 import ÜberUns from "./component/ÜberUns/ÜberUns";
-
+import Angebot from "./component/speise/angebot/Angebot";
 import { Footer } from "./component/footer/Footer"
 import { Header } from "./component/header/Header"
 import ReservationPage from "./pages/reservation/RerservationPage";
@@ -54,6 +54,7 @@ function App () {
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/ÜberUns" element={<ÜberUns />} />
+        <Route path="/angebot" element={<Angebot />} />
 
         <Route path="/reservation" element={<ReservationPage />} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
@@ -82,7 +83,7 @@ const Root = () => {
       <section className="appBody w-100">
         <Outlet />
       </section>
-      <section className="appFooter w-100">
+      <section className="appFooter w-100 ">
         <Footer />
       </section>
     </>

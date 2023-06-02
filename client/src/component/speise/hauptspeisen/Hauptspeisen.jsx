@@ -1,7 +1,16 @@
 import { useFetch } from "../../../hooks/useFetch/useFetch"
 import Button from 'react-bootstrap/Button';
+import { useState } from "react";
 
 export default function Hauptspeisen () {
+
+    const [showModal, setShowModal] = useState(false)
+    const [menuId, setMenuId] = useState("")
+    const handleModal = (e) => {
+        setShowModal(prevShowModal => !prevShowModal)
+        setMenuId(e.target.name)
+        console.log(menuId)
+    }
     const url = "http://localhost:9000/menu"
 
 
@@ -30,12 +39,32 @@ export default function Hauptspeisen () {
                         <div className="text d-flex flex-column justify-content-evenly">
                             <p className="titleAndPrice d-flex justify-content-between" >{menu.name} <span className="text-warning">50$</span></p>
                             <p className="description">{menu.description}</p>
-                            <Button className="btn btn-danger" style={{ width: "100px" }} variant="primary" >Details</Button>
+                            <Button name={`${menu._id}`} className="btn btn-danger" style={{ width: "100px" }} variant="primary" onClick={(e) => handleModal(e)}>Details</Button>
                         </div>
 
                     </div>
                 ))}
             </section>}
+            {showModal &&
+                <section className="modalContainer h-100 w-100 position-fixed top-0 start-0 bottom-0 end-0 d-flex justify-content-center align-items-center">
+                    {showModal && data && data.filter((menu) => menu._id === `${menuId}`).map((menu) => (
+                        <div key={menu._id} className="myModal bg-opacity-55 bg-warning shadow-lg rounded d-flex gap-2 flex-shrink-0 p-2 flex-column align-items-center">
+                            <div className="image ">
+                                <img className="image text-light" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt={menu.name} />
+
+                            </div>
+                            {menu.vegan && <span className="text-warning">Vegan</span>}
+
+                            <p className="titleAndPrice d-flex justify-content-between" >{menu.name} <span className="text-warning">{menu.price}$</span></p>
+                            <p className="description">{menu.description}</p>
+                            <Button className="btn btn-danger" style={{ width: "100px" }} variant="primary" onClick={() => { setShowModal(prevShowModal => !prevShowModal) }}>Schließen</Button>
+
+
+
+                        </div>
+                    ))}
+
+                </section>}
         </main>
     )
 }

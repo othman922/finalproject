@@ -12,19 +12,6 @@
   
 }
 
-/* #appBody::before{
-  content: "";
-  background-image: url("./assets/image/background.jpg");
-  background-position: center;
-  background-size: cover;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.8;
-  position: absolute;
-} */
-
 .appBody{
   min-height: 70vh;
 }
