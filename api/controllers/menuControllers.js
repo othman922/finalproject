@@ -306,6 +306,13 @@ exports.createReservation = async (req, res) => {
   try {
     const { date, people, time, email, name, telephone, extra } = req.body;
 
+    const reservationsCount = await Reservation.countDocuments({ date, time });
+    const maxReservationsPerTime = 3; 
+
+    if (reservationsCount >= maxReservationsPerTime) {
+      return res.status(400).json({ message: "Maximum reservations for this time slot reached." });
+    }
+
     const reservation = new Reservation({
       date,
       people,
@@ -318,7 +325,6 @@ exports.createReservation = async (req, res) => {
 
     await reservation.save();
 
-    // await sendEmailNotification(reservation);
 
     res.status(201).json(reservation);
   } catch (error) {
