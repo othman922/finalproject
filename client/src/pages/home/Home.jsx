@@ -1,9 +1,8 @@
 
 import { useNavigate } from "react-router-dom"
-import starter from "../../assets/image/anna-pelzer-IGfIGP5ONV0-unsplash.jpg"
-import getränk from "../../assets/image/edward-howell-jNs7IPdt4HQ-unsplash.jpg"
 import hauptgericht from "../../assets/image/lilas-yohane-14jmOnCcZkU-unsplash.jpg"
-import dessert from "../../assets/image/kobby-mendez-WXJ33HOrzvE-unsplash.jpg"
+import { useFetch } from "../../hooks/useFetch/useFetch"
+
 
 import "./Home.css"
 
@@ -11,6 +10,8 @@ import "./Home.css"
 
 export default function Home () {
     const navigate = useNavigate()
+    const url = "http://localhost:9000/menu"
+    const { data, isPending, error } = useFetch(url)
     return (
 
         <main id='homeContainer' className='border w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5'>
@@ -24,16 +25,20 @@ export default function Home () {
 
             </section>
 
-            <section className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">
-                <h1 className="btn btn-light  ">-20% OFF</h1>
+            {data && data.filter((menu) => menu._id === "64784f89d32f3079729fbf4a").map((menu) => (
+                <section key={menu._id} className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">
 
-                <div id="mainDish" className="" >
-                    <img id="mainDishImage" className=" w-100 h-100" src={hauptgericht} alt="" />
-                </div>
+                    <h1 className="btn btn-light  ">-20% OFF</h1>
+
+                    <div id="mainDish" className="" >
+                        <img id="mainDishImage" className=" w-100 h-100" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt="" />
+                    </div>
 
 
-                <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/angebot") }}>Angebot ansehen !</button>
-            </section>
+                    <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/angebot") }}>Angebot ansehen !</button>
+                </section>
+
+            ))}
 
             {/* {data.map((menu) => (
                     <div key={menu.id} className="menuElement d-flex gap-2 flex-shrink-0 p-2">
