@@ -9,7 +9,7 @@ footer{
     background-color: #111010;
     position: fixed;
     bottom: 0;
-   width: 100vw;
+    width: 100vw;
 }
 .f-item-con{
     padding: 1.5rem 10rem 0rem;
@@ -83,4 +83,13 @@ footer .cr-cont p{
 .instagram-icon:hover {
     color:#ea4c89
 
+}
+
+.daten-links{
+    padding: 5px;
+    color: lightgray;
+    text-decoration: none;
+    position: relative;
+    left: 42%;
+    margin-bottom: 10px;
 }

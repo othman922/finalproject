@@ -2,24 +2,15 @@
 export default function Impressum() {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1 className="mb-3">IMPRESSUM</h1>
-          </div>
-        </div>
-      </div>
-
-      <section className="section">
+      <section className="mt-5 card bg-white rounded-3 p-4">
         <div className="container">
           <div className="row">
-            <div>
+            <div className="col-12">
+              <h1 className="mb-3">IMPRESSUM</h1>
+            </div>
+          <div>
               <p>
                 <strong>Web Waiters is a brand of</strong>
-              </p>
-
-              <p>
-                <br />
               </p>
 
               <p>
