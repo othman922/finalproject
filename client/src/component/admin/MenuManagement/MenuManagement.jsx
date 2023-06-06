@@ -213,7 +213,7 @@ const MenuManagement = () => {
                   <div className="card mb-3" key={menuItem._id}>
                     <div className="row g-0">
                       <div className="col-md-4">
-                        <img src={`http://localhost:9000/uploadedImages/menu/${menuItem.image}`} alt={menuItem.name} className="img-fluid" />
+                        <img src={menuItem.image} alt={menuItem.name} className="img-fluid" />
                       </div>
                       <div className="col-md-8">
                         <div className="card-body">

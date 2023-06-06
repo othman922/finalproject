@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { generateAvailableTimes } from "./OpenHour";
 import PropTypes from "prop-types";
-import emailjs from "@emailjs/browser"; 
+import emailjs from "@emailjs/browser";
 
 const ReservationForm = ({ onSubmit }) => {
   const [email, setEmail] = useState("");
@@ -14,11 +14,51 @@ const ReservationForm = ({ onSubmit }) => {
   const [time, setTime] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [disabledTimes, setDisabledTimes] = useState([]);
 
   const form = useRef();
 
   const today = new Date().toISOString().split("T")[0];
   const filteredAvailableTimes = generateAvailableTimes(date, today);
+
+  useEffect(() => {
+    const fetchReservations = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:9000/reservations",
+          {
+            params: {
+              date,
+            },
+          }
+        );
+
+        const reservations = response.data;
+        const maxReservationsPerTime = 3;
+
+        const fullyBookedTimes = reservations.reduce((times, reservation) => {
+          if (times[reservation.time]) {
+            times[reservation.time]++;
+          } else {
+            times[reservation.time] = 1;
+          }
+          return times;
+        }, {});
+
+        const disabledTimes = Object.keys(fullyBookedTimes).filter(
+          (time) => fullyBookedTimes[time] >= maxReservationsPerTime
+        );
+
+        setDisabledTimes(disabledTimes);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    if (date) {
+      fetchReservations();
+    }
+  }, [date]);
 
   //Submit from the Reservation
   const handleSubmit = async (e) => {
@@ -28,6 +68,7 @@ const ReservationForm = ({ onSubmit }) => {
       setError("Telefonnummer muss mindestens 9 Ziffern enthalten");
       return;
     }
+    
 
     const reservation = {
       email,
@@ -41,7 +82,7 @@ const ReservationForm = ({ onSubmit }) => {
 
     try {
       // Send email using emailjs
-     await emailjs.send(
+      await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
@@ -57,12 +98,15 @@ const ReservationForm = ({ onSubmit }) => {
           extra: extra,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      ); 
+      );
 
-      const response = await axios.post("http://localhost:9000/reservations", reservation);
+      const response = await axios.post(
+        "http://localhost:9000/reservations",
+        reservation
+      );
 
       if (response.status === 201) {
-        setLoading(true); 
+        setLoading(true);
         onSubmit(reservation);
 
         setEmail("");
@@ -72,15 +116,19 @@ const ReservationForm = ({ onSubmit }) => {
         setDate("");
         setPeople(0);
         setTime("");
-       } else {
+      } else {
         console.log(error.message);
-        setError("Versuchen Sie es bitte nochmal: fehler beim speichern der Reservierung");
+        setError(
+          "Versuchen Sie es bitte nochmal: fehler beim speichern der Reservierung"
+        );
       }
+
+      setDisabledTimes((prevDisabledTimes) => [...prevDisabledTimes, time]);
+
     } catch (error) {
       console.log(error.message);
       setError("Versuchen Sie es bitte nochmal: fehler beim verbinden");
-    }
- finally {
+    } finally {
       setLoading(false);
     }
   };
@@ -126,11 +174,14 @@ const ReservationForm = ({ onSubmit }) => {
               className="form-control"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              required
-            >
+              required>
               <option value="">Bitte wählen</option>
               {filteredAvailableTimes.map((availableTime) => (
-                <option key={availableTime} value={availableTime}>
+                <option
+                  key={availableTime}
+                  value={availableTime}
+                  disabled={disabledTimes.includes(availableTime)}
+                >
                   {availableTime}
                 </option>
               ))}

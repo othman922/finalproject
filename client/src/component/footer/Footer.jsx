@@ -43,15 +43,15 @@ export const Footer = () => {
           <div className="footer-title">Öffnungszeiten</div>
           <ul className="hours-list">
             <li>Mo.–So.</li>
-            <li>08:00–00:00 Uhr</li>
+            <li>09:00–20:00 Uhr</li>
             <li>
-              <p className="last-entry">letzter Einlass um 22:00 Uhr</p>
+              <p className="last-entry">Letzter Einlass um 19:00 Uhr</p>
             </li>
           </ul>
         </div>
 
         <div className="grid-item">
-          <div className="footer-title">Address</div>
+          <div className="footer-title">Addresse</div>
           <ul className="address-list">
             <li>
               <NavLink
@@ -76,7 +76,7 @@ export const Footer = () => {
                 <span>
                   <HiOutlineMailOpen />
                 </span>{" "}
-                mail@1234567.com
+                dci.restaurant@gmail.com
               </NavLink>
             </li>
             <li>
@@ -89,14 +89,14 @@ export const Footer = () => {
                 <span>
                   <FaMobileAlt />
                 </span>{" "}
-                +91 90904500112
+                +49 012345678
               </NavLink>
             </li>
           </ul>
         </div>
 
         <div className="grid-item">
-          <div className="footer-title">contact us</div>
+          <div className="footer-title">Kontakt</div>
           <ul className="social-links-list">
             <li>
               <NavLink className="facebook-link" to="/">
@@ -126,6 +126,18 @@ export const Footer = () => {
       </div>
       <div className="cr-cont">
         <p>&copy; 2023 Web-Waiters. All rights reserved.</p>
+        <NavLink className="daten-links" to="/login">
+            Admin
+        </NavLink>
+        <NavLink className="daten-links" to="/agb">
+            AGB
+        </NavLink>
+        <NavLink className="daten-links" to="/datenschutz">
+            Datenschutz
+        </NavLink>
+        <NavLink className="daten-links" to="/impressum">
+            Impressum
+        </NavLink>
       </div>
     </footer>
   );
