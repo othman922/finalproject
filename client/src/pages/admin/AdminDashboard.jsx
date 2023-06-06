@@ -3,6 +3,7 @@ import AuthContext from "../../context/AuthContext";
 import {  Route, Routes, redirect, Link } from "react-router-dom";
 import MenuManagement from "../../component/admin/MenuManagement/MenuManagement";
 import CategoryManagement from "../../component/admin/CategoryManagement/CategoryManagement";
+import EventManagement from "../../component/admin/EventManagement/EventManagement";
 import ReservationManagement from "../../component/admin/ReservationManagement/ReservationManagement";
 
 import "./AdminDashboard.css"
@@ -31,6 +32,11 @@ export default function AdminDashboard() {
           </Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link" to="/dashboard/events">
+            Event Management
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/dashboard/reservations">
             Reservation Management
           </Link>
@@ -41,6 +47,7 @@ export default function AdminDashboard() {
     <Routes>
       <Route path="/menu" element={<MenuManagement />} />
       <Route path="/categories" element={<CategoryManagement />} />
+      <Route path="/events" element={<EventManagement />} />
       <Route path="/reservations" element={<ReservationManagement />} />
     </Routes>
   </div>
