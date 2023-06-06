@@ -98,7 +98,7 @@ const ReservationForm = ({ onSubmit }) => {
           extra: extra,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      );
+      ); 
 
       const response = await axios.post(
         "http://localhost:9000/reservations",
@@ -107,7 +107,7 @@ const ReservationForm = ({ onSubmit }) => {
 
       if (response.status === 201) {
         setLoading(true);
-        onSubmit(reservation);
+        onSubmit(response.data);
 
         setEmail("");
         setName("");
@@ -134,7 +134,7 @@ const ReservationForm = ({ onSubmit }) => {
   };
 
   ReservationForm.propTypes = {
-    onSubmit: PropTypes.object.isRequired,
+    onSubmit: PropTypes.func.isRequired,
   };
 
   return (
@@ -206,7 +206,7 @@ const ReservationForm = ({ onSubmit }) => {
                 className="form-control"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="mustermann@email.com"
+                placeholder="max@email.com"
                 required
               />
             </div>
@@ -218,7 +218,7 @@ const ReservationForm = ({ onSubmit }) => {
               className="form-control"
               value={telephone}
               onChange={(e) => setTelephone(e.target.value)}
-              placeholder="0123456789"
+              placeholder="z.B. 0123456789"
               required
             />
           </div>
