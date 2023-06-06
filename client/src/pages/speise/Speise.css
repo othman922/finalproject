@@ -1,6 +1,7 @@
 #Speise{
     min-height:70vh;
     font-size: clamp(16px, 2.5vw, 25px);
+    padding-top: 100px;
 }
 #Speise #menuNavigation{
    transition: 350ms;
@@ -22,6 +23,5 @@ background-color: black;
 
 #place{
     transition: 350ms;
-    width: 100vw;
-   min-height: 65vh;
+       min-height: 65vh;
 }
