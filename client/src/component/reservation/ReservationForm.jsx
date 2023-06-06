@@ -68,7 +68,7 @@ const ReservationForm = ({ onSubmit }) => {
       setError("Telefonnummer muss mindestens 9 Ziffern enthalten");
       return;
     }
-    
+
 
     const reservation = {
       email,
@@ -98,12 +98,17 @@ const ReservationForm = ({ onSubmit }) => {
           extra: extra,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      ); 
+      );
+
+      console.log(reservation)
 
       const response = await axios.post(
         "http://localhost:9000/reservations",
         reservation
       );
+
+      console.log("reservation", reservation)
+
 
       if (response.status === 201) {
         setLoading(true);
