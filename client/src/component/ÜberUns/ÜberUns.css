@@ -1,8 +1,8 @@
 #team {
     background: rgba(255, 255, 255, 0.676);
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
-    margin-left: 90px;
-    width: 90%;
+    margin-left: 150px;
+    width: 80%;
     border: 5px solid rgba(229, 186, 15, 0.897);
     border-bottom: none;
     color: black;
@@ -96,7 +96,7 @@
     font-size: x-large;
     font-weight: 400;
     border: 5px solid rgba(229, 186, 15, 0.897);
-    width: 90%;
+    width: 80%;
     background: rgba(255, 255, 255, 0.676);
-    margin-left: 90px;
+    margin-left: 150px;
 }

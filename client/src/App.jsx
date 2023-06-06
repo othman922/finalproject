@@ -20,7 +20,7 @@ import Agb from "./pages/Agb/Agb";
 import Datenschutz from "./pages/Datenschutz/Datenschutz";
 import Impressum from "./pages/Impressum/Impressum";
 import ÜberUns from "./component/ÜberUns/ÜberUns";
-
+import Events from "./component/Events/Events";
 import { Footer } from "./component/footer/Footer"
 import { Header } from "./component/header/Header"
 import ReservationPage from "./pages/reservation/RerservationPage";
@@ -50,7 +50,7 @@ function App () {
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/ÜberUns" element={<ÜberUns />} />
-
+        <Route path="/Events" element={<Events />} />
         <Route path="/reservation" element={<ReservationPage/>} />
         <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
         {loggedIn && (
