@@ -6,11 +6,14 @@
 #Events #menuNavigation{
    transition: 350ms;
    height: 5vh;
+   
  }
+ 
 
 #Events #menuNavigation:hover{
 background-color: black;
 }
+
 
 #eventsContainer{
     min-height:70vh ;
@@ -31,4 +34,21 @@ background-color: rgba(0, 0, 0, .5);
 #eventsContainer section:hover{
     transform: rotate(3deg);
     
+}
+
+#ersteCard{
+    background-image: url(./img1.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+#zweiteCard{
+    background-image: url(./img2.png);
+    background-size: cover;
+    background-position: center;
+}
+#dritteCard{
+    background-image: url(./img2.png);
+    background-size: cover;
+    background-position: center;
 }

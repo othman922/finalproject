@@ -8,6 +8,40 @@ import img5 from "../ÜberUns/5.png";
 const ÜberUns = () => {
     return (
         <div className="ÜberUns">
+
+
+<section id="section2" className="section">
+            <div className="container" data-aos="fade-up">
+          <h2>Restaurant</h2>
+          <p>
+            Neben unserer hervorragenden
+            Speisekarte bieten wir regelmäßig Veranstaltungen und Sonderaktionen an.
+            Seien Sie gespannt auf unsere kulinarischen Events, bei denen Sie neue
+            Geschmackserlebnisse entdecken können. Besuchen Sie auch unsere Bar, um
+            erlesene Getränke und eine breite Auswahl an Weinen zu genießen.
+          </p>
+          <p>
+            Unser Restaurant ist bekannt für seine gemütliche Atmosphäre, exzellenten
+            Service und erstklassige Speisen. Bei uns können Sie köstliche Gerichte
+            aus frischen Zutaten genießen, die von unseren talentierten Küchenchefs
+            zubereitet werden.
+          </p>
+          <p>
+            Neben unserer hervorragenden Speisekarte bieten wir regelmäßig Veranstaltungen
+            und Sonderaktionen an. Seien Sie gespannt auf unsere kulinarischen Events, bei
+            denen Sie neue Geschmackserlebnisse entdecken können. Besuchen Sie auch unsere Bar,
+            um erlesene Getränke und eine breite Auswahl an Weinen zu genießen.
+          </p>
+          <p>
+            Unser freundliches Personal steht Ihnen jederzeit zur Verfügung, um Ihre Fragen
+            zu beantworten und Ihre Reservierungen entgegenzunehmen. Wir legen Wert auf hohe
+            Qualität und Kundenzufriedenheit. Besuchen Sie uns und erleben Sie einen unvergesslichen
+            Abend in unserem Restaurant.
+          </p>
+        </div>
+            </section>
+
+
             <section id="team" className="section">
                 <div className="container" data-aos="fade-up">
                     <div className="section-header">
@@ -156,36 +190,7 @@ const ÜberUns = () => {
                 </div>
             </section>
 
-            <section id="section2" className="section">
-            <div className="container" data-aos="fade-up">
-          <h2>Restaurant</h2>
-          <p>
-            Neben unserer hervorragenden
-            Speisekarte bieten wir regelmäßig Veranstaltungen und Sonderaktionen an.
-            Seien Sie gespannt auf unsere kulinarischen Events, bei denen Sie neue
-            Geschmackserlebnisse entdecken können. Besuchen Sie auch unsere Bar, um
-            erlesene Getränke und eine breite Auswahl an Weinen zu genießen.
-          </p>
-          <p>
-            Unser Restaurant ist bekannt für seine gemütliche Atmosphäre, exzellenten
-            Service und erstklassige Speisen. Bei uns können Sie köstliche Gerichte
-            aus frischen Zutaten genießen, die von unseren talentierten Küchenchefs
-            zubereitet werden.
-          </p>
-          <p>
-            Neben unserer hervorragenden Speisekarte bieten wir regelmäßig Veranstaltungen
-            und Sonderaktionen an. Seien Sie gespannt auf unsere kulinarischen Events, bei
-            denen Sie neue Geschmackserlebnisse entdecken können. Besuchen Sie auch unsere Bar,
-            um erlesene Getränke und eine breite Auswahl an Weinen zu genießen.
-          </p>
-          <p>
-            Unser freundliches Personal steht Ihnen jederzeit zur Verfügung, um Ihre Fragen
-            zu beantworten und Ihre Reservierungen entgegenzunehmen. Wir legen Wert auf hohe
-            Qualität und Kundenzufriedenheit. Besuchen Sie uns und erleben Sie einen unvergesslichen
-            Abend in unserem Restaurant.
-          </p>
-        </div>
-            </section>
+            
         </div>
     );
 };
