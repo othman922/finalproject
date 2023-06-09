@@ -1,11 +1,13 @@
 require("../lib/connection");
 const Post = require("../models/Post");
+const cloudinary = require("../lib/cloudinary");
 const User = require("../models/Users");
 
 // POST Post
 exports.createPost = async (req, res) => {
   try {
     const { title, content } = req.body;
+    const image = req.file.path;
 
     const admin = await User.findOne({ isAdmin: true });
 
@@ -16,8 +18,17 @@ exports.createPost = async (req, res) => {
     const post = new Post({
       title,
       content,
+      image,
       author: admin._id,
     });
+
+    const uploadImage = await cloudinary.uploader.upload(req.file.path, {
+      public_id: `post_${post._id}`,
+      folder: `post/${post.name}`,
+    });
+
+    post.image = uploadImage.secure_url;
+
 
     await post.save();
 
@@ -62,6 +73,18 @@ exports.updatePost = async (req, res) => {
 
     if (!existingPost) {
       return res.status(404).json({ message: "Post not found" });
+    }
+
+    if (existingPost.image) {
+      const publicId = existingPost.image.split("/").pop().split(".")[0];
+      await cloudinary.uploader.destroy(publicId);
+    }
+
+    if (req.file) {
+      const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+        folder: `post/${name}`,
+      });
+      existingPost.image = uploadResult.secure_url;
     }
 
     existingPost.title = title;

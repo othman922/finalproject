@@ -6,6 +6,7 @@ const EventManagement = () => {
   const [posts, setPosts] = useState([]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [image, setImage] = useState(null);
   const [editingPostId, setEditingPostId] = useState(null);
 
   const handleTogglePosts = () => {
@@ -31,16 +32,19 @@ const EventManagement = () => {
     try {
       const token = localStorage.getItem("token");
 
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("content", content);
+      formData.append("image", image);
+
+
       const response = await axios.post(
         "http://localhost:9000/events",
-        {
-          title,
-          content,
-          author: "admin",
-        },
+        formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -125,6 +129,16 @@ const EventManagement = () => {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Image:</label>
+              <input
+                className="form-control"
+                type="file"
+                name="image"
+                onChange={(e) => setImage(e.target.files[0])}
                 required
               />
             </div>

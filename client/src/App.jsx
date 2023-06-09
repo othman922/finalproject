@@ -21,6 +21,7 @@ import Impressum from "./pages/Impressum/Impressum";
 import ÜberUns from "./component/ÜberUns/ÜberUns";
 import Angebot from "./component/speise/angebot/Angebot";
 import Events from "./component/Events/Events";
+import EventDetails from "./component/Events/EventDetails/EventDetails";
 import { Footer } from "./component/footer/Footer";
 import { Header } from "./component/header/Header";
 import ReservationPage from "./pages/reservation/RerservationPage";
@@ -46,11 +47,12 @@ function App() {
                 <Route path="/agb" element={<Agb />} />
                 <Route path="/datenschutz" element={<Datenschutz />} />
                 <Route path="/impressum" element={<Impressum />} />
-                <Route path="/ÜberUns" element={<ÜberUns />} />
+                <Route path="/überuns" element={<ÜberUns />} />
                 <Route path="/angebot" element={<Angebot />} />
 
                 <Route path="/reservation" element={<ReservationPage />} />
-                <Route path="/Events" element={<Events />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/events/:id" element={<EventDetails />} /> 
                 <Route path="/reservation" element={<ReservationPage />} />
                 <Route
                     path="/login"
