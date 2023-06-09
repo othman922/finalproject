@@ -39,7 +39,7 @@
          .myModal{
             width: clamp(250px, 33vw, 500px);
             height: clamp(350px, 30vh, 300px);
-            z-index: 12;  
+            z-index: 6;  
             cursor: pointer;
             animation: fadeIn .5s ease;
            

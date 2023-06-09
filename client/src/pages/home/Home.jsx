@@ -17,7 +17,7 @@ export default function Home () {
             {isPending && <div className="spinner-border text-warning" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>}
-            {error && <p>
+            {error && <p className="text-warning">
                 Ein Fehler ist aufgetreten, versuchen Sie es bitte erneut!
             </p>}
             <section className=" position-relative text-light  d-flex flex-column justify-content-center align-items-center flex-shrink-0">

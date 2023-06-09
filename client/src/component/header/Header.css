@@ -1,24 +1,62 @@
 .header {
   width: 100%;
+  min-height: 15vh;
   background-color: #111010;
   color:#fff;
   display:flex;
   justify-content:center;
   align-items:center;
-   position: fixed;
-    top: 0;
-    z-index: 12;
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  transition: 500ms;
+  /* animation: retract 500ms ease-in-out;
+  animation-fill-mode: forwards; */
   }
+
+  /* .mobileHeader{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color:#fff;
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items:center;
+  padding-top: 20px;
+  z-index: 12;
+  background-color: black;
+  animation: expand 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  }
+
+  @keyframes expand {
+    from {min-height: 10vh;}
+    to {min-height: 60vh;}
+
+  }
+
+  @keyframes retract {
+    from {min-height: 60vh;}
+    to {min-height: 10vh;}
+
+  } */
   
   .menu {
-  width:80vw;
+  width:90vw;
   display:flex;
   justify-content:space-around;
   align-items:center
   }
+
+  .mobileHeader .menu{
+    width:80vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+  }
   
   .container1 .main-link1 {
-    
   text-decoration:none;
   color:#000;
   background-color:#ffe4c4;
@@ -38,6 +76,18 @@
   list-style-type:none;
   margin:5px 0!important
   }
+
+ .mobileHeader .menu ul{
+  min-height: 60vh;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  padding:5px;
+  list-style-type:none;
+  margin:5px 0!important
+ }
   
   .menu li .main-link {
   text-decoration:none;
@@ -70,3 +120,74 @@
   -webkit-border-radius:200px 5px 200px 5px;
   border:17px none #000
   }
+
+/* BURGER */
+
+#burgerContainer{
+  display: none;
+  font-size: 35px;
+ 
+}
+
+#mobileNav-ul, #hideMobileMenu{
+  padding-left: 20px;
+  
+  width: 150vw;
+   height: 270px;
+   background-color: #111010;
+   animation: sideNav 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.mobile-link{
+list-style-type: none;
+text-decoration: none;
+color: white;
+
+}
+
+
+#hideMobileMenu{
+  animation: hideSideNav 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes sideNav {
+  from {left: 300%;}
+  to {left: -300%;}
+} 
+
+@keyframes hideSideNav {
+  from {left: -300%;}
+  to {left: 500%;}
+} 
+
+
+
+  /* MEDIA QUERY */
+
+  @media only screen and (max-width: 620px) {
+
+    .menu{
+      width: 100%;
+    }
+    .linksToHide {
+    
+  display: none;
+    
+    }
+
+    #burgerContainer{
+      display: block;
+      
+    }
+
+    .burgerWhiteColor{
+      color: white;
+    }
+
+   
+    
+    }

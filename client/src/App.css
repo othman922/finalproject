@@ -7,13 +7,10 @@
   
 }
 
-#appBody{
-  height: 70vh;
-  
-}
 
 .appBody{
   min-height: 70vh;
+  margin-top: 15vh;
 }
 
 .appHeader{

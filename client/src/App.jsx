@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import {
-    createBrowserRouter,
-    RouterProvider,
-    Route,
-    createRoutesFromElements,
-    Outlet,
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+  Outlet,
 } from "react-router-dom";
 
 import AuthContext from "./context/AuthContext";
@@ -29,20 +29,20 @@ import ReservationPage from "./pages/reservation/RerservationPage";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-    const [loggedIn, setLoggedIn] = useState(false);
+function App () {
+  const [loggedIn, setLoggedIn] = useState(false);
 
-    const authenticate = () => {
-        setLoggedIn(true);
-    };
+  const authenticate = () => {
+    setLoggedIn(true);
+  };
 
-    const router = createBrowserRouter(
-        createRoutesFromElements(
-            <Route path="/" element={<Root />}>
-                <Route index element={<Home />} />
-                <Route path="/about" element={<About />} />
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
 
-                <Route path="/speise" element={<Speise />} />
+        <Route path="/speise" element={<Speise />} />
 
                 <Route path="/agb" element={<Agb />} />
                 <Route path="/datenschutz" element={<Datenschutz />} />
@@ -74,19 +74,19 @@ function App() {
 }
 
 const Root = () => {
-    return (
-        <>
-            <section className="appHeader w-100">
-                <Header />
-            </section>
-            <section className="appBody w-100">
-                <Outlet />
-            </section>
-            <section className="appFooter w-100 ">
-                <Footer />
-            </section>
-        </>
-    );
+  return (
+    <>
+      <section className="appHeader w-100">
+        <Header />
+      </section>
+      <section className="appBody w-100">
+        <Outlet />
+      </section>
+      <section className="appFooter w-100 ">
+        <Footer />
+      </section>
+    </>
+  );
 };
 
 export default App;
