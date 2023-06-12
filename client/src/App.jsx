@@ -44,33 +44,33 @@ function App () {
 
         <Route path="/speise" element={<Speise />} />
 
-                <Route path="/agb" element={<Agb />} />
-                <Route path="/datenschutz" element={<Datenschutz />} />
-                <Route path="/impressum" element={<Impressum />} />
-                <Route path="/überuns" element={<ÜberUns />} />
-                <Route path="/angebot" element={<Angebot />} />
+        <Route path="/agb" element={<Agb />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/überuns" element={<ÜberUns />} />
+        <Route path="/angebot" element={<Angebot />} />
 
-                <Route path="/reservation" element={<ReservationPage />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/events/:id" element={<EventDetails />} /> 
-                <Route path="/reservation" element={<ReservationPage />} />
-                <Route
-                    path="/login"
-                    element={<AdminLogin authenticate={authenticate} />}
-                />
-                {loggedIn && (
-                    <Route path="/dashboard/*" element={<AdminDashboard />} />
-                )}
-            </Route>
-        )
-    );
-    return (
-        <AuthContext.Provider value={{ loggedIn }}>
-            <main id="App" className="">
-                <RouterProvider router={router} />
-            </main>
-        </AuthContext.Provider>
-    );
+        <Route path="/reservation" element={<ReservationPage />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventDetails />} />
+        <Route path="/reservation" element={<ReservationPage />} />
+        <Route
+          path="/login"
+          element={<AdminLogin authenticate={authenticate} />}
+        />
+        {loggedIn && (
+          <Route path="/dashboard/*" element={<AdminDashboard />} />
+        )}
+      </Route>
+    )
+  );
+  return (
+    <AuthContext.Provider value={{ loggedIn }}>
+      <main id="App" className="">
+        <RouterProvider router={router} />
+      </main>
+    </AuthContext.Provider>
+  );
 }
 
 const Root = () => {
@@ -83,7 +83,7 @@ const Root = () => {
         <Outlet />
       </section>
       <section className="appFooter w-100 ">
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
   );

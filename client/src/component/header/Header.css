@@ -1,6 +1,14 @@
+/* #headerMainContainer{
+  width: 100vw;
+  height: 100vh;
+  background-color: red ;
+  z-index: 11 !important;
+  color: red ;
+} */
+
 .header {
-  width: 100%;
-  min-height: 15vh;
+  width: 100vw;
+  min-height: 10vh;
   background-color: #111010;
   color:#fff;
   display:flex;
@@ -9,38 +17,9 @@
   position: fixed;
   top: 0;
   z-index: 12;
-  transition: 500ms;
-  /* animation: retract 500ms ease-in-out;
-  animation-fill-mode: forwards; */
   }
 
-  /* .mobileHeader{
-  width: 100%;
-  position: fixed;
-  top: 0;
-  color:#fff;
-  display:flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  align-items:center;
-  padding-top: 20px;
-  z-index: 12;
-  background-color: black;
-  animation: expand 500ms ease-in-out;
-  animation-fill-mode: forwards;
-  }
-
-  @keyframes expand {
-    from {min-height: 10vh;}
-    to {min-height: 60vh;}
-
-  }
-
-  @keyframes retract {
-    from {min-height: 60vh;}
-    to {min-height: 10vh;}
-
-  } */
+  
   
   .menu {
   width:90vw;
@@ -83,7 +62,7 @@
   flex-direction: column;
   justify-content:center;
   align-items:center;
-  gap:20px;
+  /* gap:20px; */
   padding:5px;
   list-style-type:none;
   margin:5px 0!important
@@ -131,9 +110,13 @@
 
 #mobileNav-ul, #hideMobileMenu{
   padding-left: 20px;
-  
-  width: 150vw;
-   height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14%;
+  flex-direction: column;
+  width: 100vw;
+   height: 500px;
    background-color: #111010;
    animation: sideNav 500ms ease-in-out;
   animation-fill-mode: forwards;
@@ -148,27 +131,27 @@ color: white;
 
 
 #hideMobileMenu{
-  animation: hideSideNav 500ms ease-in-out;
+  animation: hideSideNav 600ms ease-in-out;
   animation-fill-mode: forwards;
 }
 
 
 
 @keyframes sideNav {
-  from {left: 300%;}
-  to {left: -300%;}
+  from {left: 100vw;}
+  to {left: -60vw;}
 } 
 
 @keyframes hideSideNav {
-  from {left: -300%;}
-  to {left: 500%;}
+  from {left: -60vw;}
+  to {left: 100vw;}
 } 
 
 
 
   /* MEDIA QUERY */
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 640px) {
 
     .menu{
       width: 100%;
@@ -183,11 +166,6 @@ color: white;
       display: block;
       
     }
-
-    .burgerWhiteColor{
-      color: white;
-    }
-
-   
+ 
     
     }

@@ -14,11 +14,11 @@ import { useState } from "react"
 
 
 export default function Speise () {
-    const [showMenus, setShowMenus] = useState(true)
+    const [showMenus, setShowMenus] = useState(false)
     const [showMainDish, setShowMainDish] = useState(false)
     const [showDessert, setShowDessert] = useState(false)
     const [showAppetizer, setShowAppetizer] = useState(false)
-    const [showDrinks, setShowDrinks] = useState(false)
+    const [showDrinks, setShowDrinks] = useState(true)
 
     const handleAllMenu = () => {
         setShowMenus(true)
@@ -64,12 +64,12 @@ export default function Speise () {
 
     return (
         <main id="Speise" className='text-light  w-100 d-flex flex-column justify-content-between align-items-center'>
-            <section id="menuNavigation" className="w-75 d-flex justify-content-around align-items-center mt-3 border border-3 border-warning  flex-wrap">
-                <NavLink className="fs-6 decorationNone" onClick={handleAllMenu}>Alles</NavLink>
-                <NavLink className="fs-6 decorationNone" onClick={handleAppetizer}>Vorspeise</NavLink>
-                <NavLink className="fs-6 decorationNone" onClick={handleMainDish}>Hauptspeise</NavLink>
-                <NavLink className="fs-6 decorationNone" onClick={handleDessert}>Nachspeise</NavLink>
-                <NavLink className="fs-6 decorationNone" onClick={handleDrinks}>Getränke</NavLink>
+            <section id="menuNavigation" className="w-75 d-flex justify-content-around align-items-center border border-3 border-warning  flex-wrap py-3">
+                <NavLink id={showMenus ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleAllMenu}>Alles</NavLink>
+                <NavLink id={showAppetizer ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleAppetizer}>Vorspeise</NavLink>
+                <NavLink id={showMainDish ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleMainDish}>Hauptspeise</NavLink>
+                <NavLink id={showDessert ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleDessert}>Nachspeise</NavLink>
+                <NavLink id={showDrinks ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleDrinks}>Getränke</NavLink>
             </section>
             <section id="place" className="w-100">
                 {showMenus && <AllMenus />}
@@ -77,9 +77,6 @@ export default function Speise () {
                 {showMainDish && <Hauptspeisen />}
                 {showDessert && <Nachspeisen />}
                 {showAppetizer && <Vorspeisen />}
-
-
-
             </section>
         </main>
     )

@@ -1,21 +1,23 @@
 import "./Header.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 
+
+
 export const Header = () => {
   const [sideNavigation, setSideNavigation] = useState(true)
-  const [white, setWhite] = useState(true)
+  const navigateTo = useNavigate()
 
   console.log(sideNavigation)
-  const handleBurgerMenu = (e) => {
+  const handleBurgerMenu = (e, par) => {
     e.preventDefault()
-    setWhite(prevWhite => !prevWhite)
     setSideNavigation(prevNav => !prevNav)
+    navigateTo(par)
   }
 
   return (
-    <main>
+    <main id="headerMainContainer">
       <header className={"header"} >
 
 
@@ -35,7 +37,7 @@ export const Header = () => {
               <li>
                 <NavLink className="main-link" to="/speise">
 
-                  Speisekarte
+                  Speise
                 </NavLink>
               </li>
 
@@ -45,7 +47,7 @@ export const Header = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="main-link" to="/ÜberUns">
+                <NavLink className="main-link" to="/ÜberUns" >
                   Über uns
                 </NavLink>
               </li>
@@ -60,30 +62,32 @@ export const Header = () => {
 
 
           <div id="burgerContainer" className="dropdown position-relative">
-            <a className="btn btn-secondary fs-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={(e) => handleBurgerMenu(e)}>
+            <a className="btn btn-secondary fs-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={(e) => handleBurgerMenu(e, "#")}>
               <FaBars />
             </a>
 
             <ul id={sideNavigation ? "mobileNav-ul" : "hideMobileMenu"} className=" dropdown-menu d-flex flex-column align-items-start position-absolute">
               <li>
-                <NavLink className="mobile-link" to="/reservation">
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/reservation")}>
 
                   Reservieren
-                </NavLink>
+                </Link>
               </li>
 
-              <li> <NavLink className="mobile-link" to="/speise">
-
-                Speisekarte
-              </NavLink>
-              </li>
-              <li> <NavLink className="mobile-link" to="/events">
-                Events
-              </NavLink></li>
               <li>
-                <NavLink className="mobile-link" to="/ÜberUns">
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/speise")}>
+                  Speisekarte
+                </Link>
+              </li>
+              <li>
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/events")}>
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/ÜberUns")}>
                   Über uns
-                </NavLink>
+                </Link>
               </li>
 
             </ul>
