@@ -13,11 +13,11 @@ export default function Home () {
     const { data, isPending, error } = useFetch(url)
     return (
 
-        <main id='homeContainer' className='border w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5'>
+        <main id='homeContainer' className='w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5'>
             {isPending && <div className="spinner-border text-warning" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>}
-            {error && <p>
+            {error && <p className="text-warning">
                 Ein Fehler ist aufgetreten, versuchen Sie es bitte erneut!
             </p>}
             <section className=" position-relative text-light  d-flex flex-column justify-content-center align-items-center flex-shrink-0">

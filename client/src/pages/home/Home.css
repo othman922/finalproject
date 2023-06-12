@@ -8,9 +8,10 @@ height: clamp(250px, 45vh, 500px);
 
 font-size: clamp(16px, 3vw, 30px);
 transition: 300ms;
-outline: 10px solid rgba(255, 166, 0, 0.755);
+/* outline: 10px solid rgba(255, 166, 0, 0.755); */
 background-color: orange;
-background-color: rgba(0, 0, 0, .5);
+background-color: rgba(0, 0, 0, .7);
+border-radius: 10px;
 }
 
 

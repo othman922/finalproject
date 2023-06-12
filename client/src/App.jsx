@@ -10,7 +10,6 @@ import {
 
 import AuthContext from "./context/AuthContext";
 
-
 import Home from "./pages/home/Home";
 import About from "./pages/About";
 import AdminLogin from "./pages/admin/AdminLogin";
@@ -21,19 +20,16 @@ import Datenschutz from "./pages/Datenschutz/Datenschutz";
 import Impressum from "./pages/Impressum/Impressum";
 import ÜberUns from "./component/ÜberUns/ÜberUns";
 import Angebot from "./component/speise/angebot/Angebot";
-import { Footer } from "./component/footer/Footer"
-import { Header } from "./component/header/Header"
+import Events from "./component/Events/Events";
+import EventDetails from "./component/Events/EventDetails/EventDetails";
+import { Footer } from "./component/footer/Footer";
+import { Header } from "./component/header/Header";
 import ReservationPage from "./pages/reservation/RerservationPage";
 
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App () {
-
   const [loggedIn, setLoggedIn] = useState(false);
 
   const authenticate = () => {
@@ -48,34 +44,37 @@ function App () {
 
         <Route path="/speise" element={<Speise />} />
 
-
-
         <Route path="/agb" element={<Agb />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/impressum" element={<Impressum />} />
-        <Route path="/ÜberUns" element={<ÜberUns />} />
+        <Route path="/überuns" element={<ÜberUns />} />
         <Route path="/angebot" element={<Angebot />} />
 
         <Route path="/reservation" element={<ReservationPage />} />
-        <Route path="/login" element={<AdminLogin authenticate={authenticate} />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventDetails />} />
+        <Route path="/reservation" element={<ReservationPage />} />
+        <Route
+          path="/login"
+          element={<AdminLogin authenticate={authenticate} />}
+        />
         {loggedIn && (
           <Route path="/dashboard/*" element={<AdminDashboard />} />
         )}
       </Route>
     )
-  )
+  );
   return (
     <AuthContext.Provider value={{ loggedIn }}>
-      <main id="App" className="" >
+      <main id="App" className="">
         <RouterProvider router={router} />
       </main>
     </AuthContext.Provider>
-  )
+  );
 }
 
 const Root = () => {
   return (
-
     <>
       <section className="appHeader w-100">
         <Header />
@@ -84,11 +83,10 @@ const Root = () => {
         <Outlet />
       </section>
       <section className="appFooter w-100 ">
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;

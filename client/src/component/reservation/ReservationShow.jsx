@@ -1,15 +1,47 @@
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
+import { Modal } from 'react-bootstrap';
 
 const ReservationShow = ({ data }) => {
+  const dataDate = data.date.split("T")[0];
+  const dateParts = dataDate.split("-");
+  const formattedDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [modalShow, setModalShow] = useState(false);
+
+  const handleCancel = async (data) => {
+  try {
+    const token = localStorage.getItem("token");
+    await axios.delete(
+      `http://localhost:9000/reservations/${data._id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    setSuccessMessage("Die Reservierung wurde erfolgreich storniert.");
+    setModalShow(false);
+  } catch (error) {
+    setErrorMessage("Beim Stornieren der Reservierung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+    console.error(error);
+  }
+};
+
+
 
   ReservationShow.propTypes = {
     data: PropTypes.object.isRequired,
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center reservation-container">
+    <div className="d-flex justify-content-center align-items-center reservation-container ">
       <div className="card p-4 mt-4 reservation-form">
+        {successMessage && <div className="alert alert-success">{successMessage}</div>}
+        {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
         <h2 className="card-title mb-4">Reservierungsbestätigung</h2>
         <p className=" mb-4 border-bottom border-success border-2 text-bold card-title fw-bold">
           Ihre Reservierung wurde{" "}
@@ -41,7 +73,7 @@ const ReservationShow = ({ data }) => {
             <label className="border-bottom border-success border-2 text-bold card-title">
               Datum:
             </label>
-            <p className="card-text">{data.date}</p>
+            <p className="card-text">{formattedDate}</p>
           </div>
         </div>
         <div className="row mb-3">
@@ -69,6 +101,34 @@ const ReservationShow = ({ data }) => {
             <Link to="/" className="btn btn-primary">
               Zurück zur Seite
             </Link>
+          </div>
+          <div className="col-sm-12 col-md-6">
+            <button
+              className="btn btn-danger"
+              onClick={() => setModalShow(true)}
+            >
+              Stornieren
+            </button>
+            <Modal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          dialogClassName="modal-30w"
+          aria-labelledby="example-custom-modal-styling-title"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="example-custom-modal-styling-title">
+              Stornieren
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Sind Sie sicher, dass Sie diese Reservierung stornieren möchten?
+          </Modal.Body>
+          <Modal.Footer>
+            <button  className="btn btn-danger" onClick={() => setModalShow(false)}>Nein</button>
+            <button className="btn btn-primary" onClick={() => handleCancel(data)}>Ja</button>
+          </Modal.Footer>
+        </Modal>
           </div>
         </div>
       </div>

@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  image: {
+    type: String,
+    required: 'This field is required'
+},
   createdAt: {
     type: Date,
     default: Date.now,

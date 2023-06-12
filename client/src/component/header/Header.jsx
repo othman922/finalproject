@@ -1,60 +1,103 @@
 import "./Header.css";
-import { NavLink } from "react-router-dom";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { useState } from "react";
+
+
+
 export const Header = () => {
+  const [sideNavigation, setSideNavigation] = useState(true)
+  const navigateTo = useNavigate()
+
+  console.log(sideNavigation)
+  const handleBurgerMenu = (e, par) => {
+    e.preventDefault()
+    setSideNavigation(prevNav => !prevNav)
+    navigateTo(par)
+  }
+
   return (
-    <header className="header">
+    <main id="headerMainContainer">
+      <header className={"header"} >
 
 
-      <div className="menu">
+        <div className="menu">
 
 
-        <div className="container1">
+          <div className="container1">
 
 
-          <NavLink className="main-link1" to="/">
-            Web Waiters
-          </NavLink>
+            <NavLink className="main-link1" to="/">
+              LOGO
+            </NavLink>
+          </div>
+          <div className=" linksToHide menu-ul">
+            <ul>
+
+              <li>
+                <NavLink className="main-link" to="/speise">
+
+                  Speise
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink className="main-link" to="/events">
+                  Events
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="main-link" to="/ÜberUns" >
+                  Über uns
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+          <div className="container1">
+            <NavLink className="linksToHide main-link1" to="/reservation">
+
+              Reservierung
+            </NavLink>
+          </div>
+
+
+          <div id="burgerContainer" className="dropdown position-relative">
+            <a className="btn btn-secondary fs-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={(e) => handleBurgerMenu(e, "#")}>
+              <FaBars />
+            </a>
+
+            <ul id={sideNavigation ? "mobileNav-ul" : "hideMobileMenu"} className=" dropdown-menu d-flex flex-column align-items-start position-absolute">
+              <li>
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/reservation")}>
+
+                  Reservieren
+                </Link>
+              </li>
+
+              <li>
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/speise")}>
+                  Speisekarte
+                </Link>
+              </li>
+              <li>
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/events")}>
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/ÜberUns")}>
+                  Über uns
+                </Link>
+              </li>
+
+            </ul>
+          </div>
         </div>
-        <div className="menu-ul">
-          <ul>
-            <li>
-              <NavLink className="main-link" to="/ÜberUns">
-                Über uns
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="main-link" to="/speise">
-                
-                Speisekarte
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink className="main-link" to="/events">
-                Events
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="main-link" to="/about">
-                Informationen
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <div className="container1">
-          <NavLink className="main-link1" to="/reservation">
-            {/* <span className="social-icons">
-              <FaRegCalendarAlt />
-            </span>{" "} */}
-            Reservierung
-          </NavLink>
-        </div>
 
 
-      </div>
 
+      </header>
 
-    </header>
+    </main>
   );
 };

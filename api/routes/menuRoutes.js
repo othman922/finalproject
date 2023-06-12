@@ -73,10 +73,10 @@ router.delete(
   categoriesControllers.deleteCategory
 );
 
-router.post("/events", postControllers.createPost);
+router.post("/events", upload.single("image"), postControllers.createPost);
 router.get("/events", postControllers.getPosts);
 router.get("/events/:id", postControllers.getPostById);
-router.put("/events/:id", postControllers.updatePost);
+router.put("/events/:id", upload.single("image"), postControllers.updatePost);
 router.delete("/events/:id", postControllers.deletePost);
 
 router.get("/reservations",  reservationsControllers.getReservations);
