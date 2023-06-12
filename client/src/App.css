@@ -9,15 +9,15 @@
 
 
 .appBody{
-  min-height: 70vh;
-  padding-top: 15vh;
-}
+  min-height: 60vh;
+
+  }
 
 .appHeader{
-  height: fit-content;
+  min-height: 10vh;
 }
 .appFooter{
-  height: fit-content;
+  min-height: 30vh;
 }
 
 

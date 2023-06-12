@@ -37,7 +37,7 @@ export const Header = () => {
               <li>
                 <NavLink className="main-link" to="/speise">
 
-                  Speise
+                  Speisen
                 </NavLink>
               </li>
 
@@ -76,7 +76,7 @@ export const Header = () => {
 
               <li>
                 <Link className="mobile-link" onClick={(e) => handleBurgerMenu(e, "/speise")}>
-                  Speisekarte
+                  Speisen
                 </Link>
               </li>
               <li>

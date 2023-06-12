@@ -2,90 +2,28 @@
     list-style: none;
   }
   :root{
-      --theme-col: #2d4bf0;
+      --theme-col: #ffe4c4;
       
   }
-  footer{
-      background-color: #111010;
-      /* position: fixed;
-      bottom: 0; */
-     width: 100vw;
-  }
-  .f-item-con{
-      padding: 1.5rem 10rem 0rem;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-gap: .5rem;
-  }
-  
-  footer .app-name{
-      color: white;
-      border-left: 4px solid var(--theme-col);
-      padding-left: 1.5rem;
-      font-size: 1.875rem;
-      line-height: 2.25rem;
-      font-weight: 700;
-  }
-  .app-name .app-initial{
-      color: var(--theme-col);
-  }
-  
-  
-  footer .footer-title{ 
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-      color: white;
-      border-left: 4px solid var(--theme-col);
-      padding-left: 1.5rem;
-      height: fit-content;
-  }
-  footer ul{ 
-      padding-left: 1.75rem;
-      color: white;
-      font-size: 0.875rem/* 14px */;
-      line-height: 1.25rem;
-      margin-top: .5rem;
-  }
-  footer ul li{ 
-      margin: .25rem  0;
-      cursor: pointer;
-      color: #d4d4d4;
-      width: fit-content;
-  }
-  footer ul li a {
-      text-decoration: none;
-      color: #d4d4d4;
-  }
-  footer ul li:hover{
-      color: white;
-  }
-  footer ul li a:hover {
-      color: var(--theme-col);
-  }
-  footer .cr-cont p{
-      background-color: #232127;
-      color: white;
-      /* padding:.5rem ; */
-      height: 30px;
-      text-align: center;
-      margin-bottom: 0;
-  }
-  .grid-item{
-    
-}
-
-
+ 
 footer{
     background-color: #111010;
-    /* position: fixed; */
+    padding: 1rem 5rem 0rem;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
+    min-height: 30vh;
+
 }
-.f-item-con{
-    padding: 1.5rem 10rem 0rem;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-gap: .5rem;
+#footerWrapper{
+    height: fit-content;
+    display: flex;
+    column-gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+    /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
+    /* grid-gap: .5rem; */
 }
 
 footer .app-name{
@@ -96,6 +34,8 @@ footer .app-name{
     line-height: 2.25rem;
     font-weight: 700;
 }
+
+
 .app-name .app-initial{
     color: var(--theme-col);
 }
@@ -132,16 +72,37 @@ footer ul li:hover{
 footer ul li a:hover {
     color: var(--theme-col);
 }
+
+footer .cr-cont{
+    display: flex;
+    flex-direction: column;
+}
 footer .cr-cont p{
-    background-color: #232127;
-    color: white;
+    background-color: var(--theme-col);
+    color: black;
     padding:.5rem ;
     text-align: center;
     margin-bottom: 0;
 }
+
+footer .cr-cont .Admin-agb-ds-imp{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.daten-links{
+    padding: 5px;
+    color: lightgray;
+    text-decoration: none;
+    /* margin-bottom: 10px; */
+}
 .grid-item{
-  
-    margin: 0 auto;
+  width: clamp(240px, 20vw, 280px);
+height: 8rem;
 }
 
 .facebook-icon, .instagram-icon, .twitter-icon {
@@ -155,11 +116,11 @@ footer .cr-cont p{
 
 }
 
-.daten-links{
-    padding: 5px;
-    color: lightgray;
-    text-decoration: none;
-    position: relative;
-    left: 42%;
-    margin-bottom: 10px;
+
+
+
+@media only screen and (max-width: 640px) {
+    footer{
+        padding: 1.5rem 0 ;
+    }
 }
