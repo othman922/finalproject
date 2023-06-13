@@ -14,8 +14,8 @@ export const Footer = () => {
 
   return (
     <footer>
-      <div className="f-item-con">
-        <div className="grid-item">
+      <div id="footerWrapper" className="f-item-con">
+        <div className="grid-item ">
           <span className="app-name">
             <span className="app-initial">W</span>eb-
             <span className="app-initial">W</span>aiters
@@ -29,7 +29,7 @@ export const Footer = () => {
             </li>
             <li>
               <NavLink className="menu-link" to="/speise">
-                Speisekarte
+                Speisen
               </NavLink>
             </li>
             <li>
@@ -39,18 +39,18 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="grid-item">
+        <div className="grid-item ">
           <div className="footer-title">Öffnungszeiten</div>
           <ul className="hours-list">
             <li>Mo.–So.</li>
             <li>09:00–20:00 Uhr</li>
             <li>
-              <p className="last-entry">Letzter Einlass um 19:00 Uhr</p>
+              <p className="last-entry">Küchenschluss: 19:00 Uhr</p>
             </li>
           </ul>
         </div>
 
-        <div className="grid-item">
+        <div className="grid-item ">
           <div className="footer-title">Addresse</div>
           <ul className="address-list">
             <li>
@@ -95,7 +95,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <div className="grid-item">
+        <div className="grid-item ">
           <div className="footer-title">Kontakt</div>
           <ul className="social-links-list">
             <li>
@@ -126,18 +126,20 @@ export const Footer = () => {
       </div>
       <div className="cr-cont">
         <p>&copy; 2023 Web-Waiters. All rights reserved.</p>
-        <NavLink className="daten-links" to="/login">
+        <div className="Admin-agb-ds-imp">
+          <NavLink className="daten-links" to="/login">
             Admin
-        </NavLink>
-        <NavLink className="daten-links" to="/agb">
+          </NavLink>
+          <NavLink className="daten-links" to="/agb">
             AGB
-        </NavLink>
-        <NavLink className="daten-links" to="/datenschutz">
+          </NavLink>
+          <NavLink className="daten-links" to="/datenschutz">
             Datenschutz
-        </NavLink>
-        <NavLink className="daten-links" to="/impressum">
+          </NavLink>
+          <NavLink className="daten-links" to="/impressum">
             Impressum
-        </NavLink>
+          </NavLink>
+        </div>
       </div>
     </footer>
   );

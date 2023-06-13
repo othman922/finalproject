@@ -52,7 +52,7 @@ export default function AllMenus () {
                     {showModal && data && data.filter((menu) => menu._id === `${menuId}`).map((menu) => (
                         <div key={menu._id} className="myModal bg-opacity-55 bg-warning shadow-lg rounded d-flex gap-2 flex-shrink-0 p-2 flex-column align-items-center">
                             <div className="image ">
-                                <img className="image text-light" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt={menu.name} />
+                                <img className="image text-light" src={menu.image} alt={menu.name} />
 
                             </div>
                             {menu.vegan && <span className="text-warning">Vegan</span>}

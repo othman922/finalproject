@@ -17,10 +17,10 @@ export default function Angebot () {
             </p>}
 
             {data && <section className="w-100 h-100 d-flex justify-content-center align-items-center mt-5">
-                {data && data.filter((menu) => menu._id === "64784f89d32f3079729fbf4a").map((menu) => (
+                {data && data.filter((menu) => menu._id === "64870c92ecb0cf1057164d43").map((menu) => (
 
                     <div key={menu._id} className="card mb-3 w-25 h-75">
-                        <img src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} className="card-img-top" alt="..." />
+                        <img src={menu.image} className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h5 className="card-title">{menu.name}</h5>
                             <p className="card-text">{menu.description}</p>
