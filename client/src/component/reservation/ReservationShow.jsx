@@ -31,74 +31,72 @@ const ReservationShow = ({ data }) => {
   }
 };
 
-
-
   ReservationShow.propTypes = {
     data: PropTypes.object.isRequired,
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center reservation-container ">
-      <div className="card p-4 mt-4 reservation-form">
+    <div className="d-flex justify-content-center align-items-center">
+      <div className="card p-4 reservation-container text-white">
         {successMessage && <div className="alert alert-success">{successMessage}</div>}
         {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
         <h2 className="card-title mb-4">Reservierungsbestätigung</h2>
-        <p className=" mb-4 border-bottom border-success border-2 text-bold card-title fw-bold">
+        <h4 className="mb-4 card-title">
           Ihre Reservierung wurde{" "}
           <span className="text-success">erfolgreich</span> bestätigt
-          <span className="text-success">!</span>
-        </p>
+          !
+        </h4>
         <div className="row mb-3">
-          <div className="col-sm-12 col-md-6 ">
-            <label className="border-bottom border-success border-2 text-bold card-title">
+          <div className="col-sm-12 col-md-6 mb-3">
+            <label className="card-title">
               Vor-/Nachname:
             </label>
-            <p className="card-text ">{data.name}</p>
+            <p className="card-text">{data.name}</p>
           </div>
           <div className="col-sm-12 col-md-6">
-            <label className="border-bottom border-success border-2 text-bold card-title">
+            <label className="card-title">
               E-Mail:
             </label>
             <p className="card-text">{data.email}</p>
           </div>
         </div>
         <div className="row mb-3">
-          <div className="col-sm-12 col-md-6 ">
-            <label className="border-bottom border-success border-2 text-bold card-title">
+          <div className="col-sm-12 col-md-6 mb-3">
+            <label className="card-title">
               Telefonnummer:
             </label>
             <p className="card-text">{data.telephone}</p>
           </div>
           <div className="col-sm-12 col-md-6">
-            <label className="border-bottom border-success border-2 text-bold card-title">
+            <label className="card-title">
               Datum:
             </label>
             <p className="card-text">{formattedDate}</p>
           </div>
         </div>
         <div className="row mb-3">
-          <div className="col-sm-12 col-md-6">
-            <label className="border-bottom border-success border-2 text-bold card-title">
+          <div className="col-sm-12 col-md-6 mb-3">
+            <label className="card-title">
               Anzahl der Personen:
             </label>
             <p className="card-text ">{data.people}</p>
           </div>
-          <div className="col-sm-12 col-md-6">
-            <label className="border-bottom border-success border-2 text-bold card-title">
+          <div className="col-sm-12 col-md-6 mb-3">
+            <label className="card-title">
               Uhrzeit:
             </label>
             <p className="card-text ">{data.time}</p>
           </div>
         </div>
-        <div className="mb-3">
-          <label className="border-bottom border-success border-2 text-bold card-title">
+        {data.extra &&<div className="mb-3">
+          <label className="card-title">
             Zusätzliche Informationen:
           </label>
           <p className="card-text">{data.extra}</p>
-        </div>
+        </div>}
         <div className="row mb-3">
-          <div className="col-sm-12 col-md-6 mb-sm-3">
-            <Link to="/" className="btn btn-primary">
+          <div className="col-sm-12 col-md-6 mb-3">
+            <Link to="/" className="btn btn-reservation">
               Zurück zur Seite
             </Link>
           </div>

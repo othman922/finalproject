@@ -1,0 +1,12 @@
+.reservation-container{
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.btn-reservation{
+    background-color: orange;
+}
+
+.reservation-container .form-control:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+}

@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { generateAvailableTimes } from "./OpenHour";
 import PropTypes from "prop-types";
 import emailjs from "@emailjs/browser";
+import "./Reservation.css" 
 
 const ReservationForm = ({ onSubmit }) => {
   const [email, setEmail] = useState("");
@@ -69,7 +70,6 @@ const ReservationForm = ({ onSubmit }) => {
       return;
     }
 
-
     const reservation = {
       email,
       name,
@@ -98,17 +98,12 @@ const ReservationForm = ({ onSubmit }) => {
           extra: extra,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      );
-
-      console.log(reservation)
+      ); 
 
       const response = await axios.post(
         "http://localhost:9000/reservations",
         reservation
-      );
-
-      console.log("reservation", reservation)
-
+      )
 
       if (response.status === 201) {
         setLoading(true);
@@ -143,13 +138,13 @@ const ReservationForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center reservation-container">
-      <div className="card p-4 mt-4 reservation-form">
-        <h2 className="mb-2">Reservierung</h2>
+    <div className="d-flex justify-content-center align-items-center text-white">
+      <div className="card p-4 reservation-container">
+      <h2 className="text-center mb-4">Reservieren Sie ein Tisch</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form ref={form} onSubmit={handleSubmit}>
           <div className="row mb-3">
-            <div className="col-sm-12 col-md-6 ">
+            <div className="col-sm-12 col-md-6 mb-3">
               <label className="form-label">Datum:*</label>
               <input
                 type="date"
@@ -193,7 +188,7 @@ const ReservationForm = ({ onSubmit }) => {
             </select>
           </div>
           <div className="row mb-3">
-            <div className="col-sm-12 col-md-6">
+            <div className="col-sm-12 col-md-6 mb-3">
               <label className="form-label">Vor-/Nachname:*</label>
               <input
                 type="text"
@@ -236,7 +231,7 @@ const ReservationForm = ({ onSubmit }) => {
               placeholder="z.B. Allergie"
             />
           </div>
-          <button type="submit" className="btn btn-primary" disabled={loading}>
+          <button type="submit" className="btn btn-reservation" disabled={loading}>
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm"
@@ -249,7 +244,7 @@ const ReservationForm = ({ onSubmit }) => {
           </button>
         </form>
       </div>
-    </div>
+      </div>
   );
 };
 
