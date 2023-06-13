@@ -1,56 +1,56 @@
-import "./Events.css";
-
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-export default function Events() {
-    const [menuDatas] = useState();
-    const navigate = useNavigate();
-    console.log(menuDatas);
-
-    const [activeSection, setActiveSection] = useState("Diese Woche");
-    const handleSectionClick = (section) => {
-        setActiveSection(section);
-    };
-    return (
-        <main
+function AndereEvents() {
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("Andere Events");
+  const handleSectionClick = (section) => {
+      setActiveSection(section);
+  };
+  return (
+    <div>
+      <main
             id="Events"
             className="text-light  w-100 d-flex flex-column justify-content-between align-items-center"
         >
-            <section
+      <section
                 id="menuNavigation"
                 className="d-flex justify-content-around align-items-center mt-3 border border-3 border-warning w-75 "
             >
                 <Link
-                    to="/DieseWoche"
+                to="/DieseWoche"
                     className={`fs-3 decorationNone ${
                         activeSection === "Diese Woche" ? "active" : ""
                     }`}
                     href="#eventsContainer"
                     onClick={() => handleSectionClick("Diese Woche")}
                 >
+                    
                     Diese Woche
                 </Link>
 
                 <Link
-                    to="/Regelmäßig"
+                to="/Regelmäßig"
+                
                     className={`fs-3 decorationNone ${
                         activeSection === "Regelmäßig" ? "active" : ""
                     }`}
+                    
                     onClick={() => handleSectionClick("Regelmäßig")}
                 >
+                    
                     Regelmäßig
                 </Link>
 
                 <Link
-                    to="/AndereEvents"
+                to="/AndereEvents"
                     className={`fs-3 decorationNone ${
                         activeSection === "Andere Events" ? "active" : ""
                     }`}
                     href="#eventsContainer"
                     onClick={() => handleSectionClick("Andere Events")}
                 >
+                    
                     Andere Events
                 </Link>
             </section>
@@ -63,16 +63,8 @@ export default function Events() {
                     id="erstenCard"
                     className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0"
                 >
-                    <h1 className="btn btn-light  ">Event</h1>
-                    <article className="test">
-                        <div className="EventsBeschreibung">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Obcaecati nostrum vel voluptatem animi autem,
-                            error fugiat unde tempora id illum voluptatum, neque
-                            cupiditate officiis sed asperiores. Suscipit facilis
-                            cum voluptatibus.
-                        </div>
-                    </article>
+                    <h1 className="btn btn-light  ">vent</h1>
+
                     <div id="mainDish" className=""></div>
                     <button
                         type="button"
@@ -108,9 +100,7 @@ export default function Events() {
                     id="drittenCard"
                     className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0"
                 >
-                    <h1 className="btn btn-light  ">
-                        <a>Italian Night</a>
-                    </h1>
+                    <h1 className="btn btn-light  ">Event</h1>
 
                     <div id="mainDish" className=""></div>
 
@@ -125,6 +115,11 @@ export default function Events() {
                     </button>
                 </section>
             </section>
-        </main>
-    );
+            </main>
+    </div>
+
+    
+  )
 }
+
+export default AndereEvents

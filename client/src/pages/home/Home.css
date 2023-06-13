@@ -28,6 +28,7 @@ background-color: rgba(0, 0, 0, .5);
     height: clamp(150px, 15vw, 250px);
     left: 20%;
     top: 25%;
+
    }
 
 #mainDishImage{

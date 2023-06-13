@@ -6,6 +6,7 @@ import {
     Route,
     createRoutesFromElements,
     Outlet,
+    
 } from "react-router-dom";
 
 import AuthContext from "./context/AuthContext";
@@ -24,9 +25,13 @@ import Events from "./component/Events/Events";
 import { Footer } from "./component/footer/Footer";
 import { Header } from "./component/header/Header";
 import ReservationPage from "./pages/reservation/RerservationPage";
-
+import DieseWoche from "./component/Events/DieseWoche";
+import Regelmäßig from "./component/Events/Regelmäßig";
+import AndereEvents from "./component/Events/AndereEvents";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -56,6 +61,13 @@ function App() {
                     path="/login"
                     element={<AdminLogin authenticate={authenticate} />}
                 />
+                
+                <Route path="/DieseWoche" Component={DieseWoche} ></Route>
+                <Route path="/Regelmäßig" Component={Regelmäßig} ></Route>
+                <Route path="/AndereEvents" Component={AndereEvents} ></Route>
+                
+                
+                
                 {loggedIn && (
                     <Route path="/dashboard/*" element={<AdminDashboard />} />
                 )}

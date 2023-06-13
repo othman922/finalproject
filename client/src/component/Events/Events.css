@@ -1,54 +1,82 @@
-#Events{
-    min-height:70vh;
+#Events {
+    min-height: 70vh;
     font-size: clamp(16px, 2.5vw, 25px);
 }
 
-#Events #menuNavigation{
-   transition: 350ms;
-   height: 5vh;
-   
- }
- 
-
-#Events #menuNavigation:hover{
-background-color: black;
+#Events #menuNavigation {
+    transition: 350ms;
+    height: 5vh;
 }
 
-
-#eventsContainer{
-    min-height:70vh ;
+.active {
+    color: rgba(255, 166, 0, 0.755);
 }
 
-#eventsContainer section{
-width: clamp(250px, 30vw, 500px);
-height: clamp(250px, 45vh, 500px);
-
-font-size: clamp(16px, 3vw, 30px);
-transition: 300ms;
-outline: 10px solid rgba(255, 166, 0, 0.755);
-background-color: orange;
-background-color: rgba(0, 0, 0, .5);
+#Events #menuNavigation:hover {
+    background-color: black;
 }
 
-
-#eventsContainer section:hover{
-    transform: rotate(3deg);
+#eventsContainer {
+    min-height: 70vh;
+    
+    
     
 }
 
-#ersteCard{
+#eventsContainer section {
+    width: clamp(250px, 30vw, 500px);
+    height: clamp(250px, 45vh, 500px);
+
+    font-size: clamp(16px, 3vw, 30px);
+    transition: 300ms;
+    outline: 10px solid rgba(255, 166, 0, 0.755);
+    background-color: orange;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#eventsContainer section:hover {
+    transform: rotate(3deg);
+}
+
+#erstenCard {
     background-image: url(./img1.jpg);
     background-size: cover;
     background-position: center;
     
+    
+    
 }
-#zweiteCard{
-    background-image: url(./img2.png);
+#zweitenCard {
+    background-image: url(./img4.jpg);
     background-size: cover;
     background-position: center;
 }
-#dritteCard{
-    background-image: url(./img2.png);
+#drittenCard {
+    background-image: url(./img5.png);
     background-size: cover;
     background-position: center;
+   
+    
+}
+
+.Regelmäßig {
+    font-size: 100px;
+}
+
+.EventsBeschreibung {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    
+    opacity: 0;
+    
+    
+
+    
+}
+.EventsBeschreibung:hover{
+    opacity: 1;
+    
+    
+    
 }

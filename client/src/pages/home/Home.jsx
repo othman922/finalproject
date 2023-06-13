@@ -36,7 +36,7 @@ export default function Home () {
                     <h1 className="btn btn-light  ">-20% OFF</h1>
 
                     <div id="mainDish" className="" >
-                        <img id="mainDishImage" className=" w-100 h-100" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt="" />
+                        {<img id="mainDishImage" className=" w-100 h-100" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt="" />}
                     </div>
 
 
