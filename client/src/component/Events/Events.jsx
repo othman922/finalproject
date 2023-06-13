@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { NavLink } from "react-router-dom"; 
 import axios from "axios";
 
 
-import "./Events.css";
+// import "./Events.css";
 
 export default function Events() {
 
@@ -26,7 +26,7 @@ export default function Events() {
             id="Events"
             className="text-light  w-100 d-flex flex-column justify-content-between align-items-center"
         >
-            <section className="intro">
+            {/* <section className="intro">
                 <div className="intro-box">
                     <h1>Unsere Events</h1>
                     <div className="intro-text">
@@ -88,11 +88,11 @@ export default function Events() {
                 </div>
 
 
-            </section>
+            </section> */}
 
             
 
-            {/* <section
+            <section
                 id="menuNavigation"
                 className="d-flex justify-content-around align-items-center mt-8 border border-3 border-warning w-75 "
             >
@@ -120,7 +120,7 @@ export default function Events() {
                         </button>
                     </section>
                 ))}
-            </section> */}
+            </section>
         </main>
     );
 }

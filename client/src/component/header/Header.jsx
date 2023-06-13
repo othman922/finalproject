@@ -26,9 +26,8 @@ export const Header = () => {
 
           <div className="container1">
 
-
-            <NavLink className="main-link1" to="/">
-              LOGO
+            <NavLink to="/">
+              <img src="src/assets/image/logo (2).png" className="logo" alt="logo" />
             </NavLink>
           </div>
           <div className=" linksToHide menu-ul">
@@ -55,7 +54,6 @@ export const Header = () => {
           </div>
           <div className="container1">
             <NavLink className="linksToHide main-link1" to="/reservation">
-
               Reservierung
             </NavLink>
           </div>

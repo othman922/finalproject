@@ -38,12 +38,15 @@
   .container1 .main-link1 {
   text-decoration:none;
   color:#000;
-  background-color:#ffe4c4;
+  background-color:#ffc107;
   padding:10px!important;
-  border-radius:200px 5px 200px 5px;
-  -moz-border-radius:200px 5px 200px 5px;
-  -webkit-border-radius:200px 5px 200px 5px;
-  border:17px none #000
+  }
+
+  .container1 .main-link1:hover {
+    text-decoration:none;
+    color:#000;
+    background-color:#d19d00;
+    padding:10px!important;
   }
   
   .menu ul {
@@ -86,19 +89,24 @@
   
   .header .main-link:hover,.main-link1:hover {
   color:#000;
-  background-color:aqua
+  background-color:#ffc107
   }
   
   .container1 .main-link .social-icons {
   margin-right:13px
   }
-  
-  .header .main-link1:hover {
-  border-radius:200px 5px 200px 5px;
-  -moz-border-radius:200px 5px 200px 5px;
-  -webkit-border-radius:200px 5px 200px 5px;
-  border:17px none #000
+
+
+  .logo{
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
   }
+
+  .logo:hover{
+    transform: scale(1.2);
+  }
+
 
 /* BURGER */
 

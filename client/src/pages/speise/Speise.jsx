@@ -65,11 +65,26 @@ export default function Speise () {
     return (
         <main id="Speise" className='text-light  w-100 d-flex flex-column justify-content-between align-items-center'>
             <section id="menuNavigation" className="w-75 d-flex justify-content-around align-items-center border border-3 border-warning  flex-wrap py-3">
-                <NavLink id={showMenus ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleAllMenu}>Alles</NavLink>
-                <NavLink id={showAppetizer ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleAppetizer}>Vorspeise</NavLink>
-                <NavLink id={showMainDish ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleMainDish}>Hauptspeise</NavLink>
-                <NavLink id={showDessert ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleDessert}>Nachspeise</NavLink>
-                <NavLink id={showDrinks ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleDrinks}>Getränke</NavLink>
+                <NavLink id={showMenus ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleAllMenu}>
+                    Alles
+                    <img src="src/assets/image/pizza-svgrepo-com.png" alt="Pizza" className="image-align" />
+                </NavLink>
+                <NavLink id={showAppetizer ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleAppetizer}>
+                    Vorspeise
+                    <img src="src/assets/image/noodles-svgrepo-com.png" alt="Pizza" className="image-align" />
+                </NavLink>
+                <NavLink id={showMainDish ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleMainDish}>
+                    Hauptspeise
+                    <img src="src/assets/image/risotto-svgrepo-com.png" alt="Pizza" className="image-align" />
+                </NavLink>
+                <NavLink id={showDessert ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleDessert}>
+                    Nachspeise
+                    <img src="src/assets/image/pancakes-svgrepo-com.png" alt="Pizza" className="image-align" />
+                </NavLink>
+                <NavLink id={showDrinks ? "activeMenu" : ""} className="fs-6 decorationNone" onClick={handleDrinks}>
+                    Getränke
+                    <img src="src/assets/image/frappe-svgrepo-com.png" alt="Pizza" className="image-align" />
+                </NavLink>
             </section>
             <section id="place" className="w-100">
                 {showMenus && <AllMenus />}

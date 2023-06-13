@@ -14,13 +14,34 @@ export default function Home () {
     return (
 
         <main id='homeContainer' className='w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5'>
+
+
             {isPending && <div className="spinner-border text-warning" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>}
             {error && <p className="text-warning">
                 Ein Fehler ist aufgetreten, versuchen Sie es bitte erneut!
             </p>}
+
+             {/* Slider */}
+            <div id="slider" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                <div className="carousel-item active">
+                    <img
+                    src="https://images.pexels.com/photos/16124569/pexels-photo-16124569/free-photo-of-cook-behind-restaurant-windows.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    className="d-block w-100"
+                    alt="Slider Image 1"
+                    />
+                </div>
+                {/* <div className="carousel-item">
+                    <img src="image-2.jpg" className="d-block w-100" alt="Slider Image 2" />
+                </div> */}
+                </div>
+            </div>
+
+
             <section className=" position-relative text-light  d-flex flex-column justify-content-center align-items-center flex-shrink-0">
+
                 <div>
                     <p>Welcome to <span className=""><strong><em>The Restaurant</em></strong></span></p>
                     <p>This website was designed by </p>
@@ -29,6 +50,7 @@ export default function Home () {
                 <button type="button" className="btn btn-warning" onClick={() => navigate("/speise")}>Speise ansehen !</button>
 
             </section>
+            
 
             {data && data.filter((menu) => menu._id === "64784f89d32f3079729fbf4a").map((menu) => (
                 <section key={menu._id} className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">

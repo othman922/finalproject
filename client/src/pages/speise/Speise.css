@@ -11,6 +11,14 @@ column-gap: 15px;
 row-gap: 10px;
  }
 
+ .image-align {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+  }
+
 
 /* CLASS NAMES */
 .decorationNone{

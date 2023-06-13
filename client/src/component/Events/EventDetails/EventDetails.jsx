@@ -6,7 +6,7 @@ import "./EventDetails.css"
 
 
 export default function EventDetails() {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const [event, setEvent] = useState(null);
 
   useEffect(() => {

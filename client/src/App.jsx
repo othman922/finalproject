@@ -83,7 +83,7 @@ const Root = () => {
         <Outlet />
       </section>
       <section className="appFooter w-100 ">
-        {/* <Footer /> */}
+        <Footer />
       </section>
     </>
   );

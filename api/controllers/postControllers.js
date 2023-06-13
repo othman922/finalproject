@@ -40,6 +40,7 @@ exports.createPost = async (req, res) => {
 };
 
 // GET All Posts
+
 exports.getPosts = async (req, res) => {
   try {
     const posts = await Post.find({}, "-author").populate("author");
@@ -51,6 +52,7 @@ exports.getPosts = async (req, res) => {
 };
 
 // GET Post by ID
+
 exports.getPostById = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id).populate("author");
@@ -65,6 +67,7 @@ exports.getPostById = async (req, res) => {
 };
 
 // UPDATE Post
+
 exports.updatePost = async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -100,6 +103,7 @@ exports.updatePost = async (req, res) => {
 };
 
 // DELETE Post
+
 exports.deletePost = async (req, res) => {
   try {
     const { id } = req.params;

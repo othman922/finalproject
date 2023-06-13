@@ -20,8 +20,18 @@ border-radius: 10px;
     
 }
 
+#img-bg{
+    background: url("https://uploads-ssl.webflow.com/5ba4deb1ca2a2fad166775df/5baa20f79a521581b1b26edf_Bg_01.2-min-min.png");
+    height: auto;
+    background-position: 1px 100%;
+    background-repeat: no-repeat;
 
-  
+}
+
+
+#slider{
+    width: 100%;
+}
 
 
 #mainDish{

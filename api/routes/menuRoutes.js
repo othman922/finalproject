@@ -42,6 +42,9 @@ const upload = multer({
   },
 });
 
+
+// MENU ROUTES
+
 router.get("/menu", menuController.menu);
 router.get("/menu/:id", menuController.menuById);
 router.post(
@@ -55,6 +58,9 @@ router.put(
    menuController.updateMenu
 );
 router.delete("/menu/:id",   menuController.deleteMenu);
+
+
+// CATEGORIES ROUTES
 
 router.get("/categories", categoriesControllers.homepage);
 router.get("/categories/:id", categoriesControllers.homepageById);
@@ -73,11 +79,16 @@ router.delete(
   categoriesControllers.deleteCategory
 );
 
+// EVENTS ROUTES
+
 router.post("/events", upload.single("image"), postControllers.createPost);
 router.get("/events", postControllers.getPosts);
 router.get("/events/:id", postControllers.getPostById);
 router.put("/events/:id", upload.single("image"), postControllers.updatePost);
 router.delete("/events/:id", postControllers.deletePost);
+
+
+// RESERVATION ROUTES
 
 router.get("/reservations",  reservationsControllers.getReservations);
 router.get(
@@ -91,6 +102,8 @@ router.delete(
   reservationsControllers.deleteReservation
 );
 router.post("/reservations", reservationsControllers.createReservation);
+
+// ADMIN ROUTES
 
 router.post("/login", loginController.login);
 router.get("/logout", loginController.logout);
