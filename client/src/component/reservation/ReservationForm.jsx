@@ -16,6 +16,7 @@ const ReservationForm = ({ onSubmit }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [disabledTimes, setDisabledTimes] = useState([]);
+  const serverUrl = `${import.meta.env.VITE_APP_SERVER_URL}/reservations`;
 
   const form = useRef();
 
@@ -26,7 +27,7 @@ const ReservationForm = ({ onSubmit }) => {
     const fetchReservations = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9000/reservations",
+          `${serverUrl}`,
           {
             params: {
               date,
@@ -59,9 +60,8 @@ const ReservationForm = ({ onSubmit }) => {
     if (date) {
       fetchReservations();
     }
-  }, [date]);
+  }, [date, serverUrl]);
 
-  //Submit from the Reservation
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -98,7 +98,7 @@ const ReservationForm = ({ onSubmit }) => {
           extra: extra,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      ); 
+      );
 
       const response = await axios.post(
         "http://localhost:9000/reservations",
@@ -133,13 +133,9 @@ const ReservationForm = ({ onSubmit }) => {
     }
   };
 
-  ReservationForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-  };
-
   return (
-    <div className="d-flex justify-content-center align-items-center text-white">
-      <div className="card p-4 reservation-container">
+    <div className="d-flex justify-content-center align-items-center text-white mb-3 mt-3">
+      <div className="card p-4" id="reservationContainer">
       <h2 className="text-center mb-4">Reservieren Sie ein Tisch</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form ref={form} onSubmit={handleSubmit}>
@@ -231,7 +227,7 @@ const ReservationForm = ({ onSubmit }) => {
               placeholder="z.B. Allergie"
             />
           </div>
-          <button type="submit" className="btn btn-reservation" disabled={loading}>
+          <button type="submit" className="btn" id="btnReservation" disabled={loading}>
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm"
@@ -247,5 +243,9 @@ const ReservationForm = ({ onSubmit }) => {
       </div>
   );
 };
+
+ReservationForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
 
 export default ReservationForm;
