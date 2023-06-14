@@ -27,7 +27,7 @@ const ReservationForm = ({ onSubmit }) => {
     const fetchReservations = async () => {
       try {
         const response = await axios.get(
-          `${serverUrl}`,
+          serverUrl,
           {
             params: {
               date,
@@ -101,7 +101,7 @@ const ReservationForm = ({ onSubmit }) => {
       );
 
       const response = await axios.post(
-        "http://localhost:9000/reservations",
+        serverUrl,
         reservation
       )
 

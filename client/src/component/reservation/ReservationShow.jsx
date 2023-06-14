@@ -12,11 +12,12 @@ const ReservationShow = ({ data }) => {
   const [successMessage, setSuccessMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [modalShow, setModalShow] = useState(false);
+  const serverUrl = `${import.meta.env.VITE_APP_SERVER_URL}/reservations`;
 
   const handleCancel = async (data) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:9000/reservations/${data._id}`, {
+      await axios.delete(`${serverUrl}/${data._id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
