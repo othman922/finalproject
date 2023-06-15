@@ -1,5 +1,6 @@
 #Events {
     min-height: 70vh;
+
     font-size: clamp(16px, 2.5vw, 25px);
 }
 
@@ -18,9 +19,6 @@
 
 #eventsContainer {
     min-height: 70vh;
-    
-    
-    
 }
 
 #eventsContainer section {
@@ -35,56 +33,109 @@
 }
 
 #eventsContainer section:hover {
-    transform: rotate(3deg);
+    box-shadow: 0px 7px 59px 9px #fff;
 }
 
-#erstenCard {
-    background-image: url(./img1.jpg);
+#erstenCard-DW {
+    background-image: url(./img1.png);
     background-size: cover;
     background-position: center;
-    
-    
-    
 }
-#zweitenCard {
+
+#zweitenCard-DW {
     background-image: url(./img4.jpg);
     background-size: cover;
     background-position: center;
 }
-#drittenCard {
+
+#drittenCard-DW {
     background-image: url(./img5.png);
     background-size: cover;
     background-position: center;
-   
-    
 }
 
-.Regelmäßig {
-    font-size: 100px;
+#vierttenCard-DW {
+    background-image: url(./img6.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.EventsBeschreibung {
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    
-    opacity: 0;
-    
-    
-
-    
+#erstenCard-R {
+    background-image: url(./img7.jpg);
+    background-size: cover;
+    background-position: center;
 }
-.EventsBeschreibung:hover{
-    opacity: 1;
-    
-    
-    
+#zweitenCard-R {
+    background-image: url(./img4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#drittenCard-R {
+    background-image: url(./img5.png);
+    background-size: cover;
+    background-position: center;
 }
 
+#vierttenCard-R {
+    background-image: url(./img6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#erstenCard-AE {
+    background-image: url(./img6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#zweitenCard-AE {
+    background-image: url(./img4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#drittenCard-AE {
+    background-image: url(./img5.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#vierttenCard-AE {
+    background-image: url(./img7.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#mainDish {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    
+    
+}
+#mainDish::-webkit-scrollbar{
+    display: none;
+}
 #mainDish p {
-    font-size: 12px;
+    opacity: 0;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    
+}
+#mainDish:hover p {
+    opacity: 1;
+    font-size: 20px;
+    
+    
+    
 }
 
+#mainDish:hover {
+    background-color: rgba(0, 0, 0, 0.634);
+}
+
+.EventName {
+    text-align: center;
+}
 
 /* ----------------------------------------------------------- */
 

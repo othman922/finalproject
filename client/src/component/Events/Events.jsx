@@ -1,12 +1,12 @@
 import "./Events.css";
 
-import { Link } from "react-router-dom";
-import { useState , useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
+import { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
-
+import DieseWoche from "./DieseWoche";
 export default function Events() {
-
+    
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
@@ -21,15 +21,15 @@ export default function Events() {
         fetchEvents();
       }, []);
 
-    const [activeSection, setActiveSection] = useState("Diese Woche");
-    const handleSectionClick = (section) => {
-        setActiveSection(section);
-    };
+    
+    
     return (
         <main
             id="Events"
             className="text-light  w-100 d-flex flex-column justify-content-between align-items-center"
         >
+
+            <DieseWoche/>
             {/* <section className="intro">
                 <div className="intro-box">
                     <h1>Unsere Events</h1>
@@ -96,7 +96,7 @@ export default function Events() {
 
             
 
-            <section
+            {/* <section
                 id="menuNavigation"
                 className="d-flex justify-content-around align-items-center mt-8 border border-3 border-warning w-75 "
             >
@@ -131,9 +131,9 @@ export default function Events() {
                 >
                     Andere Events
                 </Link>
-            </section>
+            </section> */}
 
-            <section
+            {/* <section
                 id="eventsContainer"
                 className=" w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5"
             >
@@ -202,7 +202,7 @@ export default function Events() {
                         buchen
                     </button>
                 </section>
-            </section>
+            </section> */}
         </main>
     );
 }
