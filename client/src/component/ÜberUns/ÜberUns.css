@@ -1,5 +1,9 @@
-.UberUns {
+.ÜberUns {
     margin: 20px;
+    height: 100vh;
+   
+    
+    
   }
   
   .section {
@@ -12,6 +16,10 @@
     color: black;
     font-size: x-large;
     font-weight: 400;
+    
+    
+    
+    
     
 }
 
@@ -102,4 +110,8 @@
     width: 80%;
     background: rgba(255, 255, 255, 0.676);
     margin-left: 150px;
+    
+   
+    
+    
 }

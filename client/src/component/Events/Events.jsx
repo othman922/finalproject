@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom"; 
+import "./Events.css";
+
+import { Link } from "react-router-dom";
+import { useState , useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
-
-// import "./Events.css";
 
 export default function Events() {
 
@@ -21,6 +21,10 @@ export default function Events() {
         fetchEvents();
       }, []);
 
+    const [activeSection, setActiveSection] = useState("Diese Woche");
+    const handleSectionClick = (section) => {
+        setActiveSection(section);
+    };
     return (
         <main
             id="Events"
@@ -96,30 +100,108 @@ export default function Events() {
                 id="menuNavigation"
                 className="d-flex justify-content-around align-items-center mt-8 border border-3 border-warning w-75 "
             >
-                <NavLink className="fs-3 decorationNone">Diese Woche</NavLink>
-                <NavLink className="fs-3 decorationNone">Regelmäß</NavLink>
-                <NavLink className="fs-3 decorationNone">Andere Events</NavLink>
+                <Link
+                    to="/DieseWoche"
+                    className={`fs-3 decorationNone ${
+                        activeSection === "Diese Woche" ? "active" : ""
+                    }`}
+                    href="#eventsContainer"
+                    onClick={() => handleSectionClick("Diese Woche")}
+                >
+                    Diese Woche
+                </Link>
+
+                <Link
+                    to="/Regelmäßig"
+                    className={`fs-3 decorationNone ${
+                        activeSection === "Regelmäßig" ? "active" : ""
+                    }`}
+                    onClick={() => handleSectionClick("Regelmäßig")}
+                >
+                    Regelmäßig
+                </Link>
+
+                <Link
+                    to="/AndereEvents"
+                    className={`fs-3 decorationNone ${
+                        activeSection === "Andere Events" ? "active" : ""
+                    }`}
+                    href="#eventsContainer"
+                    onClick={() => handleSectionClick("Andere Events")}
+                >
+                    Andere Events
+                </Link>
             </section>
 
-            <section id="eventsContainer" className="w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5">
-                {events.map((event) => (
-                    <section key={event._id} className="position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">
-                        <h2 className="mb-0">{event.title}</h2>
-                        <div id="mainDish" className="">
-                            <p>{event.content}</p>
-                            <img id="mainDishImage" className="w-100 h-100" src={event.image} alt="" />
+            <section
+                id="eventsContainer"
+                className=" w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5"
+            >
+                <section
+                    id="erstenCard"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0"
+                >
+                    <h1 className="btn btn-light  ">Event</h1>
+                    <article className="test">
+                        <div className="EventsBeschreibung">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Obcaecati nostrum vel voluptatem animi autem,
+                            error fugiat unde tempora id illum voluptatum, neque
+                            cupiditate officiis sed asperiores. Suscipit facilis
+                            cum voluptatibus.
                         </div>
-                        <button
-                            type="button"
-                            className="btn btn-warning m-4"
-                            onClick={() => {
+                    </article>
+                    <div id="mainDish" className=""></div>
+                    <button
+                        type="button"
+                        className="btn btn-warning  m-4"
+                        onClick={() => {
                             navigate("/login");
-                            }}
-                        >
-                            Details
-                        </button>
-                    </section>
-                ))}
+                        }}
+                    >
+                        buchen
+                    </button>
+                </section>
+
+                <section
+                    id="zweitenCard"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0"
+                >
+                    <h1 className="btn btn-light  ">Event</h1>
+
+                    <div id="mainDish" className=""></div>
+
+                    <button
+                        type="button"
+                        className="btn btn-warning  m-4"
+                        onClick={() => {
+                            navigate("/login");
+                        }}
+                    >
+                        buchen
+                    </button>
+                </section>
+
+                <section
+                    id="drittenCard"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0"
+                >
+                    <h1 className="btn btn-light  ">
+                        <a>Italian Night</a>
+                    </h1>
+
+                    <div id="mainDish" className=""></div>
+
+                    <button
+                        type="button"
+                        className="btn btn-warning  m-4"
+                        onClick={() => {
+                            navigate("/login");
+                        }}
+                    >
+                        buchen
+                    </button>
+                </section>
             </section>
         </main>
     );
