@@ -33,13 +33,26 @@ export default function AllMenus () {
                     <div key={menu._id} className="menuElement d-flex gap-2 flex-shrink-0 p-2" >
                         <div className="image d-flex flex-column justify-content-evenly align-items-center h-100">
                             <img className="image text-light" src={menu.image} alt={menu.name} />
-                            {menu.vegan && <span className="text-warning">Vegan</span>}
+                            {menu.vegan && <span className="text-warning" id="vegan">Vegan</span>}
                         </div>
                         <div className="text d-flex flex-column justify-content-evenly">
-                            <p className="titleAndPrice d-flex justify-content-between" >{menu.name} <span className="text-warning">{menu.price}$</span></p>
-                            <p className="description">{menu.description}</p>
-                            <Button name={`${menu._id}`} className="btn btn-danger" style={{ width: "100px" }} variant="primary" onClick={(e) => handleModal(e)}>Details</Button>
-
+                            <p className="titleAndPrice d-flex justify-content-between">
+                                {menu.name} <span className="text-warning">{menu.price}€</span>
+                            </p>
+                            <p className="description">
+                                {menu.description.length > 100
+                                ? `${menu.description.substring(0, 100)}...`
+                                : menu.description}
+                            </p>
+                            <Button
+                                name={`${menu._id}`}
+                                className="btn btn-warning"
+                                style={{ width: "100px" }}
+                                variant="primary"
+                                onClick={(e) => handleModal(e)}
+                            >
+                                Details
+                            </Button>
                         </div>
 
                     </div>
@@ -57,7 +70,7 @@ export default function AllMenus () {
                             </div>
                             {menu.vegan && <span className="text-warning">Vegan</span>}
 
-                            <p className="titleAndPrice d-flex justify-content-between" >{menu.name} <span className="text-warning">{menu.price}$</span></p>
+                            <p className="titleAndPrice d-flex justify-content-between" >{menu.name} <span className="text-warning">{menu.price}€</span></p>
                             <p className="description">{menu.description}</p>
                             <Button className="btn btn-danger" style={{ width: "100px" }} variant="primary" onClick={() => { setShowModal(prevShowModal => !prevShowModal) }}>Schließen</Button>
 

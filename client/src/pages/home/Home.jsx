@@ -1,85 +1,107 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetch/useFetch";
 
-import { useNavigate } from "react-router-dom"
-import { useFetch } from "../../hooks/useFetch/useFetch"
+import "./Home.css";
 
+export default function Home() {
+  const navigate = useNavigate();
+  const url = "http://localhost:9000/getOffer";
+  const { data, isPending, error } = useFetch(url);
 
-import "./Home.css"
+  const [modalImage, setModalImage] = useState(null);
 
+  const openModal = (imageUrl) => {
+    setModalImage(imageUrl);
+  };
 
+  const closeModal = () => {
+    setModalImage(null);
+  };
 
-export default function Home () {
-    const navigate = useNavigate()
-    const url = "http://localhost:9000/menu"
-    const { data, isPending, error } = useFetch(url)
-    return (
+  return (
+    <>
+      <section className="image-background-section hero-section cologne wf-section">
+        <div className="container-full slide-wrapper w-container">
+          <div className="div-block">
+            <h2 className="hero-slider-heading">
+              Jeden Tag ab 11.30 Uhr
+              <br />
+              für SIE da
+            </h2>
+          </div>
+        </div>
+      </section>
 
-        <main id='homeContainer' className='w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5'>
-
-
-            {isPending && <div className="spinner-border text-warning" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </div>}
-            {error && <p className="text-warning">
-                Ein Fehler ist aufgetreten, versuchen Sie es bitte erneut!
-            </p>}
-
-             {/* Slider */}
-            <div id="slider" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img
-                    src="https://images.pexels.com/photos/16124569/pexels-photo-16124569/free-photo-of-cook-behind-restaurant-windows.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    className="d-block w-100"
-                    alt="Slider Image 1"
-                    />
-                </div>
-                {/* <div className="carousel-item">
-                    <img src="image-2.jpg" className="d-block w-100" alt="Slider Image 2" />
-                </div> */}
-                </div>
+      <main id="homeContainer" className="w-100 d-flex align-items-center justify-content-around flex-wrap gap-5 py-5">
+        <div className="flex-container">
+          <section className="position-relative text-light d-flex flex-row justify-content-between align-items-center flex-shrink-0">
+            <div>
+              <p>
+                Schauen Sie sich unsere
+                <span className="">
+                  <strong>
+                    <em> Speisekarte </em>
+                  </strong>
+                </span>
+                an!
+              </p>
+              <button type="button" className="btn btn-warning btn-lg" onClick={() => navigate("/speise")}>
+                Speisekarte
+              </button>
             </div>
+          </section>
 
-
-            <section className=" position-relative text-light  d-flex flex-column justify-content-center align-items-center flex-shrink-0">
-
-                <div>
-                    <p>Welcome to <span className=""><strong><em>The Restaurant</em></strong></span></p>
-                    <p>This website was designed by </p>
-                    <p><strong><em><span><strong>The WebWaiters</strong></span></em></strong></p>
-                </div>
-                <button type="button" className="btn btn-warning" onClick={() => navigate("/speise")}>Speise ansehen !</button>
-
-            </section>
-            
-
-            {data && data.filter((menu) => menu._id === "64784f89d32f3079729fbf4a").map((menu) => (
-                <section key={menu._id} className="  position-relative d-flex flex-column justify-content-between align-items-center py-3 flex-shrink-0">
-
-                    <h1 className="btn btn-light  ">-20% OFF</h1>
-
-                    <div id="mainDish" className="" >
-                        {<img id="mainDishImage" className=" w-100 h-100" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt="" />}
+          <section className="position-relative text-light d-flex flex-row justify-content-between align-items-center flex-shrink-0">
+          {isPending && <div className="spinner-border text-warning" role="status">
+                <span className="visually-hidden">Loading...</span>
+                </div>}
+                {error && <p className="text-warning">
+                    Ein Fehler ist aufgetreten, versuchen Sie es bitte erneut!
+                </p>}
+                {data && <>
+                    <h1 className="btn btn-light  ">{data.percentage}%</h1>
+                    <div id="imgBox" className="w-100 d-flex align-items-center  gap-2 px-3">
+                        <div id="offerDish" className=" " >
+                            <img id="offerDishImage" className=" w-100 h-100" src={data.offer.image} alt="" />
+                        </div>
+                        <h5 id="offerName" className="text-light underline">{data.offer.name}</h5>
                     </div>
+                    <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/angebot") }}>Angebot ansehen!</button>
+                </>}
+          </section>
+        </div>
 
-
-                    <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/angebot") }}>Angebot ansehen !</button>
-                </section>
-
+        <section id="gallery" className="position-relative text-light d-flex flex-row justify-content-between align-items-center flex-shrink-0">
+          <div className="div-text">
+            <h2>Entdecken Sie unser Restaurant</h2>
+            <p>Werfen Sie einen Blick auf einige Bilder unseres Restaurants:</p>
+          </div>
+          <div className="image-gallery">
+            {[
+              "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/735869/pexels-photo-735869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              "https://images.pexels.com/photos/2403391/pexels-photo-2403391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            ].map((imageUrl, index) => (
+              <img
+                key={index}
+                src={imageUrl}
+                alt={`Image ${index + 1}`}
+                className="gallery-image"
+                onClick={() => openModal(imageUrl)}
+              />
             ))}
+          </div>
+        </section>
 
-            {/* {data.map((menu) => (
-                    <div key={menu.id} className="menuElement d-flex gap-2 flex-shrink-0 p-2">
-                        <div className="image d-flex flex-column justify-content-evenly align-items-center h-100">
-                            <img className="image" src={`http://localhost:9000/uploadedImages/menu/${menu.image}`} alt="" />
-                            <span>cathegorie</span>
-                        </div>
-                        <div className="text d-flex flex-column justify-content-evenly">
-                            <p className="titleAndPrice d-flex justify-content-between" >Food name <span className="text-warning">50$</span></p>
-                            <p className="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, blanditiis.</p>
-                            <button className="btn btn-danger">Details</button>
-                        </div>
-                    </div>
-                ))} */}
-        </main>
-    )
+        {modalImage && (
+          <div className="modal-container" onClick={closeModal}>
+            <img src={modalImage} alt="Modal" className="modal-image" />
+          </div>
+        )}
+
+      </main>
+    </>
+  );
 }
