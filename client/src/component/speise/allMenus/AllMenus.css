@@ -27,12 +27,24 @@
         font-size: clamp(10px,1vw, 16px);
       }
 
+      /* description */
 
+      .description{
+       text-overflow: ellipsis;
+       white-space: nowrap;
+        overflow: hidden;
+  max-width: 100px;
+      }
+
+      .fullDescription{
+
+      }
       /* MY MODAL */
          
       .modalContainer{
              z-index: 5;
              animation: fadeIn .5s ease;
+font-size: clamp(15px, 1.3vw, 20px);
          
          }
 

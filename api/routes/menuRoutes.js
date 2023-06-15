@@ -9,6 +9,7 @@ const postControllers = require("../controllers/postControllers");
 const categoriesControllers = require("../controllers/categoriesControllers");
 const reservationsControllers = require("../controllers/reservationsControllers");
 const loginController = require("../controllers/loginController");
+const offersController = require("../controllers/offersController")
 
 
 //Cloudinary delete storage
@@ -107,5 +108,11 @@ router.post("/reservations", reservationsControllers.createReservation);
 
 router.post("/login", loginController.login);
 router.get("/logout", loginController.logout);
+
+// OFFER ROUTES
+
+router.post("/setOffer", offersController.setOffer)
+router.get("/getOffer", offersController.getOffer)
+
 
 module.exports = router;

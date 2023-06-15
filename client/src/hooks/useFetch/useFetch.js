@@ -51,6 +51,7 @@ export const useFetch = (url) => {
       setIsPending(true);
       try {
         const response = await axios.get(url);
+        console.log(response);
         setData(response.data);
         setIsPending(false);
         setError(null);

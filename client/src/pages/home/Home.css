@@ -6,7 +6,7 @@
 width: clamp(250px, 30vw, 500px);
 height: clamp(250px, 45vh, 500px);
 
-font-size: clamp(16px, 3vw, 30px);
+font-size: clamp(16px, 2vw, 25px);
 transition: 300ms;
 /* outline: 10px solid rgba(255, 166, 0, 0.755); */
 background-color: orange;
@@ -20,31 +20,29 @@ border-radius: 10px;
     
 }
 
-#img-bg{
-    background: url("https://uploads-ssl.webflow.com/5ba4deb1ca2a2fad166775df/5baa20f79a521581b1b26edf_Bg_01.2-min-min.png");
-    height: auto;
-    background-position: 1px 100%;
-    background-repeat: no-repeat;
-
-}
 
 
 #slider{
     width: 100%;
 }
 
+#imgBox{
+    height: fit-content;
+}
 
-#mainDish{
-    width: clamp(150px, 15vw, 250px);
-    height: clamp(150px, 15vw, 250px);
-    left: 20%;
-    top: 25%;
+#offerDish{
+    width: clamp(100px, 12vw, 250px);
+    height: clamp(100px, 12vw, 250px);
+   
    }
 
-#mainDishImage{
+#offerDishImage{
     border-radius: 50%;
 }
 
+#offerName{
+font-size: clamp(16px, 3vw, 30px);
 
+}
 
     
