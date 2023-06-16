@@ -154,6 +154,19 @@
   margin-left: 1.5rem;
 }
 
+#offerDishImage {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 2px;
+  margin: 4px;
+  object-fit: cover;
+}
+
+#imgBox{
+  border-left: 1px solid orange;
+}
+
+
 @media (max-width: 870px) {
   .gallery-image {
     width: 100px; 

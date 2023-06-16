@@ -14,11 +14,11 @@ import { useState } from "react"
 
 
 export default function Speise () {
-    const [showMenus, setShowMenus] = useState(false)
+    const [showMenus, setShowMenus] = useState(true)
     const [showMainDish, setShowMainDish] = useState(false)
     const [showDessert, setShowDessert] = useState(false)
     const [showAppetizer, setShowAppetizer] = useState(false)
-    const [showDrinks, setShowDrinks] = useState(true)
+    const [showDrinks, setShowDrinks] = useState(false)
 
     const handleAllMenu = () => {
         setShowMenus(true)

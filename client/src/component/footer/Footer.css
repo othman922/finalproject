@@ -109,14 +109,8 @@ height: 8rem;
     font-size: 1.3rem;
     margin-right: .5rem;
     margin-bottom: .5rem;
+    color: #ffc107
 }
-
-.instagram-icon:hover {
-    color:#ea4c89
-
-}
-
-
 
 
 @media only screen and (max-width: 640px) {

@@ -21,20 +21,19 @@ export default function Angebot () {
             {data && <section className="w-100 h-100 d-flex justify-content-center align-items-center mt-5">
 
 
-                <div className="card mb-3 h-75" style={{ maxWidth: "540px" }} >
+                <div className="card mb-3 h-75" style={{ maxWidth: "800px" }} >
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src={data.offer.image} className="img-fluid rounded-start h-100" alt="..." />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">{data.offer.name}</h5>
+                                <h3 className="card-text">Rabatt: {data.percentage}%</h3>
+                                <h5 className="card-title font-weight-bold">{data.offer.name}</h5>
                                 <p className="card-text">{data.offer.description}</p>
-                                <p className="card-text"><span className="text-warning">{data.offer.price}$</span></p>
+                                <p className="card-text"><span className="text-warning crossed-out">{data.offer.price}€</span></p>
+                                <p className="card-text"><span className="text-warning font-weight-bold">{data.offer.price - (data.offer.price * data.percentage) / 100}€</span></p>
                                 <p className="card-text">{data.offer.vegan && <span className="text-success">Vegan</span>}</p>
-                                <h3 className="card-text  ">{data.percentage}%</h3>
-
-
                             </div>
                         </div>
                     </div>

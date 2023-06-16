@@ -52,14 +52,14 @@ export default function Home () {
                             Ein Fehler ist aufgetreten, versuchen Sie es bitte erneut!
                         </p>}
                         {data && <>
-                            <h1 className="btn btn-light  ">{data.percentage}%</h1>
-                            <div id="imgBox" className="w-100 d-flex align-items-center  gap-2 px-3">
+                            <div id="imgBox" className="w-100 d-flex flex-column align-items-center  gap-2 px-3">
+                            <h2>Angebot: {data.percentage}%</h2>
                                 <div id="offerDish" className=" " >
                                     <img id="offerDishImage" className=" w-100 h-100" src={data.offer.image} alt="" />
                                 </div>
                                 <h5 id="offerName" className="text-light underline">{data.offer.name}</h5>
                             </div>
-                            <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/angebot") }}>Angebot ansehen!</button>
+                            <button type="button" className="btn btn-warning  m-4" onClick={() => { navigate("/angebot") }}>Angebot ansehen</button>
                         </>}
                     </section>
                 </div>
