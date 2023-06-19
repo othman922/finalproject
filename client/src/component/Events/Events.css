@@ -2,11 +2,19 @@
     min-height: 70vh;
 
     font-size: clamp(16px, 2.5vw, 25px);
+
+    
 }
 
 #Events #menuNavigation {
     transition: 350ms;
     height: 5vh;
+    background-color: rgba(128, 128, 128, 0.55);
+    
+    
+
+   
+
 }
 
 .active {
@@ -14,7 +22,7 @@
 }
 
 #Events #menuNavigation:hover {
-    background-color: black;
+    background-color: #111010;
 }
 
 #eventsContainer {
@@ -30,6 +38,8 @@
     outline: 10px solid rgba(255, 166, 0, 0.755);
     background-color: orange;
     background-color: rgba(0, 0, 0, 0.5);
+    
+    
 }
 
 #eventsContainer section:hover {
@@ -40,6 +50,10 @@
     background-image: url(./img1.png);
     background-size: cover;
     background-position: center;
+    
+    
+    
+    
 }
 
 #zweitenCard-DW {
@@ -61,80 +75,142 @@
 }
 
 #erstenCard-R {
-    background-image: url(./img7.jpg);
+    background-image: url(./weihnachten.jpg);
     background-size: cover;
     background-position: center;
 }
 #zweitenCard-R {
-    background-image: url(./img4.jpg);
+    background-image: url(./italienischer-abend.jpg);
     background-size: cover;
     background-position: center;
+    
 }
+
 #drittenCard-R {
-    background-image: url(./img5.png);
+    background-image: url(./music-img.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #vierttenCard-R {
-    background-image: url(./img6.jpg);
+    background-image: url(./privete-img2.jpeg);
     background-size: cover;
     background-position: center;
 }
 
 #erstenCard-AE {
-    background-image: url(./img6.jpg);
+    background-image: url(./weihnachten.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #zweitenCard-AE {
-    background-image: url(./img4.jpg);
+    background-image: url(./music-img.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #drittenCard-AE {
-    background-image: url(./img5.png);
+    background-image: url(./privete-img2.jpeg);
     background-size: cover;
     background-position: center;
 }
 
 #vierttenCard-AE {
-    background-image: url(./img7.jpg);
+    background-image: url(./italienischer-abend.jpg);
     background-size: cover;
     background-position: center;
+    
 }
 #mainDish {
     width: 100%;
     height: 100%;
     overflow: scroll;
+    /* position: absolute;
+    right: 1.2px; */
+    margin-left: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.452);
+    
     
     
 }
 #mainDish::-webkit-scrollbar{
     display: none;
 }
-#mainDish p {
-    opacity: 0;
-    font-size: 20px;
-    text-overflow: ellipsis;
+
+.EventName{
+    padding-top: 30px;
+    
+    background-color: rgba(0, 0, 0, 0.452);
+    width: 100%;
+    margin: 0;
+    text-align: center;
     
 }
-#mainDish:hover p {
+
+.hamada:hover span{
     opacity: 1;
-    font-size: 20px;
     
     
+    }
+    .hamada span{
+        opacity: 0;
+    }
+    
+    .hamada:hover h1{
+        width: 100%;
+        
+        margin: 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.634);
+    }
+    .hamada:hover #mainDish{
+        opacity: 1;
+        font-size: 25px;
+        background-color: rgba(0, 0, 0, 0.634);
+        }
+        
+        .hamada:hover h1{
+            width: 100%;
+            
+            margin: 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.634);
+        }
+            
+/* #mainDish p span {
+    opacity: 0;
+    font-size: 17px;
+    text-align: left;
+    
+    
+    
+    
+    
+   
     
 }
+#mainDish:hover p span {
+    opacity: 1;
+    
+    
+    
+    
+    
+} */
 
 #mainDish:hover {
-    background-color: rgba(0, 0, 0, 0.634);
+    /* background-color: rgba(0, 0, 0, 0.634); */
+    
 }
 
-.EventName {
-    text-align: center;
+.EventName:hover {
+    
+    background-color: yellow;
+    
+    
+    
 }
 
 /* ----------------------------------------------------------- */
