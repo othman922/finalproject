@@ -28,6 +28,7 @@ import ReservationPage from "./pages/reservation/RerservationPage";
 import DieseWoche from "./component/Events/DieseWoche";
 import Regelmäßig from "./component/Events/Regelmäßig";
 import AndereEvents from "./component/Events/AndereEvents";
+import TableReservation from "./component/table/TableReservation";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -58,9 +59,11 @@ function App () {
         <Route path="/DieseWoche" Component={DieseWoche} ></Route>
         <Route path="/Regelmäßig" Component={Regelmäßig} ></Route>
         <Route path="/AndereEvents" Component={AndereEvents} ></Route>
-        
+
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/reservation" element={<ReservationPage />} />
+        <Route path="/tableReservation" element={<TableReservation />} />
+
         <Route
           path="/login"
           element={<AdminLogin authenticate={authenticate} />}
