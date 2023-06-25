@@ -61,21 +61,27 @@ function AndereEvents() {
             >
                 <section
                     id="erstenCard-AE"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                     
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >
                     
+                    <h1 className="EventName">Weihnachten</h1>
 
-                    <div id="mainDish" className="">
-                    <h1 className="EventName">Event</h1>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                    </p>
-                    </div>
+                    <div id="mainDish" className="text-center">
+                            
+                            <p>
+                            
+                               <span>Wir laden euch ein am 24. Dezember mit uns das Fest zu feiern. 
+                                Mit unserem Weihnachtsmenü werden wir euch den Abend verzaubern, für weitere Informationen zu Menü und Reservierungen, schreibt uns eine Mail mit Namen, Anliegen und Anzahl der Personen.
+                                
+                               </span>
+                            </p>
+                        </div>
+
+                    
                     {/* <button
                         type="button"
                         className="btn btn-warning  m-4"
@@ -89,22 +95,24 @@ function AndereEvents() {
 
                 <section
                     id="zweitenCard-AE"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                     
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >   
+                    <h1 className="EventName">Ausstellungen</h1>
+                        <div id="mainDish" className="text-center">
+                            
+                            <p>
+                            
+                            <span>Jeden ersten Sonntag des Monats laden wir zur Vernissage ein. Als Künstler*in kannst du dich gerne an uns wenden, du erreichst uns am besten telefonisch oder per Mail.
+                                </span>
+                            </p>
+                        </div>
+
+
                     
-
-                    <div id="mainDish" className="">
-                    <h1 className="EventName">Event</h1>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                    </p>
-                    </div>
-
                     {/* <button
                         type="button"
                         className="btn btn-warning  m-4"
@@ -118,21 +126,25 @@ function AndereEvents() {
 
                 <section
                     id="drittenCard-AE"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                     
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >
-                    
+                    <h1 className="EventName">Private Events</h1>
+                        <div id="mainDish" className="text-center">
+                            
+                            <p>
+                            
+                            <span> Ob Hochzeit, Firmenfeiern oder Geburtstag, selbstverständlich lässt sich unsere Location auch privat mieten. Für Reservierungen und Fragen wendet euch gerne an uns.
 
-                    <div id="mainDish" className="">
-                    <h1 className="EventName">Event</h1>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                    </p>
-                    </div>
+                            </span>
+                            </p>
+                        </div>
+
+
+                    
 
                     {/* <button
                         type="button"
@@ -147,22 +159,27 @@ function AndereEvents() {
 
                 <section
                     id="vierttenCard-AE"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                 
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >
-                    
+                    <h1 className="EventName">Italienischer Abend</h1>
+                        <div id="mainDish" className="text-center">
+                            
+                            
+                            <p>
+                            
+                            <span> Mit einem ausgesuchten Buffet aus italienischen Köstlichkeiten empfangen wir euch jeden 1. und 3. Freitag im Monat.
 
-                    <div id="mainDish" className="">
-                    <h1 className="EventName">Event</h1>
-                    <p>
+                            </span>
+                            </p>
+                            
+                        </div>
+
+
                     
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                    </p>
-                    </div>
 
                     {/* {<button
                         type="button"

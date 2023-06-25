@@ -1,69 +1,123 @@
 /* Recipe card */
-.menuElement{
-    width: clamp(250px, 24vw, 380px);
-    height: clamp(100px, 21vh, 230px);
-    outline: 5px solid rgba(255, 166, 0, 0.755);
-    background-color: orange;
-    background-color: rgba(0, 0, 0, .7);
-    transition: 300ms;
- 
- 
-    }
-    .menuElement:hover{
-        transform: rotate(-3deg);
-        /* animation-name: welcome;
-        animation-duration: 600ms; */
-    }
-   .menuElement .image{
-        width: clamp(100px, 7vw, 250px);
-        height: clamp(100px, 7vw, 250px);
-        border-radius: 50%;
-    }
-    
+.menuElement {
+  width: clamp(250px, 24vw, 380px);
+  height: clamp(100px, 21vh, 230px);
+  outline: 5px solid transparent;
+  background-color: orange;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
 
-    #Speise #menu, .loadingSection{
-        width: 90%;
-        min-height: 60vh;
-        font-size: clamp(10px,1vw, 16px);
-      }
+.menuElement:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
 
+.menuElement .image {
+  width: clamp(120px, 15vw, 150px);
+  height: clamp(120px, 15vw, 150px);
+  object-fit: cover;
+  border-radius: 5px;
+}
 
-      /* MY MODAL */
-         
-      .modalContainer{
-             z-index: 5;
-             animation: fadeIn .5s ease;
-         
-         }
+#Speise #menu,
+.loadingSection {
+  width: 90%;
+  min-height: 60vh;
+  font-size: clamp(10px, 1vw, 16px);
+}
 
-         .myModal{
-            width: clamp(250px, 33vw, 500px);
-            height: clamp(350px, 30vh, 300px);
-            z-index: 6;  
-            cursor: pointer;
-            animation: fadeIn .5s ease;
-           
-          }
+/* MY MODAL */
 
-          
-            .myModal:hover{
-                transform: rotate(-3deg);
-                
-            }
-           .myModal .image{
-                width: clamp(100px, 7vw, 250px);
-                height: clamp(100px, 7vw, 250px);
-                border-radius: 50%;
-            }
+.modalContainer {
+  z-index: 5;
+  animation: fadeIn 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-          /* ANIMATION */
+.myModal {
+  width: clamp(250px, 33vw, 500px);
+  height: clamp(350px, 30vh, 300px);
+  z-index: 6;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
-          @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
+.myModal:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.myModal .image {
+  width: clamp(100px, 7vw, 250px);
+  height: clamp(100px, 7vw, 250px);
+  border-radius: 5px;
+}
+
+.myModal p.titleAndPrice {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.myModal .description {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.menuElement .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+}
+
+.myModal .btn {
+  width: 100px;
+  margin-top: 10px;
+}
+
+#vegan{
+  color: #22bb88 !important;
+}
+
+.titleAndPrice{
+  font-size: 17px;
+  font-weight: bold; 
+}
+
+.titleAndPrice span{
+  display: inline-block;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff !important; 
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

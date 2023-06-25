@@ -62,20 +62,22 @@ function DieseWoche() {
                 
                 <section
                     id="erstenCard-DW"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                 
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >
-                    
-
-                    <div id="mainDish" className="">
                     <h1 className="EventName">Event</h1>
+
+                    <div id="mainDish" className="text-center">
+                    
                     <p>
                     
+                        <span>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+                        
+                        </span>
                     </p>
                     </div>
                     {/* <button
@@ -91,20 +93,22 @@ function DieseWoche() {
 
                 <section
                     id="zweitenCard-DW"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                 
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >
-                    
-
-                    <div id="mainDish" className="">
                     <h1 className="EventName">Event</h1>
+
+                    <div id="mainDish" className="text-center">
+                    
                     <p>
                     
+                        <span>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+                        
+                        </span>
                     </p>
                     </div>
 
@@ -121,19 +125,22 @@ function DieseWoche() {
 
                 <section
                     id="drittenCard-DW"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                 
                     onClick={() => {
                         navigate("//reservation");
                     }}
                 >
-                    
+                    <h1 className="EventName">Event</h1>
 
-                    <div id="mainDish" className="">
-                    <h1 className="EventName">Italian Night</h1>
+                    <div id="mainDish" className="text-center">
+                    
                     <p>
+                    
+                        <span>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+                        
+                        </span>
                     </p>
                     </div>
 
@@ -150,24 +157,24 @@ function DieseWoche() {
 
                 <section
                     id="vierttenCard-DW"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
                 
                     onClick={() => {
                         navigate("/reservation");
                     }}
                 >
-                    
-
-                    <div id="mainDish" className="">
                     <h1 className="EventName">Event</h1>
+
+                    <div id="mainDish" className="text-center">
+                    
                     <p>
                     
+                        <span>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+                        
+                        </span>
                     </p>
-                   
                     </div>
-
                     {/* {<button
                         type="button"
                         className="btn btn-warning  m-4"

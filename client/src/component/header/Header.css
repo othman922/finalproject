@@ -40,6 +40,7 @@
   color:#000;
   background-color:#ffc107;
   padding:10px!important;
+  transition: 350ms;
   }
 
   .container1 .main-link1:hover {
@@ -100,11 +101,14 @@
   .logo{
     height: 50px;
     width: 50px;
-    transition: transform 0.3s ease-in-out;
+    color: #ffc107;
+    transition: 350ms;
   }
 
   .logo:hover{
-    transform: scale(1.2);
+    height: 55px;
+    width: 55px;
+    color: #ffc107;
   }
 
 
