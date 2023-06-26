@@ -260,7 +260,7 @@ const MenuManagement = () => {
                             <div>
                               <h5 className="card-title">{menuItem.name}</h5>
                               <p className="card-text">{menuItem.description}</p>
-                              <p className="card-text">Price: ${menuItem.price}</p>
+                              <p className="card-text">Price: {menuItem.price}€</p>
                               <p className="card-text">{menuItem.vegan ? 'Vegan' : 'Non-Vegan'}</p>
                               <button className="btn btn-danger" onClick={() => handleDelete(menuItem._id)}>Delete</button>
                               <button className="btn btn-secondary ms-2" onClick={() => handleEdit(menuItem._id)}>Edit</button>
