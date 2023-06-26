@@ -1,21 +1,20 @@
 #Events {
     min-height: 70vh;
-
     font-size: clamp(16px, 2.5vw, 25px);
 
     
 }
 
 #Events #menuNavigation {
-    transition: 350ms;
-    height: 5vh;
-    background-color: rgba(128, 128, 128, 0.55);
-    
-    
-
-   
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5vh;
+  background-color: rgba(128, 128, 128, 0.55);
+  transition: 350ms;
 }
+
+
 
 .active {
     color: rgba(255, 166, 0, 0.755);
@@ -37,9 +36,7 @@
     transition: 300ms;
     outline: 10px solid rgba(255, 166, 0, 0.755);
     background-color: orange;
-    background-color: rgba(0, 0, 0, 0.5);
-    
-    
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 #eventsContainer section:hover {
@@ -47,7 +44,7 @@
 }
 
 #erstenCard-DW {
-    background-image: url(./img1.png);
+    background-image: url(./italienischer-abend.jpg);
     background-size: cover;
     background-position: center;
     
@@ -57,43 +54,26 @@
 }
 
 #zweitenCard-DW {
-    background-image: url(./img4.jpg);
+    background-image: url(./drink.jpg);
     background-size: cover;
     background-position: center;
 }
 
-#drittenCard-DW {
-    background-image: url(./img5.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#vierttenCard-DW {
-    background-image: url(./img6.jpg);
-    background-size: cover;
-    background-position: center;
-}
 
 #erstenCard-R {
-    background-image: url(./weihnachten.jpg);
+    background-image: url(./drink.jpg);
     background-size: cover;
     background-position: center;
 }
 #zweitenCard-R {
-    background-image: url(./italienischer-abend.jpg);
+    background-image: url(./kochkurs.jpg);
     background-size: cover;
     background-position: center;
     
 }
 
 #drittenCard-R {
-    background-image: url(./music-img.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#vierttenCard-R {
-    background-image: url(./privete-img2.jpeg);
+    background-image: url(./italienischer-abend.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -116,102 +96,139 @@
     background-position: center;
 }
 
-#vierttenCard-AE {
-    background-image: url(./italienischer-abend.jpg);
-    background-size: cover;
-    background-position: center;
-    
-}
 #mainDish {
     width: 100%;
     height: 100%;
     overflow: scroll;
-    /* position: absolute;
-    right: 1.2px; */
     margin-left: 0;
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.452);
-    
-    
-    
 }
+
 #mainDish::-webkit-scrollbar{
     display: none;
 }
 
 .EventName{
     padding-top: 30px;
-    
     background-color: rgba(0, 0, 0, 0.452);
     width: 100%;
     margin: 0;
     text-align: center;
-    
 }
 
 .hamada:hover span{
     opacity: 1;
-    
-    
     }
+
     .hamada span{
         opacity: 0;
     }
     
     .hamada:hover h1{
         width: 100%;
-        
         margin: 0;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.634);
     }
+
     .hamada:hover #mainDish{
         opacity: 1;
         font-size: 25px;
         background-color: rgba(0, 0, 0, 0.634);
         }
-        
+
         .hamada:hover h1{
             width: 100%;
-            
             margin: 0;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.634);
         }
             
-/* #mainDish p span {
-    opacity: 0;
-    font-size: 17px;
-    text-align: left;
-    
-    
-    
-    
-    
-   
-    
-}
-#mainDish:hover p span {
-    opacity: 1;
-    
-    
-    
-    
-    
-} */
-
-#mainDish:hover {
-    /* background-color: rgba(0, 0, 0, 0.634); */
-    
-}
 
 .EventName:hover {
-    
     background-color: yellow;
-    
-    
-    
 }
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    
+    #menuNavigation {
+      height: 8vh;
+      
+    }
+    #eventsContainer p {
+        font-size: 24px;
+        word-break: break-word;
+      }
+
+    
+  
+    #eventsContainer section {
+      width: 25%;
+      height: 400px;
+      
+    }
+  }
+  
+  
+  @media screen and (max-width: 767px) {
+    
+    #menuNavigation {
+      height: 10vh;
+      flex-direction: column;
+      height: auto;
+      padding: 70px;
+    }
+
+    #menuNavigation a {
+        margin-bottom: 10px;
+      }
+  
+      #eventsContainer p {
+          font-size: 15px;
+          word-break: break-word;
+        }
+  
+    #eventsContainer section {
+      width: 50%;
+      height: 300px;
+      
+    }
+    
+  }
+  
+  
+  @media screen and (max-width: 480px) {
+    
+    #menuNavigation {
+        
+      height: 12vh;
+    }
+
+    #menuNavigation a {
+      font-size: 18px;
+    }
+
+    #eventsContainer p {
+        font-size: 8px;
+        word-break: break-word;
+      }
+  
+    #eventsContainer section {
+      width: 100%;
+      height: 200px;
+      
+    }
+  }
+
+
+
+
+
 
 /* ----------------------------------------------------------- */
 

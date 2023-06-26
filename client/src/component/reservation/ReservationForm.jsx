@@ -149,7 +149,7 @@ const ReservationForm = ({ onSubmit }) => {
   return (
     <div className="d-flex justify-content-center align-items-center text-white mb-3 mt-3">
       <div className="card p-4" id="reservationContainer">
-        <h2 className="text-center mb-4">Reservieren Sie ein Tisch</h2>
+      <h2 className="text-center mb-4">Reservieren Sie ein Tisch</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form ref={form} onSubmit={handleSubmit}>
           <div className="row mb-3">

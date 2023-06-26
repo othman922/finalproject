@@ -80,49 +80,9 @@ function AndereEvents() {
                                </span>
                             </p>
                         </div>
-
-                    
-                    {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
                 </section>
 
-                <section
-                    id="zweitenCard-AE"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
-                    
-                    onClick={() => {
-                        navigate("/reservation");
-                    }}
-                >   
-                    <h1 className="EventName">Ausstellungen</h1>
-                        <div id="mainDish" className="text-center">
-                            
-                            <p>
-                            
-                            <span>Jeden ersten Sonntag des Monats laden wir zur Vernissage ein. Als Künstler*in kannst du dich gerne an uns wenden, du erreichst uns am besten telefonisch oder per Mail.
-                                </span>
-                            </p>
-                        </div>
-
-
-                    
-                    {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
-                </section>
+                
 
                 <section
                     id="drittenCard-AE"
@@ -142,54 +102,6 @@ function AndereEvents() {
                             </span>
                             </p>
                         </div>
-
-
-                    
-
-                    {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
-                </section>
-
-                <section
-                    id="vierttenCard-AE"
-                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
-                
-                    onClick={() => {
-                        navigate("/reservation");
-                    }}
-                >
-                    <h1 className="EventName">Italienischer Abend</h1>
-                        <div id="mainDish" className="text-center">
-                            
-                            
-                            <p>
-                            
-                            <span> Mit einem ausgesuchten Buffet aus italienischen Köstlichkeiten empfangen wir euch jeden 1. und 3. Freitag im Monat.
-
-                            </span>
-                            </p>
-                            
-                        </div>
-
-
-                    
-
-                    {/* {<button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
                 </section>
             </section>
             </main>

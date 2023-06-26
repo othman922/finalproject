@@ -52,7 +52,7 @@ function Regelmäßig() {
                         }`}
                         href="#eventsContainer"
                         onClick={() => handleSectionClick("Andere Events")}
-                        // style={{color:"red"}}
+                        
                     >
                         Andere Events
                     </Link>
@@ -69,26 +69,18 @@ function Regelmäßig() {
                             navigate("/reservation");
                         }}
                     >
-                        <h1 className="EventName">Event</h1>
+                        <h1 className="EventName">Cocktailabend</h1>
                         <div id="mainDish" className="text-center">
                     
                     <p>
                     
                         <span>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+                        Erlebt eine einzigartige Mischung aus raffinierten Drinks. lasst ihr sich jeden Samstag von unseren talentierten Barkeepern verwöhnen.
                         
                         </span>
                     </p>
                     </div>
-                        {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
+                        
                     </section>
 
                     <section
@@ -99,27 +91,19 @@ function Regelmäßig() {
                             navigate("/reservation");
                         }}
                     >
-                        <h1 className="EventName">Event</h1>
+                        <h1 className="EventName">Kochkurs</h1>
                     <div id="mainDish" className="text-center">
                     
                     <p>
                     
                         <span>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+                        
+                        Entdeckt die Geheimnisse der kulinarischen Meisterwerke bei unserem Kochkurs! Lernt wie raffinierte Gerichte zubereitt werden sollen. Ein unvergessliches Erlebnis für alle, die ihre Kochkünste auf das nächste Level bringen möchten.   
                         
                         </span>
                     </p>
                     </div>
 
-                        {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
                     </section>
 
                     <section
@@ -129,61 +113,42 @@ function Regelmäßig() {
                             navigate("/reservation");
                         }}
                     >
-                        <h1 className="EventName">Event</h1>
+                        <h1 className="EventName">Italienischer Abend</h1>
 
 <div id="mainDish" className="text-center">
 
 <p>
 
     <span>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
+        Mit einem ausgesuchten Buffet aus italienischen Köstlichkeiten empfangen wir euch jeden 1. und 3. Freitag im Monat.
     
     </span>
 </p>
 </div>
-
-
-                        {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
+      
                     </section>
+
 
                     <section
-                        id="vierttenCard-R"
-                        className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
-                        onClick={() => {
-                            navigate("/reservation");
-                        }}
-                    >
-                        <h1 className="EventName">Event</h1>
+                    id="zweitenCard-AE"
+                    className="  position-relative d-flex flex-column justify-content-between align-items-center hamada"
+                    
+                    onClick={() => {
+                        navigate("/reservation");
+                    }}
+                >   
+                    <h1 className="EventName">Ausstellungen</h1>
+                        <div id="mainDish" className="text-center">
+                            
+                            <p>
+                            
+                            <span>Jeden ersten Sonntag des Monats laden wir zur Vernissage ein. Als Künstler*in kannst du dich gerne an uns wenden, du erreichst uns am besten telefonisch oder per Mail.
+                                </span>
+                            </p>
+                        </div>
+                </section>
 
-<div id="mainDish" className="text-center">
 
-<p>
-
-    <span>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, dignissimos est? Maxime vero explicabo magni aspernatur, saepe mollitia doloribus ullam nihil est atque quod similique nobis praesentium magnam quam nulla?
-    
-    </span>
-</p>
-</div>
-
-                        {/* <button
-                        type="button"
-                        className="btn btn-warning  m-4"
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                    >
-                        buchen
-                    </button> */}
-                    </section>
                 </section>
             </main>
         </div>
