@@ -82,6 +82,11 @@ const ReservationShow = ({ data }) => {
             <label className="card-title">Uhrzeit:</label>
             <p className="card-text ">{data.time}</p>
           </div>
+          <div className="col-sm-12 col-md-6 mb-3">
+            <label className="card-title text-warning">Reservierungsnummer</label>
+            <p className="card-text text-decoration-underline">{data.myReservation}</p>
+
+          </div>
         </div>
         {data.extra && (
           <div className="mb-3">
@@ -91,7 +96,7 @@ const ReservationShow = ({ data }) => {
         )}
         <div className="row mb-3">
           <div className="col-sm-12 col-md-6 mb-3">
-            <Link to="/" className="btn" id="btnReservation">
+            <Link to="/reservationOptions" className="btn" id="btnReservation">
               Zurück zur Seite
             </Link>
           </div>
