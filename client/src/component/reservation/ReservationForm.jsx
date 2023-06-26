@@ -3,7 +3,9 @@ import { useState, useRef, useEffect } from "react";
 import { generateAvailableTimes } from "./OpenHour";
 import PropTypes from "prop-types";
 import emailjs from "@emailjs/browser";
-import "./Reservation.css" 
+// import { v4 as uuidv4 } from 'uuid';
+
+import "./Reservation.css"
 
 const ReservationForm = ({ onSubmit }) => {
   const [email, setEmail] = useState("");
@@ -22,6 +24,8 @@ const ReservationForm = ({ onSubmit }) => {
 
   const today = new Date().toISOString().split("T")[0];
   const filteredAvailableTimes = generateAvailableTimes(date, today);
+
+
 
   useEffect(() => {
     const fetchReservations = async () => {
@@ -70,6 +74,14 @@ const ReservationForm = ({ onSubmit }) => {
       return;
     }
 
+    const generateReservationId = (par) => {
+      const randomString = Math.random().toString(36).substring(2, 8);
+      return `${par}-${randomString}`;
+    };
+
+    const myReservation = generateReservationId(email);
+    console.log(myReservation);
+
     const reservation = {
       email,
       name,
@@ -78,6 +90,7 @@ const ReservationForm = ({ onSubmit }) => {
       date,
       people,
       time,
+      myReservation,
     };
 
     try {
@@ -136,7 +149,7 @@ const ReservationForm = ({ onSubmit }) => {
   return (
     <div className="d-flex justify-content-center align-items-center text-white mb-3 mt-3">
       <div className="card p-4" id="reservationContainer">
-      <h2 className="text-center mb-4">Reservieren Sie ein Tisch</h2>
+        <h2 className="text-center mb-4">Reservieren Sie ein Tisch</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form ref={form} onSubmit={handleSubmit}>
           <div className="row mb-3">
@@ -240,12 +253,12 @@ const ReservationForm = ({ onSubmit }) => {
           </button>
         </form>
       </div>
-      </div>
+    </div>
   );
 };
 
 ReservationForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-  };
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default ReservationForm;

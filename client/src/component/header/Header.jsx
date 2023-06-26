@@ -53,7 +53,7 @@ export const Header = () => {
             </ul>
           </div>
           <div className="container1">
-            <NavLink className="linksToHide main-link1" to="/reservation">
+            <NavLink className="linksToHide main-link1" to="/reservationOptions">
               Reservierung
             </NavLink>
           </div>

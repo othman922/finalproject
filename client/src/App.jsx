@@ -29,6 +29,8 @@ import DieseWoche from "./component/Events/DieseWoche";
 import Regelmäßig from "./component/Events/Regelmäßig";
 import AndereEvents from "./component/Events/AndereEvents";
 import TableReservation from "./component/table/TableReservation";
+import ReservationOptions from "./component/reservation/ReservationOptions";
+import MyReservation from "./component/reservation/MyReservation";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -62,6 +64,11 @@ function App () {
 
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/reservation" element={<ReservationPage />} />
+        <Route path="/reservationOptions" element={<ReservationOptions />} />
+        <Route path="/myReservation" element={<MyReservation />} />
+
+
+
         <Route path="/tableReservation" element={<TableReservation />} />
 
         <Route

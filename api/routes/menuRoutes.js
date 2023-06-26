@@ -97,13 +97,14 @@ router.get(
 
   reservationsControllers.getReservationsById
 );
+router.get("/myReservation/:reservationID", reservationsControllers.getMyReservation)
 router.delete(
   "/reservations/:id",
 
   reservationsControllers.deleteReservation
 );
 router.post("/reservations", reservationsControllers.createReservation);
-
+router.patch("/updateMyReservation/:id", reservationsControllers.updateMyReservation)
 // ADMIN ROUTES
 
 router.post("/login", loginController.login);
