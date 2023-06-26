@@ -1,22 +1,18 @@
 import "./ÜberUns.css";
-// import img1 from "../ÜberUns/1.png";
-// import img2 from "../ÜberUns/2.png";
-// import img3 from "../ÜberUns/3.png";
-// import img4 from "../ÜberUns/4.png";
-// import img5 from "../ÜberUns/5.png";
 import profile from "../ÜberUns/profile.jpg"
-// import { Profiler } from "react";
+import member1 from "../ÜberUns/member1.png"
+import member2 from "../ÜberUns/member2.jpg"
+import member4 from "../ÜberUns/member4.png"
+import member3 from "../ÜberUns/member3.png"
+
+
 
 const ÜberUns = () => {
     return (
         <div className="ÜberUns">
 
-
-
-
-
             <section id="team" className="section">
-                <div className="container" data-aos="fade-up">
+                <div className="container" >
                     <div className="section-header">
                         <h3 className="section-h3">Unser Team:</h3>
                         <p>
@@ -30,9 +26,9 @@ const ÜberUns = () => {
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-2 col-md-6">
+                        <div className="col-lg-2 col-md-6 memberTest">
                             <div className="member">
-                                <img src={profile} className="img-fluid" alt="" />
+                                <img src={member1} className="img-fluid" alt="" />
                                 <div className="member-info">
                                     <div className="member-info-content">
                                         <h4>Etienne</h4>
@@ -56,9 +52,9 @@ const ÜberUns = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-2 col-md-6">
+                        <div className="col-lg-2 col-md-6 memberTest">
                             <div className="member">
-                                <img src={profile} className="img-fluid" alt="" />
+                                <img src={member2} className="img-fluid" alt="" />
                                 <div className="member-info">
                                     <div className="member-info-content">
                                         <h4>Youssef</h4>
@@ -82,9 +78,9 @@ const ÜberUns = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-2 col-md-6">
+                        <div className="col-lg-2 col-md-6 memberTest" >
                             <div className="member">
-                                <img src={profile} className="img-fluid" alt="" />
+                                <img src={member3} className="img-fluid" alt="" />
                                 <div className="member-info">
                                     <div className="member-info-content">
                                         <h4>Michelle</h4>
@@ -108,9 +104,9 @@ const ÜberUns = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-2 col-md-6">
+                        <div className="col-lg-2 col-md-6 memberTest">
                             <div className="member">
-                                <img src={profile} className="img-fluid" alt="" />
+                                <img src={member4} className="img-fluid" alt="" />
                                 <div className="member-info">
                                     <div className="member-info-content">
                                         <h4>Ammar</h4>
@@ -134,7 +130,7 @@ const ÜberUns = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-2 col-md-6">
+                        <div className="col-lg-2 col-md-6 memberTest">
                             <div className="member">
                                 <img src={profile} className="img-fluid" alt="" />
                                 <div className="member-info">
