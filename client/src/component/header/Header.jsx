@@ -27,7 +27,7 @@ export const Header = () => {
           <div className="container1">
 
             <NavLink to="/">
-              <img src="src/assets/image/logo (2).png" className="logo" alt="logo" />
+              <img src="src/assets/image/logo.png" className="logo" alt="logo" />
             </NavLink>
           </div>
           <div className=" linksToHide menu-ul">

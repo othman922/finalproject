@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 app.use(
     cors({
-        origin:["http://localhost:5173","https://64a2e6dcde74511c177bd835--tubular-donut-19f888.netlify.app/"] ,
+        origin:"*" ,
         credentials: true,
     })
 );
